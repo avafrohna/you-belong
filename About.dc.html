@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing:antialiased; background:#FBF8F2; color:#102A30; }
+  ::selection { background:#7FC9D6; color:#0E4D5C; }
+  image-slot { display:block; width:100%; height:100%; }
+</style>
+</helmet>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);background:rgba(251,248,242,.82);border-bottom:1px solid rgba(16,42,48,.08)">
+  <nav style="max-width:1180px;margin:0 auto;padding:0 28px;height:66px;display:flex;align-items:center;justify-content:space-between">
+    <a href="Homepage.dc.html" style="text-decoration:none;display:flex;flex-direction:column;line-height:1">
+      <span style="font:800 19px 'Hanken Grotesk';color:#0E4D5C;letter-spacing:-.01em">you belong</span>
+      <span style="font:700 8.5px 'Hanken Grotesk';letter-spacing:.34em;color:#2E9CB0;margin-top:3px">SAN DIEGO</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:30px">
+      <a href="Homepage.dc.html#categories" style="font:600 14px 'Hanken Grotesk';color:#102A30;text-decoration:none;opacity:.82" style-hover="opacity:1;color:#0E4D5C">Start here</a>
+      <a href="Directory.dc.html" style="font:600 14px 'Hanken Grotesk';color:#102A30;text-decoration:none;opacity:.82" style-hover="opacity:1;color:#0E4D5C">Browse</a>
+      <a href="About.dc.html" style="font:600 14px 'Hanken Grotesk';color:#0E4D5C;text-decoration:none">About</a>
+      <a href="/cdn-cgi/l/email-protection#7f161119103f06100a1d1a131011180c1e111b161a181051100d18" style="font:600 14px 'Hanken Grotesk';color:#fff;background:#2E9CB0;text-decoration:none;padding:9px 18px;border-radius:999px" style-hover="background:#0E4D5C">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section style="max-width:1180px;margin:0 auto;padding:64px 28px 8px;text-align:center">
+  <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:#2E9CB0">Our mission</div>
+  <h1 style="font:800 clamp(40px,5vw,64px)/1.03 'Hanken Grotesk';letter-spacing:-.025em;color:#102A30;margin:14px auto 0;max-width:780px;text-wrap:balance">Everyone deserves to feel at home in San Diego.</h1>
+  <p style="font:500 19px/1.6 'Hanken Grotesk';color:#4a5a5d;margin:18px auto 0;max-width:600px">You Belong San Diego is a non-profit with one job: helping people who are new here find the communities, causes, and gatherings where they actually fit.</p>
+  <div style="margin-top:28px">
+    <a href="Directory.dc.html" style="font:700 15px 'Hanken Grotesk';color:#fff;background:#0E4D5C;text-decoration:none;padding:14px 28px;border-radius:999px;box-shadow:0 6px 20px rgba(14,77,92,.22)" style-hover="background:#0a3b47">Browse the directory →</a>
+  </div>
+</section>
+
+<!-- STORY -->
+<section style="max-width:1180px;margin:0 auto;padding:56px 28px 0;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center">
+  <div style="aspect-ratio:5/4;width:100%;border-radius:24px;background:#E7D9BE;box-shadow:0 24px 60px -28px rgba(14,77,92,.4);overflow:hidden">
+    <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about-story" shape="rounded" radius="24" placeholder="Drop a community photo" hint-size="100%,100%" style="width:100%;height:100%;display:block"></x-import>
+  </div>
+  <div>
+    <h2 style="font:800 30px/1.12 'Hanken Grotesk';letter-spacing:-.02em;color:#102A30;margin:0">Why we built this</h2>
+    <p style="font:500 17px/1.65 'Hanken Grotesk';color:#4a5a5d;margin:16px 0 0">Moving to a new city is lonely in a way nobody warns you about. San Diego is full of welcoming people and good causes — but when you first arrive, you have no idea where any of it is.</p>
+    <p style="font:500 17px/1.65 'Hanken Grotesk';color:#4a5a5d;margin:16px 0 0">So we made one trustworthy place to look. Every listing is added by hand and chosen because it's genuinely welcoming to newcomers. No pay-to-play, no endless feed — just the real thing.</p>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section style="max-width:1180px;margin:0 auto;padding:64px 28px 0">
+  <h2 style="font:800 30px/1.1 'Hanken Grotesk';letter-spacing:-.02em;color:#102A30;margin:0;text-align:center">What makes us different</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px">
+    <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:26px">
+      <div style="width:46px;height:46px;border-radius:13px;background:#e6f4f6;display:flex;align-items:center;justify-content:center">
+        <span style="width:20px;height:20px;border-radius:6px;background:#2E9CB0"></span>
+      </div>
+      <div style="font:800 19px 'Hanken Grotesk';color:#102A30;margin-top:18px">Curated, not crowdsourced</div>
+      <p style="font:500 15px/1.55 'Hanken Grotesk';color:#6a7779;margin:9px 0 0">A real person checks every listing. No spam, no dead links, no algorithm deciding what you see.</p>
+    </div>
+    <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:26px">
+      <div style="width:46px;height:46px;border-radius:13px;background:#e6f4f6;display:flex;align-items:center;justify-content:center">
+        <span style="width:20px;height:20px;border-radius:50%;background:#0E4D5C"></span>
+      </div>
+      <div style="font:800 19px 'Hanken Grotesk';color:#102A30;margin-top:18px">Genuinely local</div>
+      <p style="font:500 15px/1.55 'Hanken Grotesk';color:#6a7779;margin:9px 0 0">From North County to South Bay — neighborhood-level picks, not the same five tourist spots.</p>
+    </div>
+    <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:26px">
+      <div style="width:46px;height:46px;border-radius:13px;background:#e6f4f6;display:flex;align-items:center;justify-content:center">
+        <span style="width:20px;height:20px;background:#FF8A3D;transform:rotate(45deg);border-radius:5px"></span>
+      </div>
+      <div style="font:800 19px 'Hanken Grotesk';color:#102A30;margin-top:18px">Free &amp; non-profit</div>
+      <p style="font:500 15px/1.55 'Hanken Grotesk';color:#6a7779;margin:9px 0 0">A registered 501(c) non-profit. The directory is free to use and always will be.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GET INVOLVED -->
+<section id="involved" style="max-width:1180px;margin:0 auto;padding:64px 28px 0">
+  <div style="text-align:center">
+    <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:#2E9CB0">Get involved</div>
+    <h2 style="font:800 30px/1.1 'Hanken Grotesk';letter-spacing:-.02em;color:#102A30;margin:12px 0 0">Help us grow the map</h2>
+    <p style="font:500 16px/1.55 'Hanken Grotesk';color:#6a7779;margin:12px auto 0;max-width:520px">There are a few ways to pitch in — pick whichever fits.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px">
+    <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:26px">
+      <div style="font:800 19px 'Hanken Grotesk';color:#102A30">Suggest a community</div>
+      <p style="font:500 15px/1.55 'Hanken Grotesk';color:#6a7779;margin:9px 0 0">Know a great group, cause, or spot that should be listed? Send it our way.</p>
+      <a href="/cdn-cgi/l/email-protection#076e696168477e687265626b686960746669636e62606829687560387472656d6264733a547260606274732235376622353764686a6a72696e737e" style="display:inline-block;font:700 14px 'Hanken Grotesk';color:#0E4D5C;text-decoration:none;margin-top:16px" style-hover="color:#2E9CB0">Send a suggestion →</a>
+    </div>
+    <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:26px">
+      <div style="font:800 19px 'Hanken Grotesk';color:#102A30">Volunteer with us</div>
+      <p style="font:500 15px/1.55 'Hanken Grotesk';color:#6a7779;margin:9px 0 0">We're small and growing. Help vet listings, welcome newcomers, or run events.</p>
+      <a href="/cdn-cgi/l/email-protection#d4bdbab2bb94adbba1b6b1b8bbbab3a7b5bab0bdb1b3bbfabba6b3eba7a1b6beb1b7a0e982bbb8a1baa0b1b1a6bdbab3" style="display:inline-block;font:700 14px 'Hanken Grotesk';color:#0E4D5C;text-decoration:none;margin-top:16px" style-hover="color:#2E9CB0">Lend a hand →</a>
+    </div>
+    <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:26px">
+      <div style="font:800 19px 'Hanken Grotesk';color:#102A30">Partner or sponsor</div>
+      <p style="font:500 15px/1.55 'Hanken Grotesk';color:#6a7779;margin:9px 0 0">Organizations and donors who want to help newcomers feel at home — let's talk.</p>
+      <a href="/cdn-cgi/l/email-protection#fe97909891be87918b9c9b929190998d9f909a979b9991d0918c99c18d8b9c949b9d8ac3ae9f8c8a909b8c8d96978e" style="display:inline-block;font:700 14px 'Hanken Grotesk';color:#0E4D5C;text-decoration:none;margin-top:16px" style-hover="color:#2E9CB0">Start a conversation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAND -->
+<section style="background:#0E4D5C;margin-top:64px">
+  <div style="max-width:1180px;margin:0 auto;padding:64px 28px;text-align:center">
+    <h2 style="font:800 clamp(28px,3.2vw,40px)/1.1 'Hanken Grotesk';letter-spacing:-.02em;color:#FBF8F2;margin:0">Questions? We're real people.</h2>
+    <p style="font:500 18px/1.55 'Hanken Grotesk';color:#bfe0e6;margin:14px auto 0;max-width:520px">Reach out anytime — we read every message.</p>
+    <div style="margin-top:26px">
+      <a href="/cdn-cgi/l/email-protection#1970777f765960766c7b7c7576777e6a78777d707c7e7637766b7e" style="font:700 16px 'Hanken Grotesk';color:#0E4D5C;background:#fff;text-decoration:none;padding:16px 30px;border-radius:999px" style-hover="background:#E7D9BE"><span class="__cf_email__" data-cfemail="5b32353d341b22342e393e3734353c283a353f323e3c347534293c">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#102A30">
+  <div style="max-width:1180px;margin:0 auto;padding:64px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px">
+    <div>
+      <div style="display:flex;flex-direction:column;line-height:1">
+        <span style="font:800 22px 'Hanken Grotesk';color:#FBF8F2;letter-spacing:-.01em">you belong</span>
+        <span style="font:700 9px 'Hanken Grotesk';letter-spacing:.34em;color:#7FC9D6;margin-top:4px">SAN DIEGO</span>
+      </div>
+      <p style="font:500 15px/1.6 'Hanken Grotesk';color:#8fa6aa;margin:18px 0 0;max-width:340px">A non-profit helping people new to San Diego find the communities, causes, and gatherings where they belong.</p>
+      <a href="/cdn-cgi/l/email-protection#cba2a5ada48bb2a4bea9aea7a4a5acb8aaa5afa2aeaca4e5a4b9ac" style="display:inline-block;font:700 14px 'Hanken Grotesk';color:#7FC9D6;text-decoration:none;margin-top:18px" style-hover="color:#fff"><span class="__cf_email__" data-cfemail="f59c9b939ab58c9a809790999a9b9286949b919c90929adb9a8792">[email&#160;protected]</span></a>
+    </div>
+    <div>
+      <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:#5e7a80">Explore</div>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
+        <a href="Homepage.dc.html#categories" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Start here</a>
+        <a href="Homepage.dc.html#featured" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Featured</a>
+        <a href="Directory.dc.html" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Directory</a>
+      </div>
+    </div>
+    <div>
+      <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:#5e7a80">Get involved</div>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
+        <a href="/cdn-cgi/l/email-protection#8ee7e0e8e1cef7e1fbecebe2e1e0e9fdefe0eae7ebe9e1a0e1fce9b1fdfbece4ebedfab3ddfbe9e9ebfdfaabbcbeefabbcbeede1e3e3fbe0e7faf7" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Suggest a community</a>
+        <a href="About.dc.html#involved" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Volunteer with us</a>
+        <a href="/cdn-cgi/l/email-protection#244d4a424b645d4b514641484b4a4357454a404d41434b0a4b5643" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:22px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span style="font:500 13px 'Hanken Grotesk';color:#5e7a80">© 2026 You Belong San Diego · A 501(c) non-profit</span>
+      <span style="font:500 13px 'Hanken Grotesk';color:#5e7a80">youbelongsandiego.org</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

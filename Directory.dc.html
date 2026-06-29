@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing:antialiased; background:#FBF8F2; color:#102A30; }
+  ::selection { background:#7FC9D6; color:#0E4D5C; }
+  image-slot { display:block; width:100%; height:100%; }
+</style>
+</helmet>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);background:rgba(251,248,242,.82);border-bottom:1px solid rgba(16,42,48,.08)">
+  <nav style="max-width:1180px;margin:0 auto;padding:0 28px;height:66px;display:flex;align-items:center;justify-content:space-between">
+    <a href="Homepage.dc.html" style="text-decoration:none;display:flex;flex-direction:column;line-height:1">
+      <span style="font:800 19px 'Hanken Grotesk';color:#0E4D5C;letter-spacing:-.01em">you belong</span>
+      <span style="font:700 8.5px 'Hanken Grotesk';letter-spacing:.34em;color:#2E9CB0;margin-top:3px">SAN DIEGO</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:30px">
+      <a href="Homepage.dc.html#categories" style="font:600 14px 'Hanken Grotesk';color:#102A30;text-decoration:none;opacity:.82" style-hover="opacity:1;color:#0E4D5C">Start here</a>
+      <a href="Directory.dc.html" style="font:600 14px 'Hanken Grotesk';color:#0E4D5C;text-decoration:none">Browse</a>
+      <a href="About.dc.html" style="font:600 14px 'Hanken Grotesk';color:#102A30;text-decoration:none;opacity:.82" style-hover="opacity:1;color:#0E4D5C">About</a>
+      <a href="/cdn-cgi/l/email-protection#a8c1c6cec7e8d1c7ddcacdc4c7c6cfdbc9c6ccc1cdcfc786c7dacf" style="font:600 14px 'Hanken Grotesk';color:#fff;background:#2E9CB0;text-decoration:none;padding:9px 18px;border-radius:999px" style-hover="background:#0E4D5C">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HEADER -->
+<section style="max-width:1180px;margin:0 auto;padding:54px 28px 8px">
+  <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:#2E9CB0">The directory</div>
+  <h1 style="font:800 clamp(36px,4.4vw,54px)/1.04 'Hanken Grotesk';letter-spacing:-.025em;color:#102A30;margin:12px 0 0">Everything worth showing up to.</h1>
+  <p style="font:500 18px/1.55 'Hanken Grotesk';color:#4a5a5d;margin:16px 0 0;max-width:560px">Communities, causes, events, and gathering spots across San Diego — filter down to the ones that feel like you.</p>
+</section>
+
+<!-- CONTROLS -->
+<section style="max-width:1180px;margin:0 auto;padding:26px 28px 0">
+  <div style="background:#fff;border:1px solid #efe6d6;border-radius:20px;padding:22px 24px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <input value="{{ query }}" onInput="{{ onQuery }}" placeholder="Search by name or neighborhood…" style="font:500 15px 'Hanken Grotesk';padding:13px 18px;border-radius:12px;border:1px solid #d9cdb8;background:#fbfaf6;color:#102A30;flex:1;min-width:240px;outline:none" style-focus="border-color:#2E9CB0;box-shadow:0 0 0 3px rgba(46,156,176,.15);background:#fff" />
+      <div style="font:700 14px 'Hanken Grotesk';color:#8a8a7e;white-space:nowrap">{{ count }} results</div>
+    </div>
+    <div style="margin-top:18px">
+      <div style="font:700 11px 'Hanken Grotesk';letter-spacing:.12em;text-transform:uppercase;color:#b0a799;margin-bottom:9px">Category</div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <sc-for list="{{ catFilters }}" as="c" hint-placeholder-count="5">
+          <button onClick="{{ c.onSelect }}" style="font:600 13px 'Hanken Grotesk';padding:9px 16px;border-radius:999px;border:1px solid #d9cdb8;cursor:pointer;color:{{ c.color }};background:{{ c.bg }}">{{ c.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <div style="font:700 11px 'Hanken Grotesk';letter-spacing:.12em;text-transform:uppercase;color:#b0a799;margin-bottom:9px">Region</div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <sc-for list="{{ regionFilters }}" as="r" hint-placeholder-count="6">
+          <button onClick="{{ r.onSelect }}" style="font:600 13px 'Hanken Grotesk';padding:9px 16px;border-radius:999px;border:1px solid #d9cdb8;cursor:pointer;color:{{ r.color }};background:{{ r.bg }}">{{ r.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section style="max-width:1180px;margin:0 auto;padding:26px 28px 20px">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:18px">
+    <sc-for list="{{ filtered }}" as="item" hint-placeholder-count="8">
+      <a href="{{ item.url }}" style="text-decoration:none;background:#fff;border:1px solid #efe6d6;border-radius:18px;padding:22px;display:block" style-hover="border-color:#7FC9D6;transform:translateY(-2px);box-shadow:0 16px 38px -22px rgba(14,77,92,.3)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:10px;height:10px;border-radius:50%;background:{{ item.color }}"></span>
+          <span style="font:700 10.5px 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:{{ item.color }}">{{ item.cat }}</span>
+          <span style="font:600 12px 'Hanken Grotesk';color:#b0a799">·</span>
+          <span style="font:600 12px 'Hanken Grotesk';color:#9a9488">{{ item.region }}</span>
+        </div>
+        <div style="font:800 20px 'Hanken Grotesk';color:#102A30;margin-top:12px">{{ item.name }}</div>
+        <div style="font:600 13px 'Hanken Grotesk';color:#9a9488;margin-top:3px">{{ item.hood }}</div>
+        <p style="font:500 14.5px/1.5 'Hanken Grotesk';color:#6a7779;margin:10px 0 0">{{ item.blurb }}</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px">
+          <div style="display:flex;gap:7px;flex-wrap:wrap">
+            <sc-for list="{{ item.tags }}" as="t" hint-placeholder-count="2">
+              <span style="font:600 11.5px 'Hanken Grotesk';color:#5c6b6e;background:#f3ecde;padding:4px 10px;border-radius:999px">{{ t }}</span>
+            </sc-for>
+          </div>
+          <span style="font:700 14px 'Hanken Grotesk';color:#0E4D5C">Visit →</span>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+  <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+    <div style="background:#fff;border:1px dashed #d9cdb8;border-radius:18px;padding:56px 22px;text-align:center;font:600 16px 'Hanken Grotesk';color:#9a9488">No matches — try clearing a filter, or <a href="/cdn-cgi/l/email-protection#40292e262f00392f3522252c2f2e2733212e242925272f6e2f3227" style="color:#2E9CB0">suggest a community →</a></div>
+  </sc-if>
+</section>
+
+<!-- SUGGEST BAND -->
+<section style="background:#0E4D5C;margin-top:40px">
+  <div style="max-width:1180px;margin:0 auto;padding:56px 28px;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap">
+    <div style="max-width:560px">
+      <h2 style="font:800 clamp(26px,3vw,36px)/1.1 'Hanken Grotesk';letter-spacing:-.02em;color:#FBF8F2;margin:0">Know a group that should be here?</h2>
+      <p style="font:500 17px/1.5 'Hanken Grotesk';color:#bfe0e6;margin:14px 0 0">We add communities by hand so the list stays good. Point us to one we're missing.</p>
+    </div>
+    <a href="/cdn-cgi/l/email-protection#c5acaba3aa85bcaab0a7a0a9aaaba2b6a4aba1aca0a2aaebaab7a2fab6b0a7afa0a6b1f896b0a2a2a0b6b1e0f7f5a4e0f7f5a6aaa8a8b0abacb1bc" style="font:700 15px 'Hanken Grotesk';color:#0E4D5C;background:#fff;text-decoration:none;padding:15px 28px;border-radius:999px;white-space:nowrap" style-hover="background:#E7D9BE">Suggest a community →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="about" style="background:#102A30">
+  <div style="max-width:1180px;margin:0 auto;padding:64px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px">
+    <div>
+      <div style="display:flex;flex-direction:column;line-height:1">
+        <span style="font:800 22px 'Hanken Grotesk';color:#FBF8F2;letter-spacing:-.01em">you belong</span>
+        <span style="font:700 9px 'Hanken Grotesk';letter-spacing:.34em;color:#7FC9D6;margin-top:4px">SAN DIEGO</span>
+      </div>
+      <p style="font:500 15px/1.6 'Hanken Grotesk';color:#8fa6aa;margin:18px 0 0;max-width:340px">A non-profit helping people new to San Diego find the communities, causes, and gatherings where they belong.</p>
+      <a href="/cdn-cgi/l/email-protection#127b7c747d526b7d6770777e7d7c7561737c767b77757d3c7d6075" style="display:inline-block;font:700 14px 'Hanken Grotesk';color:#7FC9D6;text-decoration:none;margin-top:18px" style-hover="color:#fff"><span class="__cf_email__" data-cfemail="e881868e87a891879d8a8d8487868f9b89868c818d8f87c6879a8f">[email&#160;protected]</span></a>
+    </div>
+    <div>
+      <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:#5e7a80">Explore</div>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
+        <a href="Homepage.dc.html#categories" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Start here</a>
+        <a href="Homepage.dc.html#featured" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Featured</a>
+        <a href="Directory.dc.html" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Directory</a>
+      </div>
+    </div>
+    <div>
+      <div style="font:700 12px 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:#5e7a80">Get involved</div>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
+        <a href="/cdn-cgi/l/email-protection#0a63646c654a73657f686f6665646d796b646e636f6d652465786d35797f68606f697e37597f6d6d6f797e2f383a6b2f383a696567677f64637e73" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Suggest a community</a>
+        <a href="About.dc.html#involved" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Volunteer with us</a>
+        <a href="/cdn-cgi/l/email-protection#1f767179705f66706a7d7a737071786c7e717b767a787031706d78" style="font:500 15px 'Hanken Grotesk';color:#b9cccf;text-decoration:none" style-hover="color:#fff">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:22px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span style="font:500 13px 'Hanken Grotesk';color:#5e7a80">© 2026 You Belong San Diego · A 501(c) non-profit</span>
+      <span style="font:500 13px 'Hanken Grotesk';color:#5e7a80">youbelongsandiego.org</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cat: 'all', region: 'all', query: '' };
+
+  renderVals() {
+    const COLORS = { Community: '#2E9CB0', Volunteer: '#0E4D5C', Events: '#4f8f6b', Places: '#b08a3f' };
+    const L = [
+      { name: 'North Park Newcomers', cat: 'Community', hood: 'North Park', region: 'Central', blurb: 'A weekly meetup built for people who just moved to SD. No agenda, just hellos.', tags: ['Free', 'Weekly'], url: 'Community.dc.html' },
+      { name: 'Queer SD Social', cat: 'Community', hood: 'Hillcrest', region: 'Central', blurb: 'A welcoming LGBTQ+ social crew with monthly mixers and small hangs.', tags: ['Free', 'Monthly'], url: '#' },
+      { name: 'SD Run Collective', cat: 'Community', hood: 'Pacific Beach', region: 'Coastal', blurb: 'Free group runs along the boardwalk — all paces, zero pressure.', tags: ['Free', 'Beginner-friendly'], url: '#' },
+      { name: 'Newcomers of North County', cat: 'Community', hood: 'Encinitas', region: 'North County', blurb: 'Coffee walks and beach days for folks settling into North County.', tags: ['Free'], url: '#' },
+      { name: 'SD Board Game Nights', cat: 'Community', hood: 'Normal Heights', region: 'Central', blurb: 'Weekly tabletop nights at a local pub. Newcomers always seated first.', tags: ['Weekly'], url: '#' },
+      { name: 'San Diego Coastkeeper', cat: 'Volunteer', hood: 'Coastwide', region: 'Coastal', blurb: 'Beach cleanups and water-quality work most weekends across the county.', tags: ['Drop-in'], url: '#' },
+      { name: 'Feeding San Diego', cat: 'Volunteer', hood: 'Countywide', region: 'Central', blurb: 'Sort and pack food for neighbors facing hunger. Shifts fit any schedule.', tags: ['Flexible'], url: '#' },
+      { name: 'Habitat for Humanity SD', cat: 'Volunteer', hood: 'El Cajon', region: 'East County', blurb: 'Build homes alongside future homeowners — no construction skills needed.', tags: ['No experience'], url: '#' },
+      { name: 'Surfrider San Diego', cat: 'Volunteer', hood: 'Coastwide', region: 'Coastal', blurb: 'Protect the waves you came here for. Cleanups, advocacy, and socials.', tags: ['Drop-in'], url: '#' },
+      { name: 'Little Italy Mercato', cat: 'Events', hood: 'Little Italy', region: 'Central', blurb: 'Saturday farmers market with 175+ local vendors. An easy first outing.', tags: ['Weekly', 'Free'], url: '#' },
+      { name: 'Balboa Park Twilight', cat: 'Events', hood: 'Balboa Park', region: 'Central', blurb: 'Free evening concerts and gallery nights running all summer long.', tags: ['Seasonal', 'Free'], url: '#' },
+      { name: 'Oceanside Sunset Market', cat: 'Events', hood: 'Oceanside', region: 'North County', blurb: 'Thursday-night street market with food, makers, and live music.', tags: ['Weekly'], url: '#' },
+      { name: 'City Heights Cafés', cat: 'Places', hood: 'City Heights', region: 'Central', blurb: 'A short list of cafés where regulars actually strike up conversation.', tags: ['Anytime'], url: '#' },
+      { name: 'Sunset Cliffs Meetups', cat: 'Places', hood: 'Point Loma', region: 'Coastal', blurb: 'Informal sunset gatherings on the bluffs. Bring a blanket and say hi.', tags: ['Free'], url: '#' },
+      { name: 'Chula Vista Bayfront Walks', cat: 'Places', hood: 'Chula Vista', region: 'South Bay', blurb: 'A relaxed walking group along the new bayfront park most mornings.', tags: ['Free', 'Mornings'], url: '#' },
+    ];
+
+    const c = this.state.cat, rg = this.state.region, q = this.state.query.trim().toLowerCase();
+    const filtered = L
+      .filter((it) => (c === 'all' || it.cat === c) && (rg === 'all' || it.region === rg) && (!q || it.name.toLowerCase().includes(q) || it.hood.toLowerCase().includes(q)))
+      .map((it) => ({ ...it, color: COLORS[it.cat] }));
+
+    const mkFilters = (defs, current, key) => defs.map((d) => {
+      const active = d.val === current;
+      return { label: d.label, bg: active ? '#0E4D5C' : '#fbfaf6', color: active ? '#fff' : '#0E4D5C', onSelect: () => this.setState({ [key]: d.val }) };
+    });
+
+    const catFilters = mkFilters([
+      { label: 'All', val: 'all' }, { label: 'Communities', val: 'Community' }, { label: 'Volunteer', val: 'Volunteer' }, { label: 'Events', val: 'Events' }, { label: 'Places', val: 'Places' },
+    ], c, 'cat');
+    const regionFilters = mkFilters([
+      { label: 'All regions', val: 'all' }, { label: 'Central', val: 'Central' }, { label: 'Coastal', val: 'Coastal' }, { label: 'North County', val: 'North County' }, { label: 'East County', val: 'East County' }, { label: 'South Bay', val: 'South Bay' },
+    ], rg, 'region');
+
+    return {
+      catFilters, regionFilters, filtered,
+      count: filtered.length, isEmpty: filtered.length === 0,
+      query: this.state.query,
+      onQuery: (e) => this.setState({ query: e.target.value }),
+    };
+  }
+}
+</script>
+</body>
+</html>
