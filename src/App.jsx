@@ -1,22 +1,58 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
-  CalendarDays,
+  ChevronDown,
   Coffee,
   ExternalLink,
+  Globe,
   HandHeart,
   HeartHandshake,
   Mail,
   MapPin,
+  Megaphone,
   Menu,
+  Scissors,
   Search,
   Sparkles,
+  Sprout,
+  Store,
   Users,
   X,
 } from "lucide-react";
 import { categories, featuredListings, getCategory, listings, regions } from "./data/listings.js";
 
 const email = "info@youbelongsandiego.org";
+
+const sections = [
+  {
+    id: "united-neighborhoods",
+    href: "/united-neighborhoods",
+    label: "United Neighborhoods",
+    description:
+      "Connect across San Diego's diverse neighborhoods and discover the strength we build together.",
+  },
+  {
+    id: "global-impact",
+    href: "/global-impact",
+    label: "Global Impact",
+    description:
+      "Engage with foreign policy, contact local officials, and advocate for universal human rights.",
+  },
+  {
+    id: "rights-action",
+    href: "/rights-action",
+    label: "Rights & Action",
+    description:
+      "Defend free speech, organize marches, and access legal support for grassroots activism.",
+  },
+  {
+    id: "businesses-give-back",
+    href: "/businesses-give-back",
+    label: "Businesses That Give Back",
+    description:
+      "A directory of local businesses that support their communities and marginalized groups.",
+  },
+];
 
 function normalizePath(pathname) {
   if (pathname.length > 1 && pathname.endsWith("/")) {
@@ -99,12 +135,22 @@ function App() {
       <SiteHeader currentPath={path} />
       <main>
         {path === "/" && <HomePage />}
-        {path === "/directory" && <DirectoryPage />}
+        {(path === "/businesses-give-back" || path === "/directory") && <BusinessDirectoryPage />}
         {path === "/about" && <AboutPage />}
-        {path === "/community/north-park-newcomers" && <CommunityPage />}
-        {!["/", "/directory", "/about", "/community/north-park-newcomers"].includes(path) && (
-          <NotFoundPage />
-        )}
+        {path === "/business/luna-coffee-collective" && <BusinessDetailPage />}
+        {sections
+          .filter((section) => section.id !== "businesses-give-back")
+          .map(
+            (section) =>
+              path === section.href && <SectionStubPage key={section.id} section={section} />,
+          )}
+        {![
+          "/",
+          "/directory",
+          "/about",
+          "/business/luna-coffee-collective",
+          ...sections.map((section) => section.href),
+        ].includes(path) && <NotFoundPage />}
       </main>
       <SiteFooter />
     </>
@@ -114,21 +160,41 @@ function App() {
 function SiteHeader({ currentPath }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
-  const navItems = [
-    { href: "/#categories", label: "Start here" },
-    { href: "/directory", label: "Directory" },
-    { href: "/about", label: "About" },
-  ];
+  const navItems = [{ href: "/about", label: "About" }];
 
   return (
     <header className="site-header">
       <nav className="nav-shell" aria-label="Main navigation">
         <Link className="brand" href="/" onClick={close} aria-label="You Belong San Diego home">
-          <span className="brand-main">you belong</span>
-          <span className="brand-sub">SAN DIEGO</span>
+          <img className="brand-logo" src="/assets/logo-mark-white.svg" alt="" />
+          <span className="brand-text">
+            <span className="brand-main">you belong</span>
+            <span className="brand-sub">SAN DIEGO</span>
+          </span>
         </Link>
 
         <div className="desktop-nav">
+          <div className="nav-dropdown">
+            <button
+              className={
+                sections.some((section) => section.href === currentPath)
+                  ? "nav-link dropdown-trigger active"
+                  : "nav-link dropdown-trigger"
+              }
+              type="button"
+            >
+              Explore
+              <ChevronDown size={15} aria-hidden="true" />
+            </button>
+            <div className="dropdown-panel">
+              {sections.map((section) => (
+                <Link key={section.id} className="dropdown-item" href={section.href}>
+                  <strong>{section.label}</strong>
+                  <span>{section.description}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -157,6 +223,11 @@ function SiteHeader({ currentPath }) {
 
       {open && (
         <div className="mobile-nav">
+          {sections.map((section) => (
+            <Link key={section.id} href={section.href} onClick={close}>
+              {section.label}
+            </Link>
+          ))}
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} onClick={close}>
               {item.label}
@@ -178,22 +249,23 @@ function HomePage() {
         <div className="hero-copy">
           <div className="eyebrow">
             <Sparkles size={15} aria-hidden="true" />
-            Welcome to San Diego
+            Where community meets conscience
           </div>
           <h1>
-            Find your <span>community</span> in San Diego.
+            Welcome to <span>You Belong</span> San Diego.
           </h1>
           <p>
-            You just moved here. Let's find your people. Explore local groups, values-led small
-            businesses, volunteer opportunities, and gatherings that turn a brand-new city into home.
+            San Diego is more than sunshine and coastlines—it's a city of people who care. Whether
+            you've just arrived or you've been here for years, this is your space to connect with
+            others who believe that meaningful change starts locally and ripples globally.
           </p>
           <div className="button-row">
-            <Link className="button primary" href="/directory">
+            <Link className="button primary" href="/#categories">
               Start exploring
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
-            <Link className="button secondary" href="/#categories">
-              How it works
+            <Link className="button secondary" href="/businesses-give-back">
+              Businesses that give back
             </Link>
           </div>
           <div className="trust-row">
@@ -202,8 +274,11 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="People meeting at a sunny San Diego gathering">
-          <img src="/assets/community-hero.png" alt="" />
+        <div
+          className="hero-visual"
+          aria-label="Families strolling under palm trees at sunset in Balboa Park"
+        >
+          <img src="/assets/balboa-park-stroll.jpg" alt="" />
           <div className="hero-note">
             <div className="avatar-stack" aria-hidden="true">
               <span />
@@ -215,18 +290,36 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="section-shell intro-statement">
+        <p>
+          We're a community built on shared values: celebrating diversity, defending human rights,
+          protecting privacy and free expression, and working toward peace both near and far. From
+          neighborhood initiatives to global causes, we bring together the people, stories, and
+          movements that make San Diego a place where compassion meets action.
+        </p>
+        <p>
+          We also shine a spotlight on local businesses that go beyond profit—those that give back,
+          lift up marginalized communities, and prove that commerce and conscience can go hand in
+          hand.
+        </p>
+        <p>
+          This is where newcomers find their people, locals deepen their roots, and everyone finds a
+          way to make a difference. <strong>Welcome home.</strong>
+        </p>
+      </section>
+
       <section id="categories" className="section-shell section-block">
         <SectionIntro
           label="Start somewhere"
           title="Where do you want to begin?"
-          text="Four ways into the city. Pick the one that feels like you; there is no wrong door."
+          text="Four ways into the movement. Pick the one that feels like you; there is no wrong door."
         />
         <div className="category-grid">
-          {categories.map((category) => (
-            <Link key={category.id} className="category-card" href={`/directory?category=${category.id}`}>
-              <CategoryIcon id={category.id} />
-              <h3>{category.label}</h3>
-              <p>{category.description}</p>
+          {sections.map((section) => (
+            <Link key={section.id} className="category-card" href={section.href}>
+              <SectionIcon id={section.id} />
+              <h3>{section.label}</h3>
+              <p>{section.description}</p>
               <span>
                 Explore
                 <ArrowRight size={16} aria-hidden="true" />
@@ -239,9 +332,9 @@ function HomePage() {
       <section className="section-shell section-block">
         <SectionIntro
           label="Editor's picks"
-          title="Handpicked for newcomers"
-          text="A few sample listings to show the shape of the directory while you gather the real links."
-          action={<Link href="/directory">See all</Link>}
+          title="Businesses we love"
+          text="A few sample businesses to show the shape of the directory while you gather the real ones."
+          action={<Link href="/businesses-give-back">See all</Link>}
         />
         <div className="featured-grid">
           {featuredListings.map((listing) => (
@@ -253,14 +346,14 @@ function HomePage() {
       <section className="callout-band">
         <div className="section-shell callout-content">
           <div>
-            <h2>Just landed in San Diego?</h2>
+            <h2>Spend where it matters.</h2>
             <p>
-              Filter by what you are into: surfing, board games, mutual aid, faith communities,
-              small businesses, volunteer shifts, or simply a place to show up this week.
+              Every dollar spent locally can lift a neighbor up. Browse restaurants, shops,
+              services, and markets that give back to the communities around them.
             </p>
           </div>
-          <Link className="button light" href="/directory">
-            Browse the directory
+          <Link className="button light" href="/businesses-give-back">
+            Browse the businesses
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
@@ -269,7 +362,7 @@ function HomePage() {
   );
 }
 
-function DirectoryPage() {
+function BusinessDirectoryPage() {
   const params = new URLSearchParams(window.location.search);
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState(params.get("category") || "all");
@@ -290,11 +383,11 @@ function DirectoryPage() {
   return (
     <>
       <section className="directory-hero section-shell">
-        <div className="eyebrow">The directory</div>
-        <h1>Everything worth showing up to.</h1>
+        <div className="eyebrow">Businesses That Give Back</div>
+        <h1>Commerce and conscience, hand in hand.</h1>
         <p>
-          Communities, causes, events, restaurants, and local gathering spots across San Diego,
-          curated for people looking for belonging and good values.
+          A directory of local businesses that support their communities and marginalized
+          groups—proof that doing well and doing good can share a storefront.
         </p>
       </section>
 
@@ -349,8 +442,8 @@ function DirectoryPage() {
         {filtered.length === 0 && (
           <div className="empty-state">
             <h2>No matches yet</h2>
-            <p>Try clearing a filter, or send us a community you think belongs here.</p>
-            <a href={`mailto:${email}`}>Suggest a listing</a>
+            <p>Try clearing a filter, or tell us about a business you think belongs here.</p>
+            <a href={`mailto:${email}`}>Suggest a business</a>
           </div>
         )}
       </section>
@@ -368,8 +461,8 @@ function AboutPage() {
           You Belong San Diego is a non-profit project with one job: helping people who are new here
           find the communities, causes, local businesses, and gatherings where they actually fit.
         </p>
-        <Link className="button primary" href="/directory">
-          Browse the directory
+        <Link className="button primary" href="/businesses-give-back">
+          Browse the businesses
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>
@@ -433,18 +526,18 @@ function AboutPage() {
   );
 }
 
-function CommunityPage() {
-  const listing = listings.find((item) => item.id === "north-park-newcomers");
+function BusinessDetailPage() {
+  const listing = listings.find((item) => item.id === "luna-coffee-collective");
   const related = listings.filter((item) => item.category === listing.category && item.id !== listing.id).slice(0, 3);
 
   return (
     <>
       <section className="detail-hero section-shell">
         <div>
-          <Link className="breadcrumb" href="/directory">
-            Directory
+          <Link className="breadcrumb" href="/businesses-give-back">
+            Businesses That Give Back
           </Link>
-          <div className="eyebrow">Community · {listing.neighborhood}</div>
+          <div className="eyebrow">Business · {listing.neighborhood}</div>
           <h1>{listing.name}</h1>
           <p>{listing.blurb}</p>
           <div className="button-row">
@@ -452,8 +545,8 @@ function CommunityPage() {
               Visit website
               <ExternalLink size={18} aria-hidden="true" />
             </a>
-            <Link className="button secondary" href="/directory">
-              Back to directory
+            <Link className="button secondary" href="/businesses-give-back">
+              Back to the directory
             </Link>
           </div>
         </div>
@@ -463,15 +556,15 @@ function CommunityPage() {
       </section>
 
       <section className="section-shell fact-grid">
-        <Fact label="Meets" value={listing.cadence} />
+        <Fact label="Hours" value={listing.hours} />
         <Fact label="Where" value={`${listing.neighborhood}, ${listing.region}`} />
-        <Fact label="Cost" value={listing.cost} />
+        <Fact label="Gives back" value={listing.givesBack} />
         <Fact label="Good for" value={listing.goodFor} />
       </section>
 
       <section className="section-shell detail-body">
         <article>
-          <h2>About this group</h2>
+          <h2>About this business</h2>
           <p>{listing.details}</p>
           <h3>Why it belongs here</h3>
           <ul>
@@ -492,7 +585,7 @@ function CommunityPage() {
       </section>
 
       <section className="section-shell section-block">
-        <SectionIntro title="More like this" action={<Link href="/directory">All communities</Link>} />
+        <SectionIntro title="More like this" action={<Link href="/businesses-give-back">All businesses</Link>} />
         <div className="featured-grid">
           {related.map((item) => (
             <ListingFeatureCard key={item.id} listing={item} />
@@ -531,12 +624,41 @@ function SectionIntro({ label, title, text, action }) {
   );
 }
 
+function SectionIcon({ id }) {
+  const icons = {
+    "united-neighborhoods": <Users size={25} />,
+    "global-impact": <Globe size={25} />,
+    "rights-action": <Megaphone size={25} />,
+    "businesses-give-back": <Store size={25} />,
+  };
+  return <div className={`category-icon ${id}`}>{icons[id]}</div>;
+}
+
+function SectionStubPage({ section }) {
+  return (
+    <>
+      <section className="about-hero section-shell">
+        <div className="eyebrow">You Belong San Diego</div>
+        <h1>{section.label}</h1>
+        <p>{section.description}</p>
+      </section>
+      <section className="section-shell results-section">
+        <div className="empty-state">
+          <h2>This section is on its way</h2>
+          <p>We're putting the finishing touches on it. In the meantime, browse the businesses that give back or say hello.</p>
+          <a href={`mailto:${email}`}>Get in touch</a>
+        </div>
+      </section>
+    </>
+  );
+}
+
 function CategoryIcon({ id }) {
   const icons = {
-    community: <Users size={25} />,
-    volunteer: <HandHeart size={25} />,
-    events: <CalendarDays size={25} />,
-    places: <Coffee size={25} />,
+    "eat-drink": <Coffee size={25} />,
+    shops: <Store size={25} />,
+    services: <Scissors size={25} />,
+    markets: <Sprout size={25} />,
   };
   return <div className={`category-icon ${id}`}>{icons[id]}</div>;
 }
@@ -619,9 +741,12 @@ function SiteFooter() {
     <footer className="site-footer">
       <div className="section-shell footer-grid">
         <div>
-          <div className="footer-brand">
-            <span>you belong</span>
-            <small>SAN DIEGO</small>
+          <div className="footer-brand-row">
+            <img className="brand-logo" src="/assets/logo-mark-white.svg" alt="" />
+            <div className="footer-brand">
+              <span>you belong</span>
+              <small>SAN DIEGO</small>
+            </div>
           </div>
           <p>
             A non-profit project helping people new to San Diego find the communities, causes,
@@ -631,8 +756,11 @@ function SiteFooter() {
         </div>
         <div>
           <h2>Explore</h2>
-          <Link href="/#categories">Start here</Link>
-          <Link href="/directory">Directory</Link>
+          {sections.map((section) => (
+            <Link key={section.id} href={section.href}>
+              {section.label}
+            </Link>
+          ))}
           <Link href="/about">About</Link>
         </div>
         <div>
