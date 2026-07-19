@@ -312,7 +312,7 @@ function HomePage() {
         <SectionIntro
           label="Start somewhere"
           title="Where do you want to begin?"
-          text="Four ways into the movement. Pick the one that feels like you; there is no wrong door."
+          text="Four ways to get involved, from your neighborhood to the wider world."
         />
         <div className="category-grid">
           {sections.map((section) => (

@@ -465,9 +465,9 @@ img {
 
 .section-intro {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .section-intro h2,
@@ -484,7 +484,7 @@ img {
 }
 
 .intro-side {
-  max-width: 390px;
+  max-width: 640px;
 }
 
 .intro-side p {
@@ -1016,6 +1016,8 @@ img {
 .site-footer {
   color: #c4d5d8;
   background: var(--ink);
+  /* paints over the sub-pixel rounding gap between the footer and the page bottom */
+  box-shadow: 0 2px 0 0 var(--ink);
 }
 
 main > :last-child:not(.callout-band) {
