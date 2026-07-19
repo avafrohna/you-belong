@@ -290,22 +290,25 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell intro-statement">
-        <p>
-          We're a community built on shared values: celebrating diversity, defending human rights,
-          protecting privacy and free expression, and working toward peace both near and far. From
-          neighborhood initiatives to global causes, we bring together the people, stories, and
-          movements that make San Diego a place where compassion meets action.
-        </p>
-        <p>
-          We also shine a spotlight on local businesses that go beyond profit—those that give back,
-          lift up marginalized communities, and prove that commerce and conscience can go hand in
-          hand.
-        </p>
-        <p>
-          This is where newcomers find their people, locals deepen their roots, and everyone finds a
-          way to make a difference. <strong>Welcome home.</strong>
-        </p>
+      <section className="intro-statement">
+        <div className="section-shell intro-statement-inner">
+          <div className="eyebrow">What we're about</div>
+          <p>
+            We're a community built on shared values: celebrating diversity, defending human rights,
+            protecting privacy and free expression, and working toward peace both near and far. From
+            neighborhood initiatives to global causes, we bring together the people, stories, and
+            movements that make San Diego a place where compassion meets action.
+          </p>
+          <p>
+            We also shine a spotlight on local businesses that go beyond profit—those that give
+            back, lift up marginalized communities, and prove that commerce and conscience can go
+            hand in hand.
+          </p>
+          <p>
+            This is where newcomers find their people, locals deepen their roots, and everyone
+            finds a way to make a difference. <strong>Welcome home.</strong>
+          </p>
+        </div>
       </section>
 
       <section id="categories" className="section-shell section-block">
@@ -333,7 +336,7 @@ function HomePage() {
         <SectionIntro
           label="Editor's picks"
           title="Businesses we love"
-          text="A few sample businesses to show the shape of the directory while you gather the real ones."
+          text="Local businesses that support the causes and communities around them."
           action={<Link href="/businesses-give-back">See all</Link>}
         />
         <div className="featured-grid">

@@ -440,22 +440,33 @@ img {
 }
 
 .intro-statement {
+  color: #c6dde4;
+  background: var(--blue);
+}
+
+.intro-statement-inner {
   display: grid;
-  gap: 20px;
-  max-width: 840px;
-  padding: 14px 0 10px;
+  justify-items: start;
+  gap: 18px;
+  padding: 58px 0 64px;
+}
+
+.intro-statement .eyebrow {
+  color: #7fc9d6;
 }
 
 .intro-statement p {
+  max-width: 840px;
   margin: 0;
-  color: #4c5d60;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.65;
+  text-wrap: pretty;
 }
 
+
 .intro-statement strong {
-  color: var(--ink);
+  color: #fff;
   font-weight: 800;
 }
 
@@ -484,7 +495,7 @@ img {
 }
 
 .intro-side {
-  max-width: 640px;
+  max-width: 720px;
 }
 
 .intro-side p {
@@ -493,6 +504,7 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .text-link a,
