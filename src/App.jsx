@@ -882,9 +882,6 @@ function SiteFooter() {
         </div>
         <div>
           <h2>Let’s build this together</h2>
-          <a href={`mailto:${email}?subject=A%20local%20recommendation`}>
-            Share a recommendation <ArrowUpRight size={14} aria-hidden="true" />
-          </a>
           <a href={`mailto:${email}`}>{email}</a>
           <span className="footer-note">
             An independent community project.
