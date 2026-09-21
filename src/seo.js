@@ -1,3 +1,8 @@
+import { organizations, organizationPath } from "./data/organizations.js";
+import { events } from "./data/events.js";
+import { exampleEventTemplates } from "./data/example-events.js";
+import { publicEvents } from "./lib/events.js";
+
 // Keep this origin aligned with GitHub Pages and both CNAME files.
 // Confirm ownership and DNS before changing the site's primary domain.
 export const SITE_URL = "https://youbelongsandiego.org";
@@ -24,6 +29,45 @@ export const routeMetadata = {
       "Learn about You Belong San Diego, our commitment to community and human rights, and how to get involved in building a more connected San Diego.",
     robots: "index, follow, max-image-preview:large",
   },
+  "/calendar": {
+    title: "Community Events Calendar | You Belong San Diego",
+    description:
+      "Explore the San Diego community calendar. Browse by month and filter events by the causes you care about and the organizations you follow.",
+    robots: publicEvents(events).length
+      ? "index, follow, max-image-preview:large"
+      : previewRobots,
+  },
+  ...Object.fromEntries(
+    organizations.map((organization) => [
+      organizationPath(organization),
+      {
+        title: `${organization.name}${organization.isExample ? " · Example" : ""} | You Belong San Diego`,
+        description: organization.isExample
+          ? "A fictional organization profile with sample events, showing how the You Belong San Diego directory and calendar will work."
+          : organization.description,
+        robots: organization.isExample
+          ? previewRobots
+          : "index, follow, max-image-preview:large",
+      },
+    ]),
+  ),
+  ...Object.fromEntries(
+    [
+      ...exampleEventTemplates.map((event) => ({ ...event, isExample: true })),
+      ...publicEvents(events),
+    ].map((event) => [
+      `/events/${event.id}`,
+      {
+        title: `${event.title}${event.isExample ? " · Example" : ""} | You Belong San Diego`,
+        description: event.isExample
+          ? "A fictional event for the You Belong San Diego calendar preview. This is an illustrative example, not a real gathering or booking."
+          : event.description,
+        robots: event.isExample
+          ? previewRobots
+          : "index, follow, max-image-preview:large",
+      },
+    ]),
+  ),
   "/businesses-give-back": {
     title: "Community Directory Preview | You Belong San Diego",
     description:
@@ -34,12 +78,6 @@ export const routeMetadata = {
     title: "Community Directory Preview | You Belong San Diego",
     description:
       "Explore an early preview of the You Belong San Diego community directory. Listings are illustrative while we gather verified local recommendations.",
-    robots: previewRobots,
-  },
-  "/business/luna-coffee-collective": {
-    title: "Sample Business Listing | You Belong San Diego",
-    description:
-      "An illustrative business profile showing the planned You Belong San Diego directory. This is a sample listing, not a verified local recommendation.",
     robots: previewRobots,
   },
   "/united-neighborhoods": {
@@ -66,7 +104,8 @@ export function getPageMeta(path = "/") {
   const normalizedPath = path.split(/[?#]/)[0].replace(/\/+$/, "") || "/";
   const metadata = routeMetadata[normalizedPath] ?? {
     title: "Page Not Found | You Belong San Diego",
-    description: "This page could not be found. Return to You Belong San Diego to find your way.",
+    description:
+      "This page could not be found. Return to You Belong San Diego to find your way.",
     robots: "noindex, follow",
   };
   return {

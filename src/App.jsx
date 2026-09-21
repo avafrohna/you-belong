@@ -16,6 +16,14 @@ import {
 } from "lucide-react";
 import { categories, getCategory, listings, regions } from "./data/listings.js";
 import { updatePageMeta, SITE_URL } from "./seo.js";
+import { organizations, organizationPath } from "./data/organizations.js";
+import { events } from "./data/events.js";
+import { exampleEventTemplates } from "./data/example-events.js";
+import {
+  CalendarPage,
+  EventDetailPage,
+  OrganizationEvents,
+} from "./components/Events.jsx";
 
 const email = "info@youbelongsandiego.org";
 const sections = [
@@ -154,6 +162,14 @@ function App({ initialPath }) {
   const path = normalizePath(location.split("?")[0]);
   const params = location.split("?")[1] || "";
   const activeSection = sections.find((section) => section.href === path);
+  const organization = organizations.find(
+    (item) => organizationPath(item) === path,
+  );
+  const eventId = path.startsWith("/events/") ? path.slice(8) : null;
+  const knownEvent = [
+    ...events.filter((event) => event.status !== "draft"),
+    ...exampleEventTemplates,
+  ].some((event) => event.id === eventId);
   const previousPath = useRef(path);
   useEffect(() => {
     updatePageMeta(path);
@@ -165,10 +181,14 @@ function App({ initialPath }) {
   if (path === "/") page = <HomePage />;
   else if (path === "/explore") page = <ExplorePage />;
   else if (path === "/about") page = <AboutPage />;
+  else if (path === "/calendar")
+    page = <CalendarPage key={location} Link={Link} initialParams={params} />;
+  else if (eventId && knownEvent)
+    page = <EventDetailPage key={eventId} id={eventId} Link={Link} />;
   else if (path === "/directory" || path === "/businesses-give-back")
     page = <BusinessDirectoryPage key={location} initialParams={params} />;
-  else if (path === "/business/luna-coffee-collective")
-    page = <BusinessDetailPage />;
+  else if (organization)
+    page = <OrganizationDetailPage organization={organization} />;
   else if (activeSection) page = <ComingSoonPage section={activeSection} />;
   else page = <NotFoundPage />;
   return (
@@ -208,6 +228,7 @@ function SiteHeader({ currentPath }) {
   const nav = [
     { href: "/explore", label: "Explore" },
     { href: "/businesses-give-back", label: "Local directory" },
+    { href: "/calendar", label: "Calendar" },
     { href: "/about", label: "Our story" },
   ];
   return (
@@ -654,11 +675,12 @@ function ListingCard({ listing }) {
           <span key={tag}>{tag}</span>
         ))}
       </div>
-      {listing.id === "luna-coffee-collective" && (
-        <Link className="text-link listing-detail-link" href={listing.url}>
-          View example page <ArrowRight size={16} aria-hidden="true" />
-        </Link>
-      )}
+      <Link
+        className="text-link listing-detail-link"
+        href={`/business/${listing.id}`}
+      >
+        View example & events <ArrowRight size={16} aria-hidden="true" />
+      </Link>
     </article>
   );
 }
@@ -766,8 +788,7 @@ function ValueCard({ icon: Icon, title, text }) {
     </article>
   );
 }
-function BusinessDetailPage() {
-  const listing = listings[0];
+function OrganizationDetailPage({ organization: listing }) {
   return (
     <>
       <section className="page-hero section-shell">
@@ -775,31 +796,57 @@ function BusinessDetailPage() {
           ← Back to the directory preview
         </Link>
         <div className="eyebrow">
-          Fictional example · {listing.neighborhood}
+          {listing.isExample ? "Fictional example" : "In our community"} ·{" "}
+          {listing.neighborhood || "San Diego"}
         </div>
         <h1>{listing.name}</h1>
-        <p>{listing.blurb}</p>
+        <p>{listing.description}</p>
       </section>
       <section className="section-shell detail-section">
-        <PreviewNotice />
+        {listing.isExample && <PreviewNotice />}
         <div className="detail-grid">
           <article>
-            <h2>What a listing could tell you</h2>
-            <p>{listing.details}</p>
-            <h3>Example community contributions</h3>
-            <ul>
-              {listing.values.map((value) => (
-                <li key={value}>{value}</li>
-              ))}
-            </ul>
+            <h2>
+              {listing.isExample
+                ? "What a listing could tell you"
+                : "Part of our community"}
+            </h2>
+            <p>{listing.details || listing.description}</p>
+            {listing.values?.length > 0 && (
+              <>
+                <h3>
+                  {listing.isExample
+                    ? "Example community contributions"
+                    : "How they give back"}
+                </h3>
+                <ul>
+                  {listing.values.map((value) => (
+                    <li key={value}>{value}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </article>
           <aside className="detail-aside">
-            <h2>A useful local guide</h2>
+            <h2>
+              {listing.isExample ? "A useful local guide" : "Get to know them"}
+            </h2>
             <p>
-              Published listings should include a verified website,
-              neighborhood, and clear information about how the business gives
-              back.
+              {listing.isExample
+                ? "Published listings should include a verified website, neighborhood, and clear information about how the organization gives back."
+                : "Find out more about their work and ways to get involved."}
             </p>
+            {!listing.isExample && (
+              <a
+                className="text-link"
+                href={listing.website}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit their website{" "}
+                <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+            )}
             <a
               className="text-link"
               href={`mailto:${email}?subject=Suggest%20a%20business`}
@@ -810,6 +857,7 @@ function BusinessDetailPage() {
           </aside>
         </div>
       </section>
+      <OrganizationEvents organization={listing} Link={Link} />
       <Callout />
     </>
   );
@@ -878,6 +926,7 @@ function SiteFooter() {
           <h2>Find your way</h2>
           <Link href="/explore">Explore the project</Link>
           <Link href="/businesses-give-back">Directory preview</Link>
+          <Link href="/calendar">Community calendar</Link>
           <Link href="/about">Our story</Link>
         </div>
         <div>

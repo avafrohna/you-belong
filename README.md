@@ -66,3 +66,15 @@ In GoDaddy, select `youbelongsandiego.com`, open DNS / Forwarding, and configure
 ## Photo
 
 The homepage uses a real Balboa Park photograph by Librarybell (CC0). Source and download details are in `public/assets/PHOTO-CREDIT.md`.
+
+## Community calendar
+
+`/calendar/` provides a month view, multiple section/organization filters, search,
+and linked event details. Every example business now has a profile with its
+own upcoming event list. The first version is a labelled fictional preview;
+calendar samples and sample profiles are excluded from search indexing.
+
+See [docs/events.md](docs/events.md) to enter real organizations and events,
+understand Pacific time and multi-day ranges, and plan future imports. There is
+no automated scraper or editing dashboard yet. `npm test` covers date boundaries,
+filters, publication rules, and data validation; CI runs it before building.
