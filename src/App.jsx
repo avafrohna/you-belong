@@ -1,108 +1,120 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
-  ChevronDown,
+  ArrowUpRight,
   Coffee,
-  ExternalLink,
   Globe,
-  HandHeart,
   HeartHandshake,
   Mail,
   MapPin,
   Megaphone,
   Menu,
-  Scissors,
   Search,
-  Sparkles,
-  Sprout,
   Store,
   Users,
   X,
 } from "lucide-react";
-import { categories, featuredListings, getCategory, listings, regions } from "./data/listings.js";
+import { categories, getCategory, listings, regions } from "./data/listings.js";
+import { updatePageMeta, SITE_URL } from "./seo.js";
 
 const email = "info@youbelongsandiego.org";
-
 const sections = [
   {
     id: "united-neighborhoods",
     href: "/united-neighborhoods",
-    label: "United Neighborhoods",
+    name: "United Neighborhoods",
     description:
-      "Connect across San Diego's diverse neighborhoods and discover the strength we build together.",
+      "Connect across San Diego’s diverse neighborhoods and discover the strength we build together.",
+    focus: [
+      "Connections across diverse neighborhoods",
+      "Welcoming spaces for newcomers and longtime locals",
+      "Neighborhood initiatives rooted in shared values",
+    ],
+    status: "In the works",
+    icon: Users,
   },
   {
     id: "global-impact",
     href: "/global-impact",
-    label: "Global Impact",
+    name: "Global Impact",
     description:
       "Engage with foreign policy, contact local officials, and advocate for universal human rights.",
+    focus: [
+      "Foreign policy and its connections to our community",
+      "Ways to contact local officials",
+      "Advocacy for universal human rights and peace",
+    ],
+    status: "In the works",
+    icon: Globe,
   },
   {
     id: "rights-action",
     href: "/rights-action",
-    label: "Rights & Action",
+    name: "Rights & Action",
     description:
-      "Defend free speech, organize marches, and access legal support for grassroots activism.",
+      "Defend free speech, organize marches, and find legal support for grassroots activism.",
+    focus: [
+      "Free speech, privacy, and free expression",
+      "Community-organized marches",
+      "Legal support resources for grassroots activism",
+    ],
+    status: "In the works",
+    icon: Megaphone,
   },
   {
     id: "businesses-give-back",
     href: "/businesses-give-back",
-    label: "Businesses That Give Back",
+    name: "Businesses That Give Back",
     description:
-      "A directory of local businesses that support their communities and marginalized groups.",
+      "Discover local businesses that support their communities and lift up marginalized groups.",
+    focus: [
+      "Local businesses that go beyond profit",
+      "Support for communities and marginalized groups",
+      "Commerce and conscience, hand in hand",
+    ],
+    status: "Preview the directory",
+    icon: Store,
   },
 ];
 
-function normalizePath(pathname) {
-  if (pathname.length > 1 && pathname.endsWith("/")) {
-    return pathname.slice(0, -1);
-  }
-  return pathname;
-}
-
-function useRoute() {
-  const [path, setPath] = useState(() => normalizePath(window.location.pathname));
-
+const normalizePath = (path) => path.replace(/\/+$/, "") || "/";
+function useRoute(initialPath) {
+  const [location, setLocation] = useState(
+    () =>
+      initialPath ||
+      (typeof window !== "undefined" ? window.location.pathname : "/"),
+  );
   useEffect(() => {
-    const onChange = () => setPath(normalizePath(window.location.pathname));
-    window.addEventListener("popstate", onChange);
-    window.addEventListener("app:navigate", onChange);
+    const update = () =>
+      setLocation(window.location.pathname + window.location.search);
+    update();
+    window.addEventListener("popstate", update);
+    window.addEventListener("app:navigate", update);
     return () => {
-      window.removeEventListener("popstate", onChange);
-      window.removeEventListener("app:navigate", onChange);
+      window.removeEventListener("popstate", update);
+      window.removeEventListener("app:navigate", update);
     };
   }, []);
-
   useEffect(() => {
-    if (window.location.hash) {
-      requestAnimationFrame(() => {
-        document.querySelector(window.location.hash)?.scrollIntoView({ behavior: "smooth" });
-      });
-    } else {
-      window.scrollTo({ top: 0, behavior: "instant" });
-    }
-  }, [path]);
-
-  return path;
-}
-
-function navigate(href) {
-  const next = new URL(href, window.location.origin);
-  window.history.pushState({}, "", `${next.pathname}${next.search}${next.hash}`);
-  window.dispatchEvent(new Event("app:navigate"));
-  if (next.hash) {
-    requestAnimationFrame(() => {
-      document.querySelector(next.hash)?.scrollIntoView({ behavior: "smooth" });
+    const frame = requestAnimationFrame(() => {
+      const hash = window.location.hash.slice(1);
+      if (hash)
+        document.getElementById(decodeURIComponent(hash))?.scrollIntoView();
+      else window.scrollTo({ top: 0, behavior: "instant" });
     });
-  }
+    return () => cancelAnimationFrame(frame);
+  }, [location]);
+  return location;
 }
-
-function Link({ href, className, children, onClick, ...props }) {
+function Link({ href, children, onClick, ...props }) {
+  const url = new URL(href, SITE_URL);
+  const resolvedHref = href.startsWith("/")
+    ? `${url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`}${url.search}${url.hash}`
+    : href;
   return (
     <a
-      className={className}
-      href={href}
+      href={resolvedHref}
+      {...props}
       onClick={(event) => {
         onClick?.(event);
         if (
@@ -112,331 +124,495 @@ function Link({ href, className, children, onClick, ...props }) {
           event.shiftKey ||
           event.altKey ||
           event.button !== 0 ||
-          href.startsWith("mailto:") ||
-          href.startsWith("http")
-        ) {
+          !href.startsWith("/") ||
+          props.target ||
+          props.download
+        )
           return;
-        }
         event.preventDefault();
-        navigate(href);
+        const next = new URL(resolvedHref, window.location.origin);
+        window.history.pushState(
+          {},
+          "",
+          next.pathname + next.search + next.hash,
+        );
+        window.dispatchEvent(new Event("app:navigate"));
+        if (next.hash)
+          requestAnimationFrame(() =>
+            document
+              .getElementById(decodeURIComponent(next.hash.slice(1)))
+              ?.scrollIntoView(),
+          );
       }}
-      {...props}
     >
       {children}
     </a>
   );
 }
-
-function App() {
-  const path = useRoute();
-
+function App({ initialPath }) {
+  const location = useRoute(initialPath);
+  const path = normalizePath(location.split("?")[0]);
+  const params = location.split("?")[1] || "";
+  const activeSection = sections.find((section) => section.href === path);
+  const previousPath = useRef(path);
+  useEffect(() => {
+    updatePageMeta(path);
+    if (previousPath.current !== path)
+      document.getElementById("main-content")?.focus({ preventScroll: true });
+    previousPath.current = path;
+  }, [path]);
+  let page;
+  if (path === "/") page = <HomePage />;
+  else if (path === "/explore") page = <ExplorePage />;
+  else if (path === "/about") page = <AboutPage />;
+  else if (path === "/directory" || path === "/businesses-give-back")
+    page = <BusinessDirectoryPage key={location} initialParams={params} />;
+  else if (path === "/business/luna-coffee-collective")
+    page = <BusinessDetailPage />;
+  else if (activeSection) page = <ComingSoonPage section={activeSection} />;
+  else page = <NotFoundPage />;
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <SiteHeader currentPath={path} />
-      <main>
-        {path === "/" && <HomePage />}
-        {(path === "/businesses-give-back" || path === "/directory") && <BusinessDirectoryPage />}
-        {path === "/about" && <AboutPage />}
-        {path === "/business/luna-coffee-collective" && <BusinessDetailPage />}
-        {sections
-          .filter((section) => section.id !== "businesses-give-back")
-          .map(
-            (section) =>
-              path === section.href && <SectionStubPage key={section.id} section={section} />,
-          )}
-        {![
-          "/",
-          "/directory",
-          "/about",
-          "/business/luna-coffee-collective",
-          ...sections.map((section) => section.href),
-        ].includes(path) && <NotFoundPage />}
+      <main id="main-content" tabIndex={-1}>
+        {page}
       </main>
       <SiteFooter />
     </>
   );
 }
-
+function Brand({ footer = false }) {
+  return (
+    <Link
+      className={`brand${footer ? " footer-brand" : ""}`}
+      href="/"
+      aria-label="You Belong San Diego home"
+    >
+      <img src="/assets/logo-mark-white.svg" width="54" height="35" alt="" />
+      <span>
+        <strong>you belong</strong>
+        <small>SAN DIEGO</small>
+      </span>
+    </Link>
+  );
+}
 function SiteHeader({ currentPath }) {
   const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
-  const navItems = [{ href: "/about", label: "About" }];
-
+  const toggle = useRef(null);
+  useEffect(() => {
+    setOpen(false);
+  }, [currentPath]);
+  const nav = [
+    { href: "/explore", label: "Explore" },
+    { href: "/businesses-give-back", label: "Local directory" },
+    { href: "/about", label: "Our story" },
+  ];
   return (
-    <header className="site-header">
-      <nav className="nav-shell" aria-label="Main navigation">
-        <Link className="brand" href="/" onClick={close} aria-label="You Belong San Diego home">
-          <img className="brand-logo" src="/assets/logo-mark-white.svg" alt="" />
-          <span className="brand-text">
-            <span className="brand-main">you belong</span>
-            <span className="brand-sub">SAN DIEGO</span>
-          </span>
-        </Link>
-
-        <div className="desktop-nav">
-          <div className="nav-dropdown">
-            <button
-              className={
-                sections.some((section) => section.href === currentPath)
-                  ? "nav-link dropdown-trigger active"
-                  : "nav-link dropdown-trigger"
-              }
-              type="button"
-            >
-              Explore
-              <ChevronDown size={15} aria-hidden="true" />
-            </button>
-            <div className="dropdown-panel">
-              {sections.map((section) => (
-                <Link key={section.id} className="dropdown-item" href={section.href}>
-                  <strong>{section.label}</strong>
-                  <span>{section.description}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-          {navItems.map((item) => (
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          setOpen(false);
+          toggle.current?.focus();
+        }
+      }}
+    >
+      <div className="nav-shell">
+        <Brand />
+        <nav className="desktop-nav" aria-label="Main navigation">
+          {nav.map((item) => (
             <Link
               key={item.href}
-              className={currentPath === item.href ? "nav-link active" : "nav-link"}
               href={item.href}
+              aria-current={currentPath === item.href ? "page" : undefined}
             >
               {item.label}
             </Link>
           ))}
-          <a className="nav-cta" href={`mailto:${email}`}>
-            <Mail size={16} aria-hidden="true" />
-            Contact
-          </a>
-        </div>
-
+        </nav>
         <button
+          ref={toggle}
           className="menu-button"
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          onClick={() => setOpen(!open)}
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X /> : <Menu />}
         </button>
+      </div>
+      <nav
+        className="mobile-nav"
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        hidden={!open}
+      >
+        {nav.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={() => setOpen(false)}
+            aria-current={currentPath === item.href ? "page" : undefined}
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
-
-      {open && (
-        <div className="mobile-nav">
-          {sections.map((section) => (
-            <Link key={section.id} href={section.href} onClick={close}>
-              {section.label}
-            </Link>
-          ))}
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} onClick={close}>
-              {item.label}
-            </Link>
-          ))}
-          <a href={`mailto:${email}`} onClick={close}>
-            Contact
-          </a>
-        </div>
-      )}
     </header>
   );
 }
-
 function HomePage() {
   return (
     <>
-      <section className="hero section-shell">
+      <section className="hero section-shell" aria-labelledby="home-title">
         <div className="hero-copy">
           <div className="eyebrow">
-            <Sparkles size={15} aria-hidden="true" />
-            Where community meets conscience
+            <span className="little-sun" aria-hidden="true">
+              ✳
+            </span>{" "}
+            Where community meets conscience.
           </div>
-          <h1>
-            Welcome to <span>You Belong</span> San Diego.
+          <h1 id="home-title">
+            Find your people.
+            <br />
+            <em>Put down roots.</em>
           </h1>
           <p>
-            San Diego is more than sunshine and coastlines—it's a city of people who care. Whether
-            you've just arrived or you've been here for years, this is your space to connect with
-            others who believe that meaningful change starts locally and ripples globally.
+            San Diego is more than sunshine and coastlines. It’s a city of
+            people who care. Whether you’ve just arrived or been here for years,
+            connect with others who believe change starts locally and ripples
+            globally.
           </p>
           <div className="button-row">
-            <Link className="button primary" href="/#categories">
-              Start exploring
+            <Link className="button primary" href="/explore">
+              Find your starting point{" "}
               <ArrowRight size={18} aria-hidden="true" />
             </Link>
-            <Link className="button secondary" href="/businesses-give-back">
-              Businesses that give back
+            <Link className="text-link" href="/about">
+              Get to know us <ArrowUpRight size={17} aria-hidden="true" />
             </Link>
           </div>
-          <div className="trust-row">
-            <span>501(c) non-profit in progress</span>
-            <span>Always free to use</span>
+          <div className="hero-footnote">
+            <span className="small-dot" /> A growing community project. Always
+            free to explore.
           </div>
         </div>
-
-        <div
-          className="hero-visual"
-          aria-label="Families strolling under palm trees at sunset in Balboa Park"
-        >
-          <img src="/assets/balboa-park-stroll.jpg" alt="" />
-          <div className="hero-note">
-            <div className="avatar-stack" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
-            <strong>Your people are out here.</strong>
+        <figure className="hero-visual">
+          <div className="photo-frame">
+            <img
+              src="/assets/san-diego-real.jpg"
+              alt="California Tower above the gardens at Balboa Park in San Diego"
+              width="960"
+              height="1280"
+              fetchPriority="high"
+            />
+            <span className="photo-label">
+              <MapPin size={15} aria-hidden="true" /> A little corner of San
+              Diego
+            </span>
           </div>
+          <figcaption>
+            <span>Good things start close to home.</span>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:California_tower_gardens_at_Balboa_Park_2022.jpg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photo credit <ArrowUpRight size={12} aria-hidden="true" />
+            </a>
+          </figcaption>
+        </figure>
+      </section>
+      <div className="welcome-strip">
+        <div className="section-shell">
+          <span>New here? Lived here forever?</span>
+          <strong>There’s room for you.</strong>
+          <HeartHandshake size={24} aria-hidden="true" />
+        </div>
+      </div>
+      <section
+        id="explore"
+        className="section-shell section-block"
+        aria-labelledby="explore-title"
+      >
+        <div className="section-intro">
+          <div>
+            <div className="eyebrow">Big city. Small starting points.</div>
+            <h2 id="explore-title">What brings you here?</h2>
+          </div>
+          <p>
+            Four ways to connect, share your values, and make a difference—from
+            your own neighborhood to the wider world.
+          </p>
+        </div>
+        <div className="category-grid">
+          {sections.map((section, index) => (
+            <Link
+              className={`category-card category-${index}`}
+              href={section.href}
+              key={section.id}
+            >
+              <div className="card-top">
+                <section.icon size={25} strokeWidth={1.5} aria-hidden="true" />
+                <span>0{index + 1}</span>
+              </div>
+              <h3>{section.name}</h3>
+              <p>{section.description}</p>
+              <div className="card-bottom">
+                <span>{section.status}</span>
+                <ArrowUpRight size={19} aria-hidden="true" />
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
-
-      <section className="intro-statement">
-        <div className="section-shell intro-statement-inner">
-          <div className="eyebrow">What we're about</div>
+      <section className="mission-section section-shell">
+        <div>
+          <div className="eyebrow">Compassion meets action</div>
+          <h2>
+            A city feels different
+            <br />
+            when you <em>belong.</em>
+          </h2>
+        </div>
+        <div className="mission-copy">
           <p>
-            We're a community built on shared values: celebrating diversity, defending human rights,
-            protecting privacy and free expression, and working toward peace both near and far. From
-            neighborhood initiatives to global causes, we bring together the people, stories, and
-            movements that make San Diego a place where compassion meets action.
+            We’re a community built on shared values: celebrating diversity,
+            defending human rights, protecting privacy and free expression, and
+            working toward peace, near and far.
           </p>
           <p>
-            We also shine a spotlight on local businesses that go beyond profit—those that give
-            back, lift up marginalized communities, and prove that commerce and conscience can go
-            hand in hand.
+            From neighborhood initiatives to global causes, we bring people,
+            stories, and movements together. We also shine a light on local
+            businesses that go beyond profit, give back, and lift up
+            marginalized communities.
           </p>
           <p>
-            This is where newcomers find their people, locals deepen their roots, and everyone
+            Newcomers find their people. Locals deepen their roots. Everyone
             finds a way to make a difference. <strong>Welcome home.</strong>
           </p>
-        </div>
-      </section>
-
-      <section id="categories" className="section-shell section-block">
-        <SectionIntro
-          label="Start somewhere"
-          title="Where do you want to begin?"
-          text="Four ways to get involved, from your neighborhood to the wider world."
-        />
-        <div className="category-grid">
-          {sections.map((section) => (
-            <Link key={section.id} className="category-card" href={section.href}>
-              <SectionIcon id={section.id} />
-              <h3>{section.label}</h3>
-              <p>{section.description}</p>
-              <span>
-                Explore
-                <ArrowRight size={16} aria-hidden="true" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-shell section-block">
-        <SectionIntro
-          label="Editor's picks"
-          title="Businesses we love"
-          text="Local businesses that support the causes and communities around them."
-          action={<Link href="/businesses-give-back">See all</Link>}
-        />
-        <div className="featured-grid">
-          {featuredListings.map((listing) => (
-            <ListingFeatureCard key={listing.id} listing={listing} />
-          ))}
-        </div>
-      </section>
-
-      <section className="callout-band">
-        <div className="section-shell callout-content">
-          <div>
-            <h2>Spend where it matters.</h2>
-            <p>
-              Every dollar spent locally can lift a neighbor up. Browse restaurants, shops,
-              services, and markets that give back to the communities around them.
-            </p>
-          </div>
-          <Link className="button light" href="/businesses-give-back">
-            Browse the businesses
-            <ArrowRight size={18} aria-hidden="true" />
+          <Link className="text-link" href="/about">
+            More about our mission <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
       </section>
+      <Callout />
     </>
   );
 }
-
-function BusinessDirectoryPage() {
-  const params = new URLSearchParams(window.location.search);
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState(params.get("category") || "all");
-  const [region, setRegion] = useState("all");
-
-  const filtered = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-    return listings.filter((listing) => {
-      const matchesCategory = category === "all" || listing.category === category;
-      const matchesRegion = region === "all" || listing.region === region;
-      const haystack = `${listing.name} ${listing.neighborhood} ${listing.region} ${listing.blurb} ${listing.tags.join(
-        " ",
-      )}`.toLowerCase();
-      return matchesCategory && matchesRegion && (!normalizedQuery || haystack.includes(normalizedQuery));
-    });
-  }, [category, query, region]);
-
+function ExplorePage() {
   return (
     <>
-      <section className="directory-hero section-shell">
-        <div className="eyebrow">Businesses That Give Back</div>
-        <h1>Commerce and conscience, hand in hand.</h1>
+      <section className="page-hero section-shell">
+        <div className="eyebrow">Local roots. Global reach.</div>
+        <h1>
+          Find your way to
+          <br />
+          <em>make a difference.</em>
+        </h1>
         <p>
-          A directory of local businesses that support their communities and marginalized
-          groups—proof that doing well and doing good can share a storefront.
+          Belonging grows when shared values become shared action. These four
+          parts of You Belong San Diego connect neighborhood life with the
+          causes and communities that matter, near and far.
         </p>
       </section>
-
-      <section className="section-shell directory-controls" aria-label="Directory filters">
-        <label className="search-field">
-          <Search size={19} aria-hidden="true" />
-          <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by name, neighborhood, or interest"
-          />
-        </label>
-        <div className="filter-group">
-          <span>Category</span>
-          <div className="filter-buttons">
-            <FilterButton active={category === "all"} onClick={() => setCategory("all")}>
-              All
-            </FilterButton>
-            {categories.map((item) => (
-              <FilterButton
-                key={item.id}
-                active={category === item.id}
-                onClick={() => setCategory(item.id)}
-              >
-                {item.label}
-              </FilterButton>
-            ))}
-          </div>
-        </div>
-        <div className="filter-group">
-          <span>Region</span>
-          <div className="filter-buttons">
-            <FilterButton active={region === "all"} onClick={() => setRegion("all")}>
-              All regions
-            </FilterButton>
-            {regions.map((item) => (
-              <FilterButton key={item} active={region === item} onClick={() => setRegion(item)}>
-                {item}
-              </FilterButton>
-            ))}
-          </div>
+      <section
+        className="section-shell explore-section"
+        aria-label="Our four areas of focus"
+      >
+        <div className="explore-grid">
+          {sections.map((section, index) => (
+            <article
+              className={`explore-card category-${index}`}
+              key={section.id}
+            >
+              <div className="card-top">
+                <section.icon size={27} strokeWidth={1.5} aria-hidden="true" />
+                <span>0{index + 1}</span>
+              </div>
+              <h2>{section.name}</h2>
+              <p>{section.description}</p>
+              <h3>What we’re building</h3>
+              <ul>
+                {section.focus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div className="explore-card-footer">
+                <span>{section.status}</span>
+                <Link
+                  className="text-link"
+                  href={section.href}
+                  aria-label={`Explore ${section.name}`}
+                >
+                  {section.id === "businesses-give-back"
+                    ? "View directory preview"
+                    : "Explore this area"}
+                  <ArrowRight size={17} aria-hidden="true" />
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
-
-      <section className="section-shell results-section">
-        <div className="results-meta">{filtered.length} results</div>
+      <Callout />
+    </>
+  );
+}
+function Callout() {
+  return (
+    <section className="callout-band">
+      <div className="section-shell callout-content">
+        <div className="callout-symbol" aria-hidden="true">
+          ✳
+        </div>
+        <div>
+          <div className="eyebrow">Help shape what comes next</div>
+          <h2>Know a little local good?</h2>
+          <p>
+            A welcoming group. A business that gives back. A cause worth showing
+            up for. We’d love to hear about it.
+          </p>
+        </div>
+        <a
+          className="button light"
+          href={`mailto:${email}?subject=A%20local%20recommendation`}
+        >
+          Share a recommendation <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
+      </div>
+    </section>
+  );
+}
+function PreviewNotice() {
+  return (
+    <div className="preview-notice">
+      <Coffee size={21} aria-hidden="true" />
+      <div>
+        <strong>A first look at the directory</strong>
+        <p>
+          These are fictional examples showing how the guide will work. They are
+          not verified businesses or recommendations.{" "}
+          <a href={`mailto:${email}?subject=Suggest%20a%20business`}>
+            Suggest a real business
+          </a>{" "}
+          to help us get started.
+        </p>
+      </div>
+    </div>
+  );
+}
+function BusinessDirectoryPage({ initialParams }) {
+  const params = new URLSearchParams(initialParams);
+  const [query, setQuery] = useState(params.get("q") || "");
+  const [category, setCategory] = useState(
+    categories.some((item) => item.id === params.get("category"))
+      ? params.get("category")
+      : "all",
+  );
+  const [region, setRegion] = useState(
+    regions.includes(params.get("region")) ? params.get("region") : "all",
+  );
+  const filtered = useMemo(
+    () =>
+      listings.filter(
+        (listing) =>
+          (category === "all" || listing.category === category) &&
+          (region === "all" || listing.region === region) &&
+          `${listing.name} ${listing.neighborhood} ${listing.region} ${listing.blurb} ${listing.tags.join(" ")}`
+            .toLowerCase()
+            .includes(query.trim().toLowerCase()),
+      ),
+    [query, category, region],
+  );
+  const reset = () => {
+    setQuery("");
+    setCategory("all");
+    setRegion("all");
+  };
+  const hasFilters = query !== "" || category !== "all" || region !== "all";
+  return (
+    <>
+      <section className="page-hero section-shell">
+        <div className="eyebrow">Businesses that give back</div>
+        <h1>
+          A little local.
+          <br />
+          <em>A lot of good.</em>
+        </h1>
+        <p>
+          We’re building a directory of local businesses that give back to their
+          communities and lift up marginalized groups—where commerce and
+          conscience go hand in hand.
+        </p>
+      </section>
+      <section className="section-shell directory-section">
+        <PreviewNotice />
+        <div className="directory-controls">
+          <label className="search-label" htmlFor="directory-search">
+            Find your kind of place
+          </label>
+          <div className="search-field">
+            <Search size={20} aria-hidden="true" />
+            <input
+              id="directory-search"
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Try coffee, North Park, or books"
+            />
+          </div>
+          <div className="filters-row">
+            <fieldset>
+              <legend>Category</legend>
+              <div className="filter-buttons">
+                <FilterButton
+                  active={category === "all"}
+                  onClick={() => setCategory("all")}
+                >
+                  All categories
+                </FilterButton>
+                {categories.map((item) => (
+                  <FilterButton
+                    key={item.id}
+                    active={category === item.id}
+                    onClick={() => setCategory(item.id)}
+                  >
+                    {item.label}
+                  </FilterButton>
+                ))}
+              </div>
+            </fieldset>
+            <div className="region-filter">
+              <label htmlFor="region">Area</label>
+              <select
+                id="region"
+                value={region}
+                onChange={(event) => setRegion(event.target.value)}
+              >
+                <option value="all">All San Diego areas</option>
+                {regions.map((item) => (
+                  <option key={item}>{item}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="results-meta">
+          <span role="status" aria-live="polite">
+            {filtered.length} example{" "}
+            {filtered.length === 1 ? "listing" : "listings"}
+          </span>
+          {hasFilters && (
+            <button type="button" className="clear-filters" onClick={reset}>
+              Clear all filters <X size={15} aria-hidden="true" />
+            </button>
+          )}
+        </div>
         <div className="results-grid">
           {filtered.map((listing) => (
             <ListingCard key={listing.id} listing={listing} />
@@ -444,341 +620,287 @@ function BusinessDirectoryPage() {
         </div>
         {filtered.length === 0 && (
           <div className="empty-state">
-            <h2>No matches yet</h2>
-            <p>Try clearing a filter, or tell us about a business you think belongs here.</p>
-            <a href={`mailto:${email}`}>Suggest a business</a>
+            <Search size={28} aria-hidden="true" />
+            <h2>No matches this time.</h2>
+            <p>
+              Try a different search or clear your filters to see all examples.
+            </p>
+            <button type="button" className="button primary" onClick={reset}>
+              Clear filters
+            </button>
           </div>
         )}
       </section>
+      <Callout />
     </>
   );
 }
-
-function AboutPage() {
-  return (
-    <>
-      <section className="about-hero section-shell">
-        <div className="eyebrow">Our mission</div>
-        <h1>Everyone deserves to feel at home in San Diego.</h1>
-        <p>
-          You Belong San Diego is a non-profit project with one job: helping people who are new here
-          find the communities, causes, local businesses, and gatherings where they actually fit.
-        </p>
-        <Link className="button primary" href="/businesses-give-back">
-          Browse the businesses
-          <ArrowRight size={18} aria-hidden="true" />
-        </Link>
-      </section>
-
-      <section className="section-shell split-section">
-        <div className="photo-panel">
-          <img src="/assets/community-hero.png" alt="" />
-        </div>
-        <div>
-          <h2>Why we built this</h2>
-          <p>
-            Moving to a new city can be lonely in a way nobody really warns you about. San Diego is
-            full of welcoming people and good causes, but when you first arrive, it is hard to know
-            where any of it is.
-          </p>
-          <p>
-            This site is meant to become one trustworthy place to look. Every listing should be
-            added with care because it is genuinely welcoming, values-aligned, useful, or locally
-            rooted.
-          </p>
-        </div>
-      </section>
-
-      <section className="section-shell section-block">
-        <h2 className="center-heading">What makes us different</h2>
-        <div className="value-grid">
-          <ValueCard
-            icon={<HeartHandshake />}
-            title="Curated, not pay-to-play"
-            text="The goal is a useful local guide, not an ad wall. Listings should earn their place by being genuinely good for the community."
-          />
-          <ValueCard
-            icon={<MapPin />}
-            title="Neighborhood-level"
-            text="San Diego is more than one downtown radius. The directory can grow across North County, South Bay, East County, coastal, and central neighborhoods."
-          />
-          <ValueCard
-            icon={<HandHeart />}
-            title="Non-profit-minded"
-            text="The organization is being built as a 501(c) non-profit, with the directory free for newcomers and locals to use."
-          />
-        </div>
-      </section>
-
-      <section className="callout-band">
-        <div className="section-shell callout-content">
-          <div>
-            <h2>Help us grow the map.</h2>
-            <p>
-              Suggest a community, volunteer opportunity, restaurant, small business, or local group
-              that helps people feel like they belong.
-            </p>
-          </div>
-          <a className="button light" href={`mailto:${email}`}>
-            Email us
-            <Mail size={18} aria-hidden="true" />
-          </a>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function BusinessDetailPage() {
-  const listing = listings.find((item) => item.id === "luna-coffee-collective");
-  const related = listings.filter((item) => item.category === listing.category && item.id !== listing.id).slice(0, 3);
-
-  return (
-    <>
-      <section className="detail-hero section-shell">
-        <div>
-          <Link className="breadcrumb" href="/businesses-give-back">
-            Businesses That Give Back
-          </Link>
-          <div className="eyebrow">Business · {listing.neighborhood}</div>
-          <h1>{listing.name}</h1>
-          <p>{listing.blurb}</p>
-          <div className="button-row">
-            <a className="button primary" href={listing.website} target="_blank" rel="noreferrer">
-              Visit website
-              <ExternalLink size={18} aria-hidden="true" />
-            </a>
-            <Link className="button secondary" href="/businesses-give-back">
-              Back to the directory
-            </Link>
-          </div>
-        </div>
-        <div className="photo-panel detail-photo">
-          <img src="/assets/community-hero.png" alt="" />
-        </div>
-      </section>
-
-      <section className="section-shell fact-grid">
-        <Fact label="Hours" value={listing.hours} />
-        <Fact label="Where" value={`${listing.neighborhood}, ${listing.region}`} />
-        <Fact label="Gives back" value={listing.givesBack} />
-        <Fact label="Good for" value={listing.goodFor} />
-      </section>
-
-      <section className="section-shell detail-body">
-        <article>
-          <h2>About this business</h2>
-          <p>{listing.details}</p>
-          <h3>Why it belongs here</h3>
-          <ul>
-            {listing.values.map((value) => (
-              <li key={value}>{value}</li>
-            ))}
-          </ul>
-        </article>
-        <aside className="aside-panel">
-          <h2>Listing tags</h2>
-          <div className="tag-list">
-            {listing.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </div>
-          <a href={`mailto:${email}`}>Suggest an edit</a>
-        </aside>
-      </section>
-
-      <section className="section-shell section-block">
-        <SectionIntro title="More like this" action={<Link href="/businesses-give-back">All businesses</Link>} />
-        <div className="featured-grid">
-          {related.map((item) => (
-            <ListingFeatureCard key={item.id} listing={item} />
-          ))}
-        </div>
-      </section>
-    </>
-  );
-}
-
-function NotFoundPage() {
-  return (
-    <section className="section-shell not-found">
-      <h1>That page is not here yet.</h1>
-      <p>The base frame is ready for it, though.</p>
-      <Link className="button primary" href="/">
-        Go home
-        <ArrowRight size={18} aria-hidden="true" />
-      </Link>
-    </section>
-  );
-}
-
-function SectionIntro({ label, title, text, action }) {
-  return (
-    <div className="section-intro">
-      <div>
-        {label && <div className="eyebrow">{label}</div>}
-        {title && <h2>{title}</h2>}
-      </div>
-      <div className="intro-side">
-        {text && <p>{text}</p>}
-        {action && <div className="text-link">{action}</div>}
-      </div>
-    </div>
-  );
-}
-
-function SectionIcon({ id }) {
-  const icons = {
-    "united-neighborhoods": <Users size={25} />,
-    "global-impact": <Globe size={25} />,
-    "rights-action": <Megaphone size={25} />,
-    "businesses-give-back": <Store size={25} />,
-  };
-  return <div className={`category-icon ${id}`}>{icons[id]}</div>;
-}
-
-function SectionStubPage({ section }) {
-  return (
-    <>
-      <section className="about-hero section-shell">
-        <div className="eyebrow">You Belong San Diego</div>
-        <h1>{section.label}</h1>
-        <p>{section.description}</p>
-      </section>
-      <section className="section-shell results-section">
-        <div className="empty-state">
-          <h2>This section is on its way</h2>
-          <p>We're putting the finishing touches on it. In the meantime, browse the businesses that give back or say hello.</p>
-          <a href={`mailto:${email}`}>Get in touch</a>
-        </div>
-      </section>
-    </>
-  );
-}
-
-function CategoryIcon({ id }) {
-  const icons = {
-    "eat-drink": <Coffee size={25} />,
-    shops: <Store size={25} />,
-    services: <Scissors size={25} />,
-    markets: <Sprout size={25} />,
-  };
-  return <div className={`category-icon ${id}`}>{icons[id]}</div>;
-}
-
-function ListingFeatureCard({ listing }) {
-  const category = getCategory(listing.category);
-  return (
-    <Link className="feature-card" href={listing.url}>
-      <div className="feature-media">
-        <CategoryIcon id={listing.category} />
-      </div>
-      <div className="feature-body">
-        <span style={{ color: category.color }}>{category.singular}</span>
-        <h3>{listing.name}</h3>
-        <p>{listing.blurb}</p>
-        <strong>
-          Visit
-          <ArrowRight size={16} aria-hidden="true" />
-        </strong>
-      </div>
-    </Link>
-  );
-}
-
 function ListingCard({ listing }) {
   const category = getCategory(listing.category);
   return (
-    <Link className="listing-card" href={listing.url}>
+    <article className="listing-card">
       <div className="listing-top">
-        <span className="dot" style={{ background: category.color }} />
-        <span className="listing-type" style={{ color: category.color }}>
-          {category.singular}
-        </span>
-        <span>{listing.region}</span>
+        <span>{category.singular}</span>
+        <span className="sample-badge">Example</span>
       </div>
       <h2>{listing.name}</h2>
-      <p className="listing-location">{listing.neighborhood}</p>
+      <p className="listing-location">
+        <MapPin size={14} aria-hidden="true" /> {listing.neighborhood} ·{" "}
+        {listing.region}
+      </p>
       <p>{listing.blurb}</p>
-      <div className="listing-bottom">
-        <div className="tag-list">
-          {listing.tags.slice(0, 3).map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
-        <ArrowRight size={18} aria-hidden="true" />
+      <div className="tag-list">
+        {listing.tags.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
       </div>
-    </Link>
+      {listing.id === "luna-coffee-collective" && (
+        <Link className="text-link listing-detail-link" href={listing.url}>
+          View example page <ArrowRight size={16} aria-hidden="true" />
+        </Link>
+      )}
+    </article>
   );
 }
-
-function FilterButton({ active, children, onClick }) {
+function FilterButton({ active, onClick, children }) {
   return (
-    <button className={active ? "filter-button active" : "filter-button"} type="button" onClick={onClick}>
+    <button
+      type="button"
+      className={`filter-button${active ? " active" : ""}`}
+      aria-pressed={active}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
 }
-
-function ValueCard({ icon, title, text }) {
+function AboutPage() {
   return (
-    <div className="value-card">
-      <div className="value-icon">{icon}</div>
+    <>
+      <section className="page-hero section-shell about-hero">
+        <div className="eyebrow">Welcome to You Belong San Diego</div>
+        <h1>
+          Everyone deserves
+          <br />
+          <em>a place to belong.</em>
+        </h1>
+        <p>
+          Where community meets conscience. A space for newcomers and longtime
+          locals to connect through shared values, deepen their roots, and make
+          a difference, here in San Diego and beyond.
+        </p>
+      </section>
+      <section className="section-shell about-story">
+        <div className="story-heading">
+          <span className="little-sun" aria-hidden="true">
+            ✳
+          </span>
+          <h2>
+            Local roots.
+            <br />
+            Shared values.
+          </h2>
+        </div>
+        <div>
+          <p>
+            San Diego is more than sunshine and coastlines—it’s a city of people
+            who care. Whether you’ve just arrived or you’ve been here for years,
+            this is your space to connect with others who believe that
+            meaningful change starts locally and ripples globally.
+          </p>
+          <p>
+            We’re a community built on shared values: celebrating diversity,
+            defending human rights, protecting privacy and free expression, and
+            working toward peace both near and far. From neighborhood
+            initiatives to global causes, we bring together the people, stories,
+            and movements that make San Diego a place where compassion meets
+            action.
+          </p>
+          <p>
+            We also shine a spotlight on local businesses that go beyond profit:
+            those that give back, lift up marginalized communities, and show
+            that commerce and conscience can go hand in hand.
+          </p>
+          <p>
+            This is where newcomers find their people, locals deepen their
+            roots, and everyone finds a way to make a difference.{" "}
+            <strong>Welcome home.</strong>
+          </p>
+        </div>
+      </section>
+      <section className="section-shell section-block">
+        <div className="section-intro">
+          <div>
+            <div className="eyebrow">What brings us together</div>
+            <h2>Shared values. Meaningful action.</h2>
+          </div>
+        </div>
+        <div className="value-grid">
+          <ValueCard
+            icon={Users}
+            title="Diversity & belonging"
+            text="Connect across San Diego’s diverse neighborhoods and build a community where newcomers and longtime locals can feel at home."
+          />
+          <ValueCard
+            icon={Globe}
+            title="Human rights & peace"
+            text="Defend human rights, privacy, and free expression, and turn local compassion into action for peace near and far."
+          />
+          <ValueCard
+            icon={HeartHandshake}
+            title="Commerce & conscience"
+            text="Shine a spotlight on businesses that go beyond profit, give back to their communities, and lift up marginalized groups."
+          />
+        </div>
+      </section>
+      <Callout />
+    </>
+  );
+}
+function ValueCard({ icon: Icon, title, text }) {
+  return (
+    <article className="value-card">
+      <Icon size={27} strokeWidth={1.5} aria-hidden="true" />
       <h3>{title}</h3>
       <p>{text}</p>
-    </div>
+    </article>
   );
 }
-
-function Fact({ label, value }) {
+function BusinessDetailPage() {
+  const listing = listings[0];
   return (
-    <div className="fact-card">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
+    <>
+      <section className="page-hero section-shell">
+        <Link className="text-link breadcrumb" href="/businesses-give-back">
+          ← Back to the directory preview
+        </Link>
+        <div className="eyebrow">
+          Fictional example · {listing.neighborhood}
+        </div>
+        <h1>{listing.name}</h1>
+        <p>{listing.blurb}</p>
+      </section>
+      <section className="section-shell detail-section">
+        <PreviewNotice />
+        <div className="detail-grid">
+          <article>
+            <h2>What a listing could tell you</h2>
+            <p>{listing.details}</p>
+            <h3>Example community contributions</h3>
+            <ul>
+              {listing.values.map((value) => (
+                <li key={value}>{value}</li>
+              ))}
+            </ul>
+          </article>
+          <aside className="detail-aside">
+            <h2>A useful local guide</h2>
+            <p>
+              Published listings should include a verified website,
+              neighborhood, and clear information about how the business gives
+              back.
+            </p>
+            <a
+              className="text-link"
+              href={`mailto:${email}?subject=Suggest%20a%20business`}
+            >
+              Suggest a real business{" "}
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+          </aside>
+        </div>
+      </section>
+      <Callout />
+    </>
   );
 }
-
+function ComingSoonPage({ section }) {
+  return (
+    <>
+      <section className="page-hero section-shell">
+        <div className="eyebrow">Taking root</div>
+        <h1>{section.name}</h1>
+        <p>{section.description}</p>
+      </section>
+      <section className="section-shell coming-soon">
+        <section.icon size={36} strokeWidth={1.5} aria-hidden="true" />
+        <h2>Help us bring this to life.</h2>
+        <p>
+          This part of the guide is still being built. Know a local group,
+          initiative, or resource that belongs here? Your recommendation is a
+          great place to start.
+        </p>
+        <div className="button-row">
+          <a
+            className="button primary"
+            href={`mailto:${email}?subject=${encodeURIComponent(`A recommendation for ${section.name}`)}`}
+          >
+            Share a recommendation <Mail size={17} aria-hidden="true" />
+          </a>
+          <Link className="text-link" href="/explore">
+            Explore the project <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
+function NotFoundPage() {
+  return (
+    <section className="page-hero section-shell not-found">
+      <div className="eyebrow">404 · A little off the path</div>
+      <h1>
+        Let’s get you
+        <br />
+        <em>back home.</em>
+      </h1>
+      <p>This page may have moved, or the link may be incorrect.</p>
+      <Link className="button primary" href="/">
+        Back to the homepage <ArrowRight size={18} aria-hidden="true" />
+      </Link>
+    </section>
+  );
+}
 function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="section-shell footer-grid">
         <div>
-          <div className="footer-brand-row">
-            <img className="brand-logo" src="/assets/logo-mark-white.svg" alt="" />
-            <div className="footer-brand">
-              <span>you belong</span>
-              <small>SAN DIEGO</small>
-            </div>
-          </div>
+          <Brand footer />
           <p>
-            A non-profit project helping people new to San Diego find the communities, causes,
-            small businesses, and gatherings where they belong.
+            More connection.
+            <br />
+            More compassion.
+            <br />A San Diego where you belong.
           </p>
+        </div>
+        <div>
+          <h2>Find your way</h2>
+          <Link href="/explore">Explore the project</Link>
+          <Link href="/businesses-give-back">Directory preview</Link>
+          <Link href="/about">Our story</Link>
+        </div>
+        <div>
+          <h2>Let’s build this together</h2>
+          <a href={`mailto:${email}?subject=A%20local%20recommendation`}>
+            Share a recommendation <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
           <a href={`mailto:${email}`}>{email}</a>
-        </div>
-        <div>
-          <h2>Explore</h2>
-          {sections.map((section) => (
-            <Link key={section.id} href={section.href}>
-              {section.label}
-            </Link>
-          ))}
-          <Link href="/about">About</Link>
-        </div>
-        <div>
-          <h2>Get involved</h2>
-          <a href={`mailto:${email}?subject=Suggest%20a%20community`}>Suggest a community</a>
-          <a href={`mailto:${email}?subject=Volunteer%20with%20You%20Belong`}>Volunteer with us</a>
-          <a href={`mailto:${email}`}>Contact</a>
+          <span className="footer-note">
+            An independent community project.
+            <br />
+            Made for neighbors, near and new.
+          </span>
         </div>
       </div>
-      <div className="footer-bottom section-shell">
-        <span>© 2026 You Belong San Diego</span>
-        <span>youbelongsandiego.org</span>
+      <div className="section-shell footer-bottom">
+        <span>© {new Date().getFullYear()} You Belong San Diego</span>
+        <span>
+          {new URL(SITE_URL).hostname} <span aria-hidden="true">·</span>{" "}
+          Everyone welcome.
+        </span>
       </div>
     </footer>
   );
 }
-
 export default App;
