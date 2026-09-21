@@ -23,7 +23,9 @@ for (const route of pages) {
   assert.ok(html.includes(`<link rel="canonical" href="${metadata.canonical}"`), `${route}: expected canonical`);
   assert.ok(html.includes(`<meta property="og:url" content="${metadata.canonical}"`), `${route}: expected sharing URL`);
   assert.ok(html.includes('<meta name="twitter:card" content="summary"'), `${route}: expected Twitter card`);
-  assert.ok(html.includes('href="/assets/favicon.svg"'), `${route}: expected favicon`);
+  for (const icon of ["/favicon.ico", "/assets/favicon-48.png", "/assets/favicon-96.png", "/assets/favicon.svg", "/apple-touch-icon.png"]) {
+    assert.ok(html.includes(`href="${icon}?v=2"`), `${route}: expected icon ${icon}`);
+  }
   const jsonLd = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
   assert.ok(jsonLd, `${route}: expected structured data`);
   const structuredData = JSON.parse(jsonLd);
@@ -47,5 +49,7 @@ const hostname = new URL(SITE_URL).hostname;
 for (const file of ["CNAME", "public/CNAME", "dist/CNAME"]) {
   assert.equal((await read(file)).trim(), hostname, `${file} must match SITE_URL`);
 }
-await read("dist/assets/favicon.svg");
+for (const icon of ["favicon.ico", "assets/favicon-48.png", "assets/favicon-96.png", "assets/favicon.svg", "apple-touch-icon.png"]) {
+  await read(`dist/${icon}`);
+}
 console.log(`Build checks passed: ${pages.length} rendered pages, route metadata, noindex previews, sitemap, structured data, favicon, and domain consistency.`);
