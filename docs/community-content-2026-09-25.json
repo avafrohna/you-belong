@@ -1,0 +1,1119 @@
+{
+  "reviewedAt": "2026-09-25",
+  "window": {
+    "from": "2026-09-26",
+    "through": "2026-11-30",
+    "timezone": "America/Los_Angeles"
+  },
+  "purpose": "Source research and publication audit. Only IDs in publication are imported. Event candidates may represent multiple dates and unresolved details; do not import them wholesale.",
+  "sections": {
+    "united-neighborhoods": "United Neighborhoods",
+    "global-impact": "Global Impact",
+    "rights-action": "Rights & Action",
+    "businesses-give-back": "Businesses That Give Back"
+  },
+  "organizations": [
+    {
+      "id": "alliance-san-diego",
+      "name": "Alliance San Diego",
+      "description": "Alliance San Diego brings neighbors together to build community power and protect human dignity. Its work combines civic education, leadership development, human-rights advocacy, and immigration legal assistance.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://www.alliancesd.org/",
+      "profileSourceUrl": "https://www.alliancesd.org/ourstory/",
+      "eventSourceUrl": "https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Virtual civic training on October 6, 7, 27 and 28. September 30 public-charge webinars also advertised on the homepage; end times need confirmation.",
+      "organizationType": "Local organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "san-diego-organizing-project",
+      "name": "San Diego Organizing Project",
+      "description": "A multifaith network that helps San Diego County residents organize around shared concerns. Its campaigns address housing, immigration, justice-system reform, and public accountability through community leadership and collective action.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://sdop.net/",
+      "profileSourceUrl": "https://sdop.net/",
+      "eventSourceUrl": "https://sdop.net/calendar",
+      "eventReviewStatus": "none-found",
+      "eventReviewNote": "Reviewed the calendar and its linked public Google Calendar feed. No future entries found in the review window; some listed organizing meetings are not open to the public.",
+      "organizationType": "Local organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "pathways-to-citizenship",
+      "name": "Pathways to Citizenship",
+      "description": "Pathways helps immigrant families navigate citizenship and other immigration processes through legal assistance and education. Its San Diego County programs include citizenship-test preparation and opportunities for community members to volunteer as tutors.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://pathwayssd.org/",
+      "profileSourceUrl": "https://pathwayssd.org/",
+      "eventSourceUrl": "https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Party with a Purpose: October 4, 3 p.m. until sunset. Venue, ticket details and a precise end time need confirmation.",
+      "organizationType": "Local organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "san-diego-world-affairs-council",
+      "name": "San Diego World Affairs Council",
+      "description": "A nonpartisan forum connecting San Diegans with global issues through speakers, discussions, and educational programs. Topics include diplomacy, migration, international security, and the relationships between local communities and the wider world.",
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "global-impact",
+      "website": "https://www.sdwac.org/",
+      "profileSourceUrl": "https://www.sdwac.org/",
+      "eventSourceUrl": "https://www.sdwac.org/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Three detailed listings checked: October 1, October 10 and November 14. See the event table.",
+      "organizationType": "Local organization affiliated with a national council network",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "house-of-palestine",
+      "name": "House of Palestine",
+      "description": "Located among Balboa Park’s International Cottages, House of Palestine shares Palestinian history and culture through exhibits, food, dance, workshops, and community gatherings. Volunteers help visitors connect with Palestinian heritage and everyday life.",
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://houseofpalestine.org/",
+      "profileSourceUrl": "https://houseofpalestine.org/about-us/",
+      "eventSourceUrl": "https://houseofpalestine.org/el-funoun-hop-september-events/",
+      "eventReviewStatus": "recurring-or-same-day",
+      "eventReviewNote": "The El-Funoun series ends September 25, with a theater presentation at 6 p.m.; keep it separate from the future window. Weekend house hosting is advertised from 11 a.m. No later dated special event verified.",
+      "organizationType": "Local cultural organization",
+      "editorialNote": "Member of House of Pacific Relations; do not duplicate shared events.",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "karama",
+      "name": "KARAMA",
+      "description": "KARAMA promotes understanding of the Arab and Islamic worlds, with particular attention to Palestinian experiences. Its cultural and educational work includes the San Diego Arab Film Festival, which shares stories from and about Arab communities.",
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "global-impact",
+      "website": "https://karamanow.org/",
+      "profileSourceUrl": "https://sandiegoaff.org/",
+      "eventSourceUrl": "https://sandiegoaff.org/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Two October 24 films announced: El Sett and Who Killed Alex Odeh? Venue confirmed; showtimes need checking.",
+      "organizationType": "Local cultural and educational organization",
+      "editorialNote": "Main KARAMA site had an expired-certificate error. Its official film-festival site was accessible and identifies the festival as a KARAMA project.",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "islamic-center-san-diego",
+      "name": "Islamic Center of San Diego",
+      "description": "A mosque and community center offering religious services, education, youth activities, and support for families. Its programs create opportunities for learning, volunteering, and connection within San Diego’s Muslim community.",
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://www.icsd.org/",
+      "profileSourceUrl": "https://www.icsd.org/icsd.html",
+      "eventSourceUrl": "https://www.icsd.org/calendar.html",
+      "eventReviewStatus": "recurring",
+      "eventReviewNote": "Homepage and public calendar list ongoing classes, lectures and community programs. Record these as recurring opportunities; confirm current session timing before generating individual dates.",
+      "organizationType": "Local faith and community center",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "pana",
+      "name": "Partnership for the Advancement of New Americans (PANA)",
+      "description": "PANA is a refugee-founded and refugee-led organization building belonging and civic power. It supports community leadership, policy advocacy, and storytelling so refugee and immigrant communities can shape the decisions that affect their lives.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://www.panasd.org/",
+      "profileSourceUrl": "https://www.panasd.org/",
+      "eventSourceUrl": "https://www.panasd.org/newsletter/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Global Village/PANA Event Hall is a vote center October 24–November 3. PANA’s published hours conflict with the Registrar’s; use the official county schedule and address recorded below.",
+      "organizationType": "Local organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "just-education-collective",
+      "name": "JUST Education Collective",
+      "description": "A women-owned grassroots collective supporting families, students, caregivers, and educators across San Diego County. Through mutual aid, resource sharing, storytelling, and advocacy, it helps communities respond to inequity in K–12 education.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://www.justeducationcollective.com/",
+      "profileSourceUrl": "https://www.justeducationcollective.com/",
+      "eventSourceUrl": "https://www.justeducationcollective.com/events",
+      "eventReviewStatus": "stale-or-ambiguous",
+      "eventReviewNote": "The page labels November 16 and December 7 events as upcoming but gives no year. Sunday November 16 aligns with 2025, not 2026, and adjacent entries explicitly reference 2025. Do not import as 2026 events.",
+      "organizationType": "Local grassroots collective",
+      "editorialNote": "Kasey’s group is this organization; keep one profile.",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "border-angels",
+      "name": "Border Angels",
+      "description": "Border Angels supports migrants and refugees through humanitarian aid, education, and advocacy in the U.S.–Mexico border region. Its programs include desert water drops, assistance to migrant shelters, and outreach to day laborers.",
+      "sectionIds": [
+        "rights-action",
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://www.borderangels.org/",
+      "profileSourceUrl": "https://www.borderangels.org/about-us.html",
+      "eventSourceUrl": "https://www.borderangels.org/volunteer.html",
+      "eventReviewStatus": "registration-required",
+      "eventReviewNote": "Monthly water drops and Caravan of Love are described publicly, but individual dates and logistics are shared through approved volunteer registration. No dates inferred.",
+      "organizationType": "San Diego-based organization working across the border region",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "kind-hearts-san-diego",
+      "name": "Kind Hearts San Diego",
+      "description": "Kind Hearts welcomes refugees and newcomers through practical assistance, donated resources, and community support. Based in La Mesa, it brings volunteers together to help families build connections and settle into life in San Diego.",
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://www.kindheartssd.org/home",
+      "profileSourceUrl": "https://www.kindheartssd.org/home",
+      "eventSourceUrl": "https://www.kindheartssd.org/",
+      "eventReviewStatus": "tbd",
+      "eventReviewNote": "The events page lists a 2025 newcomers blanket drive and an emergency food drive, both with date/time and location TBD. No calendar-ready event found.",
+      "organizationType": "Local organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "san-diego-sister-cities",
+      "name": "San Diego International Sister Cities Association",
+      "description": "San Diego’s sister-city umbrella association supports connections with communities around the world. It brings together local societies working on cultural, educational, economic, and humanitarian exchanges that encourage understanding and peace.",
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "global-impact",
+      "website": "https://www.sandisca.org/",
+      "profileSourceUrl": "https://www.sandisca.org/",
+      "eventSourceUrl": "https://www.sandisca.org/events-calendar/",
+      "eventReviewStatus": "partner-announcement",
+      "eventReviewNote": "The embedded calendar did not expose a readable schedule. A current news post announces a House of Panama sweepstakes drawing on October 3, but no start time; this is a partner fundraiser, not a verified SanDISCA-hosted public gathering.",
+      "organizationType": "Local umbrella association",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "house-of-pacific-relations",
+      "name": "House of Pacific Relations International Cottages",
+      "description": "The International Cottages in Balboa Park bring together cultural houses representing communities from around the world. Open houses and lawn programs invite visitors to discover food, music, dance, history, and traditions through local volunteers.",
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://www.sdhpr.org/",
+      "profileSourceUrl": "https://www.sdhpr.org/",
+      "eventSourceUrl": "https://www.sdhpr.org/lp.html",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Ten lawn-program dates listed between September 26 and November 15. The first four also have explicit 11 a.m.–4 p.m. homepage listings; later dates use the annual program’s general timing guidance.",
+      "organizationType": "Local cultural umbrella organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "san-diego-refugee-communities-coalition",
+      "name": "San Diego Refugee Communities Coalition",
+      "description": "A coalition of community-based organizations supporting refugee communities across San Diego County. Members coordinate work on health, housing, economic opportunity, and other priorities, centering the knowledge and leadership of the communities they serve.",
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://sandiegorefugeecommunities.org/",
+      "profileSourceUrl": "https://sandiegorefugeecommunities.org/about-us/",
+      "eventSourceUrl": "https://sandiegorefugeecommunities.org/news-stories/",
+      "eventReviewStatus": "none-found",
+      "eventReviewNote": "Reviewed homepage and news. The latest event story reports an April 4, 2026 town hall, posted in August; it is not an upcoming event. No future dated public event found.",
+      "organizationType": "Local coalition",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "cair-san-diego",
+      "name": "CAIR California — San Diego",
+      "description": "CAIR’s San Diego office supports civil rights, immigrant communities, and civic participation. Its work includes responding to discrimination, providing legal assistance, and offering education and advocacy opportunities for local communities.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://ca.cair.com/sandiego/",
+      "profileSourceUrl": "https://ca.cair.com/sandiego/",
+      "eventSourceUrl": "https://ca.cair.com/events/beyond-the-headlines/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Beyond the Headlines conference: October 16, 8 a.m.–5 p.m. on the official event page. Venue and admission need confirmation; the linked ticket site blocked automated access.",
+      "organizationType": "San Diego office of a larger organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "jvp-san-diego",
+      "name": "Jewish Voice for Peace San Diego",
+      "description": "The San Diego chapter of Jewish Voice for Peace brings together anti-Zionist Jews and allies advocating for Palestinian freedom and equal rights. It offers ways to learn, build community, and participate in collective advocacy.",
+      "sectionIds": [
+        "rights-action",
+        "global-impact"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://www.jvpsandiego.org/",
+      "profileSourceUrl": "https://www.jvpsandiego.org/",
+      "eventSourceUrl": "https://www.jvpsandiego.org/events/",
+      "eventReviewStatus": "none-found",
+      "eventReviewNote": "Event page says no upcoming signups. Its public Google Calendar had no dates in the review window; the most recent September event found was September 13.",
+      "organizationType": "Local chapter of a national advocacy organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "pcrf-san-diego",
+      "name": "Palestine Children’s Relief Fund — San Diego",
+      "description": "PCRF’s San Diego chapter connects local volunteers with efforts to support children’s medical care and humanitarian needs in Palestine and the wider region. Chapters raise awareness and funds and help support children receiving treatment.",
+      "sectionIds": [
+        "global-impact"
+      ],
+      "primarySectionId": "global-impact",
+      "website": "https://www.pcrf.net/team/san-diego.html",
+      "profileSourceUrl": "https://www.pcrf.net/get-involved",
+      "eventSourceUrl": "https://www.pcrf.net/get-involved",
+      "eventReviewStatus": "dated-needs-correction",
+      "eventReviewNote": "Seeds of Healing benefit dinner is listed for October 17 at Four Point Sheraton. The index says 5:00 am Pacific Time (PST), inconsistent with a dinner; do not silently change it to p.m. The linked registration page requires dynamic rendering.",
+      "organizationType": "Local chapter of an international charity",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "irc-san-diego",
+      "name": "International Rescue Committee in San Diego",
+      "description": "IRC’s San Diego office helps refugees, asylum seekers, and other immigrants rebuild their lives. Local programs support employment, education, youth, wellbeing, small-business development, and access to immigration legal services.",
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://www.rescue.org/united-states/san-diego-ca",
+      "profileSourceUrl": "https://www.rescue.org/united-states/san-diego-ca",
+      "eventSourceUrl": "https://www.rescue.org/About/Taste2026",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Taste of the IRC: October 29, doors 6:15 p.m., start 6:30 p.m., Building 177 at Liberty Station. End time and current ticket price need checking.",
+      "organizationType": "San Diego office of an international organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "heal-palestine",
+      "name": "HEAL Palestine",
+      "description": "HEAL Palestine supports Palestinian children and communities through healthcare, education, humanitarian aid, and leadership programs. San Diego supporters have participated in local fundraising, connecting community action here with assistance abroad.",
+      "sectionIds": [
+        "global-impact"
+      ],
+      "primarySectionId": "global-impact",
+      "website": "https://www.healpalestine.org/",
+      "profileSourceUrl": "https://www.healpalestine.org/about-us/",
+      "eventSourceUrl": "https://www.healpalestine.org/events/",
+      "eventReviewStatus": "no-local-date-found",
+      "eventReviewNote": "The current upcoming-events list names Virginia, North Carolina and Florida events, but no San Diego date. Do not import other cities’ events into the local calendar.",
+      "organizationType": "Broader humanitarian organization with San Diego activity",
+      "editorialNote": "User confirmed identity; do not imply an independently verified formal San Diego chapter.",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "humanization-matters",
+      "name": "The Humanization Matters Collaborative",
+      "description": "The Humanization Matters Collaborative works to counter dehumanization and center the voices of oppressed and Indigenous communities. It offers advisory work, community partnerships, and research focused on dignity and equity in healthcare, education, and media.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://humanizationmatters.org/",
+      "profileSourceUrl": "https://humanizationmatters.org/about-us/",
+      "eventSourceUrl": "https://humanizationmatters.org/",
+      "eventReviewStatus": "none-found",
+      "eventReviewNote": "No dated public events found on the reviewed site pages. Speaking requests and advisory services are offered, but they are not scheduled public events.",
+      "organizationType": "San Diego-run organization; location confirmed firsthand by site owner",
+      "editorialNote": "New organization and San Diego operation confirmed by user. HTTPS certificate error remains; identity/profile content was inspected separately from normal secure access.",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "activist-san-diego",
+      "name": "Activist San Diego",
+      "description": "Activist San Diego connects people and organizations working for social justice through community organizing, education, and media. Its public community calendar helps residents discover local gatherings and opportunities to get involved.",
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "rights-action",
+      "website": "https://www.activistsandiego.org/",
+      "profileSourceUrl": "https://www.activistsandiego.org/about/",
+      "eventSourceUrl": "https://www.activistsandiego.org/",
+      "eventReviewStatus": "community-calendar",
+      "eventReviewNote": "The public calendar contains dated community events, including September 30 actions. Many are hosted by other groups: treat Activist San Diego as the source, not automatically the organizer. Its own summit post is dated March 16, 2026; do not generate future summits solely from the usual monthly pattern.",
+      "organizationType": "Local organization",
+      "editorialNote": "",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "media-arts-center-san-diego",
+      "name": "Media Arts Center San Diego",
+      "description": "Media Arts Center San Diego expands access to filmmaking, creative learning, and community storytelling. Its programs include youth media education, Digital Gym Cinema, and the San Diego Latino Film Festival, creating space for underrepresented voices and shared cultural experiences.",
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://mediaartscenter.org/",
+      "profileSourceUrl": "https://mediaartscenter.org/home/about-us/",
+      "eventSourceUrl": "https://digitalgym.org/",
+      "eventReviewStatus": "dated",
+      "eventReviewNote": "Digital Gym screenings include The Great Experiment with filmmaker Q&A on October 23 and The Proposition on November 22. November 23–25 youth camp is also advertised; daily times and price need checking.",
+      "organizationType": "Local arts nonprofit",
+      "editorialNote": "Digital Gym Cinema is a program/venue, not a second organization profile. November workforce-program applications are an opportunity, not a dated public event.",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "san-diego-foundation",
+      "name": "San Diego Foundation",
+      "description": "San Diego Foundation connects charitable giving with community priorities across San Diego County. Through grants, scholarships, and partnerships with local nonprofits, it supports education, children and families, the environment, and opportunities for communities to thrive.",
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "primarySectionId": "united-neighborhoods",
+      "website": "https://www.sdfoundation.org/",
+      "profileSourceUrl": "https://www.sdfoundation.org/about-us/",
+      "eventSourceUrl": "https://www.sdfoundation.org/news-events/events/",
+      "eventReviewStatus": "invitation-only",
+      "eventReviewNote": "The official events page lists the October 7, 2026 Professional Advisor Symposium and an October 2026 Fifty & Forward Closing Celebration as invitation-only. The symposium save-the-date gives 12:30–5:30 p.m. PT at Farmer & The Seahorse, Americana Room. Do not present either as an open public event. The next fundraising conference listed is September 14–15, 2027, outside this review window.",
+      "organizationType": "Regional community foundation",
+      "editorialNote": "San Diego-based, but a major regional foundation rather than a small business. Included at the user’s explicit request. Grants and scholarships belong under resources/opportunities rather than being turned into calendar events.",
+      "reviewedAt": "2026-09-25"
+    }
+  ],
+  "eventCandidates": [
+    {
+      "id": "alliance-training-2026-10-06",
+      "title": "We the People civic-engagement training — English",
+      "organizationIds": [
+        "alliance-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-06"
+      ],
+      "timeAsPublished": "12:00 p.m.",
+      "locationAsPublished": "Online",
+      "sourceUrl": "https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Start published; end time and explicit timezone not stated in event page.",
+      "costAsPublished": "Free (advertised on official homepage)",
+      "hostName": "Alliance San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "alliance-training-2026-10-07",
+      "title": "We the People civic-engagement training — Spanish",
+      "organizationIds": [
+        "alliance-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-07"
+      ],
+      "timeAsPublished": "6:00 p.m.",
+      "locationAsPublished": "Online",
+      "sourceUrl": "https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Start published; end time and explicit timezone not stated in event page.",
+      "costAsPublished": "Free (advertised on official homepage)",
+      "hostName": "Alliance San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "alliance-training-2026-10-27",
+      "title": "We the People civic-engagement training — English",
+      "organizationIds": [
+        "alliance-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-27"
+      ],
+      "timeAsPublished": "12:00 p.m.",
+      "locationAsPublished": "Online",
+      "sourceUrl": "https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Start published; end time and explicit timezone not stated in event page.",
+      "costAsPublished": "Free (advertised on official homepage)",
+      "hostName": "Alliance San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "alliance-training-2026-10-28",
+      "title": "We the People civic-engagement training — Spanish",
+      "organizationIds": [
+        "alliance-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-28"
+      ],
+      "timeAsPublished": "6:00 p.m.",
+      "locationAsPublished": "Online",
+      "sourceUrl": "https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Start published; end time and explicit timezone not stated in event page.",
+      "costAsPublished": "Free (advertised on official homepage)",
+      "hostName": "Alliance San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "alliance-public-charge-english",
+      "title": "Public-charge information webinar — English",
+      "organizationIds": [
+        "alliance-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-09-30"
+      ],
+      "timeAsPublished": "5:30 p.m.",
+      "locationAsPublished": "Online",
+      "sourceUrl": "https://www.alliancesd.org/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Dated September 24 social post embedded on the official homepage. Verify registration, timezone and end time; describe as an organizer-led information session, not legal advice from You Belong.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "Alliance San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "alliance-public-charge-spanish",
+      "title": "Public-charge information webinar — Spanish",
+      "organizationIds": [
+        "alliance-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-09-30"
+      ],
+      "timeAsPublished": "6:30 p.m.",
+      "locationAsPublished": "Online",
+      "sourceUrl": "https://www.alliancesd.org/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Dated September 24 social post embedded on the official homepage. Verify registration, timezone and end time; describe as an organizer-led information session, not legal advice from You Belong.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "Alliance San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "pathways-party-2026",
+      "title": "Party with a Purpose",
+      "organizationIds": [
+        "pathways-to-citizenship"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "dates": [
+        "2026-10-04"
+      ],
+      "timeAsPublished": "3 p.m. until sunset",
+      "locationAsPublished": "Not established from readable source",
+      "sourceUrl": "https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Confirm venue, price and precise end time. Do not substitute an estimated sunset time.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "Pathways to Citizenship",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "wac-france-2026",
+      "title": "France on the World Stage — Randy Willoughby",
+      "organizationIds": [
+        "san-diego-world-affairs-council"
+      ],
+      "sectionIds": [
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-01"
+      ],
+      "timeAsPublished": "10 a.m.–noon",
+      "locationAsPublished": "Remington Club II, second floor, Rancho Bernardo; also Zoom",
+      "sourceUrl": "https://www.sdwac.org/event-6854657",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Advance registration required; obtain street address through organizer registration. Local venue time interpreted as America/Los_Angeles.",
+      "costAsPublished": "Free",
+      "hostName": "San Diego World Affairs Council",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "wac-dialogue-2026",
+      "title": "Beyond the Echo Chamber — dialogue workshop with OneSD",
+      "organizationIds": [
+        "san-diego-world-affairs-council"
+      ],
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-10"
+      ],
+      "timeAsPublished": "10 a.m.–noon",
+      "locationAsPublished": "UC San Diego Extended Studies, 8980 Villa La Jolla Drive, floor 3",
+      "sourceUrl": "https://www.sdwac.org/event-6837761",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Advance registration available. No price displayed in extracted registration categories; do not label free. Local venue time interpreted as America/Los_Angeles.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "San Diego World Affairs Council",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "wac-sports-2026",
+      "title": "Next in Sports: Lessons, Legacy, & the Future of Sports Diplomacy",
+      "organizationIds": [
+        "san-diego-world-affairs-council"
+      ],
+      "sectionIds": [
+        "global-impact"
+      ],
+      "dates": [
+        "2026-11-14"
+      ],
+      "timeAsPublished": "10 a.m.–noon",
+      "locationAsPublished": "UC San Diego Extended Studies, 8980 Villa La Jolla Drive, floor 3",
+      "sourceUrl": "https://www.sdwac.org/event-6789500",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Other registration categories available. Local venue time interpreted as America/Los_Angeles.",
+      "costAsPublished": "$15 non-member",
+      "hostName": "San Diego World Affairs Council",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-09-26",
+      "title": "House of Korea lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-09-26"
+      ],
+      "timeAsPublished": "11 a.m.–4 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Homepage explicitly lists hours.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Korea / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-09-27",
+      "title": "House of Puerto Rico lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-09-27"
+      ],
+      "timeAsPublished": "11 a.m.–4 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Homepage explicitly lists hours.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Puerto Rico / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-10-10",
+      "title": "House of Spain lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-10"
+      ],
+      "timeAsPublished": "11 a.m.–4 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Homepage explicitly lists hours.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Spain / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-10-11",
+      "title": "House of Norway — Leif Erikson Day lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-11"
+      ],
+      "timeAsPublished": "11 a.m.–4 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Homepage explicitly lists hours.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Norway — Leif Erikson Day / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-10-17",
+      "title": "House of Czech & Slovak Republics lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-17"
+      ],
+      "timeAsPublished": "General lawn-program window: 11 a.m.–4 p.m.; stage usually starts 2 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/lp.html",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Annual 2026 calendar confirms date; verify house-specific hours before using generic program times.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Czech & Slovak Republics / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-10-18",
+      "title": "House of Czech & Slovak Republics lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-18"
+      ],
+      "timeAsPublished": "General lawn-program window: 11 a.m.–4 p.m.; stage usually starts 2 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/lp.html",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Annual 2026 calendar confirms date; verify house-specific hours before using generic program times.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Czech & Slovak Republics / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-10-24",
+      "title": "House of Scotland lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-24"
+      ],
+      "timeAsPublished": "General lawn-program window: 11 a.m.–4 p.m.; stage usually starts 2 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/lp.html",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Annual 2026 calendar confirms date; verify house-specific hours before using generic program times.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Scotland / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-10-25",
+      "title": "House of Türkiye lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-25"
+      ],
+      "timeAsPublished": "General lawn-program window: 11 a.m.–4 p.m.; stage usually starts 2 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/lp.html",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Annual 2026 calendar confirms date; verify house-specific hours before using generic program times.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Türkiye / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-11-08",
+      "title": "House of USA — Veterans Day lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-11-08"
+      ],
+      "timeAsPublished": "General lawn-program window: 11 a.m.–4 p.m.; stage usually starts 2 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/lp.html",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Annual 2026 calendar confirms date; verify house-specific hours before using generic program times.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of USA — Veterans Day / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "hpr-2026-11-15",
+      "title": "House of Syria lawn program",
+      "organizationIds": [
+        "house-of-pacific-relations"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "global-impact"
+      ],
+      "dates": [
+        "2026-11-15"
+      ],
+      "timeAsPublished": "General lawn-program window: 11 a.m.–4 p.m.; stage usually starts 2 p.m.",
+      "locationAsPublished": "HPR International Cottages, 2294 Pan American Plaza, Balboa Park",
+      "sourceUrl": "https://www.sdhpr.org/lp.html",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Annual 2026 calendar confirms date; verify house-specific hours before using generic program times.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "House of Syria / House of Pacific Relations",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "cair-conference-2026",
+      "title": "Beyond the Headlines: Understanding & Combatting Anti-Muslim Hate",
+      "organizationIds": [
+        "cair-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-16"
+      ],
+      "timeAsPublished": "8 a.m.–5 p.m.",
+      "locationAsPublished": "Not shown in readable event page",
+      "sourceUrl": "https://ca.cair.com/events/beyond-the-headlines/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Confirm venue, timezone and price on organizer registration page; Zeffy blocked automated access.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "CAIR California — San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "pcrf-dinner-2026",
+      "title": "Seeds of Healing Benefit Dinner",
+      "organizationIds": [
+        "pcrf-san-diego"
+      ],
+      "sectionIds": [
+        "global-impact"
+      ],
+      "dates": [
+        "2026-10-17"
+      ],
+      "timeAsPublished": "Unresolved: event index says 5:00 am Pacific Time (PST)",
+      "locationAsPublished": "Four Point Sheraton (as written in index)",
+      "sourceUrl": "https://www.pcrf.net/get-involved",
+      "reviewStatus": "conflict",
+      "reviewNotes": "Confirm time, exact hotel/address and admission with the organizer-linked registration at https://pcrf1.app.neoncrm.com/nx/portal/event-detail?event=2543. Do not assume p.m. or an incorrect October PST offset.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "Palestine Children’s Relief Fund — San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "karama-el-sett-2026",
+      "title": "El Sett — San Diego Arab Film Festival fall screening",
+      "organizationIds": [
+        "karama"
+      ],
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-24"
+      ],
+      "timeAsPublished": "Not confirmed",
+      "locationAsPublished": "Museum of Photographic Arts at the San Diego Museum of Art",
+      "sourceUrl": "https://sandiegoaff.org/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Date and venue confirmed. Follow the organizer’s Purplepass ticket reference to establish showtime, price and availability.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "KARAMA",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "karama-alex-odeh-2026",
+      "title": "Who Killed Alex Odeh? — San Diego Arab Film Festival fall screening",
+      "organizationIds": [
+        "karama"
+      ],
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-24"
+      ],
+      "timeAsPublished": "Not confirmed",
+      "locationAsPublished": "Museum of Photographic Arts at the San Diego Museum of Art",
+      "sourceUrl": "https://sandiegoaff.org/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Date and venue confirmed. Follow the organizer’s Purplepass ticket reference to establish showtime, price and availability.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "KARAMA",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "irc-taste-2026",
+      "title": "Taste of the IRC",
+      "organizationIds": [
+        "irc-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-29"
+      ],
+      "timeAsPublished": "Doors 6:15 p.m.; event 6:30 p.m.",
+      "locationAsPublished": "Building 177, Liberty Station, 2875 Dewey Road, San Diego",
+      "sourceUrl": "https://www.rescue.org/About/Taste2026",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Start, doors and venue confirmed; check end time and price. Local venue time interpreted as America/Los_Angeles.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "International Rescue Committee in San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "macsd-great-experiment-2026",
+      "title": "The Great Experiment — filmmaker introduction and Q&A",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-23"
+      ],
+      "timeAsPublished": "6:30 p.m.",
+      "locationAsPublished": "Digital Gym Cinema, 1100 Market Street, San Diego",
+      "sourceUrl": "https://digitalgym.org/movies/the-great-experiment-filmmaker-intro-qa/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "End time not published. Film runtime does not include the introduction or Q&A. Later October showtimes are TBA.",
+      "costAsPublished": "$13 regular; $11 students/seniors; $9 members",
+      "hostName": "Digital Gym Cinema / Media Arts Center San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "macsd-proposition-2026",
+      "title": "Film Geeks San Diego: The Proposition",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-11-22"
+      ],
+      "timeAsPublished": "Noon",
+      "locationAsPublished": "Digital Gym Cinema, 1100 Market Street, San Diego",
+      "sourceUrl": "https://digitalgym.org/movies/film-geeks-san-diego-the-proposition/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "End time not published; do not infer event duration solely from film runtime.",
+      "costAsPublished": "$13 general admission",
+      "hostName": "Film Geeks San Diego at Digital Gym Cinema / MACSD",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "macsd-fall-camp-2026",
+      "title": "Young Creators Media Camp",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-11-23",
+        "2026-11-24",
+        "2026-11-25"
+      ],
+      "timeAsPublished": "Daily times not confirmed",
+      "locationAsPublished": "UCSD Park & Market, 1100 Market Street, San Diego",
+      "sourceUrl": "https://mediaartscenter.org/camps/",
+      "reviewStatus": "details-needed",
+      "reviewNotes": "Ages 6–12. Page lists November 23–25 and links to its Fall/Winter 2026–27 registration. Registration blocked automated access; confirm year, hours, price and availability before publishing.",
+      "costAsPublished": "Not confirmed",
+      "hostName": "Media Arts Center San Diego",
+      "checkedAt": "2026-09-25"
+    },
+    {
+      "id": "pana-vote-center-2026",
+      "title": "PANA Event Hall / Global Village vote center",
+      "organizationIds": [
+        "pana"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "dates": [
+        "2026-10-24",
+        "2026-11-03"
+      ],
+      "timeAsPublished": "October 24–November 2: 8 a.m.–5 p.m.; November 3: 7 a.m.–8 p.m.",
+      "locationAsPublished": "PANA Event Hall, 5555 University Avenue, San Diego",
+      "sourceUrl": "https://www.sdvote.com/content/rov/en/elections/vote-center-locations.html",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Dates describe an inclusive operating period, not one continuous event. County Registrar confirms venue/dates/hours and supersedes conflicting PANA newsletter hours. If imported, create separate daily occurrences and apply the November 1 daylight-saving transition.",
+      "costAsPublished": "Free",
+      "hostName": "San Diego County Registrar of Voters; hosted at PANA Event Hall",
+      "checkedAt": "2026-09-25"
+    }
+  ],
+  "heldOrganization": {
+    "name": "Acacia Center for Justice",
+    "proposedSectionIds": [
+      "rights-action"
+    ],
+    "description": "A national organization supporting immigration legal representation through a network of service providers. Its work aims to help immigrants access legal support and fair treatment.",
+    "sourceUrl": "https://acaciajustice.org/",
+    "holdReason": "Headquartered in Washington, D.C.; no independent San Diego office verified. Local inclusion remains unresolved. No San Diego event established in this review."
+  },
+  "exclusions": [
+    "Spark San Diego",
+    "SJP",
+    "San Diego Community Coalition"
+  ],
+  "deduplication": {
+    "Kasey’s group": "JUST Education Collective"
+  },
+  "publication": {
+    "date": "2026-09-25",
+    "organizationIds": [
+      "activist-san-diego",
+      "alliance-san-diego",
+      "border-angels",
+      "cair-san-diego",
+      "heal-palestine",
+      "house-of-pacific-relations",
+      "irc-san-diego",
+      "islamic-center-san-diego",
+      "jvp-san-diego",
+      "just-education-collective",
+      "karama",
+      "kind-hearts-san-diego",
+      "media-arts-center-san-diego",
+      "pcrf-san-diego",
+      "pana",
+      "pathways-to-citizenship",
+      "san-diego-foundation",
+      "san-diego-sister-cities",
+      "san-diego-organizing-project",
+      "san-diego-refugee-communities-coalition",
+      "san-diego-world-affairs-council",
+      "humanization-matters"
+    ],
+    "eventIds": [
+      "wac-france-2026",
+      "wac-dialogue-2026",
+      "wac-sports-2026",
+      "hpr-2026-09-26",
+      "hpr-2026-09-27",
+      "hpr-2026-10-10",
+      "hpr-2026-10-11",
+      "irc-taste-2026",
+      "macsd-great-experiment-2026",
+      "macsd-proposition-2026"
+    ],
+    "notes": "House of Palestine is represented by the House of Pacific Relations umbrella only. No recurring schedules. Calendar items link directly to external sources, without local event pages. Start-only events omit unverified end times; uncertain admission is referred to the organizer. Other event candidates remain research leads, not published records."
+  }
+}

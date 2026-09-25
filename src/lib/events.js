@@ -53,7 +53,9 @@ export function eventDays(event) {
     ? { first: event.start, last: shiftDay(event.end, -1) }
     : {
         first: sanDiegoDay(event.start),
-        last: sanDiegoDay(new Date(Date.parse(event.end) - 1)),
+        last: event.end
+          ? sanDiegoDay(new Date(Date.parse(event.end) - 1))
+          : sanDiegoDay(event.start),
       };
 }
 export function occursOn(event, day) {
@@ -110,7 +112,9 @@ export function upcomingEvents(records, organizationId, now = new Date()) {
       event.organizationIds.includes(organizationId) &&
       (event.allDay
         ? event.end > sanDiegoDay(now)
-        : Date.parse(event.end) > new Date(now).getTime()),
+        : event.end
+          ? Date.parse(event.end) > new Date(now).getTime()
+          : sanDiegoDay(event.start) >= sanDiegoDay(now)),
   );
 }
 export function eventTime(event) {
@@ -121,7 +125,9 @@ export function eventTime(event) {
       hour: "numeric",
       minute: "2-digit",
     }).format(new Date(value));
-  return `${format(event.start)} – ${format(event.end)} PT`;
+  return event.end
+    ? `${format(event.start)} – ${format(event.end)} PT`
+    : `${format(event.start)} PT · End time not listed`;
 }
 export function eventDateLabel(event) {
   const { first, last } = eventDays(event);
@@ -198,13 +204,13 @@ export function validateEventData(records, organizations, sections) {
       const timestamp =
         /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:\d{2})$/;
       if (
-        ![event.start, event.end].every(
+        !(event.end === undefined ? [event.start] : [event.start, event.end]).every(
           (value) =>
             timestamp.test(value) &&
             validDay(value.slice(0, 10)) &&
             Number.isFinite(Date.parse(value)),
         ) ||
-        Date.parse(event.end) <= Date.parse(event.start)
+        (event.end !== undefined && Date.parse(event.end) <= Date.parse(event.start))
       )
         fail(`Timed events need valid start/end with UTC offsets: ${label}`);
     }

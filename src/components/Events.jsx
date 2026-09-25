@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -13,10 +13,6 @@ import {
 import { events } from "../data/events.js";
 import { organizations, organizationPath } from "../data/organizations.js";
 import { eventSections } from "../data/event-sections.js";
-import {
-  exampleEventTemplates,
-  getExampleEvents,
-} from "../data/example-events.js";
 import {
   dayLabel,
   eventDateLabel,
@@ -43,29 +39,6 @@ function useToday() {
   }, []);
   return today;
 }
-function useEventCollection(today) {
-  return useMemo(
-    () =>
-      publicEvents(events).length
-        ? publicEvents(events)
-        : today
-          ? publicEvents(getExampleEvents(today))
-          : [],
-    [today],
-  );
-}
-export function ExampleEventsNotice() {
-  return (
-    <div className="event-preview-note">
-      <CalendarDays size={22} aria-hidden="true" />
-      <p>
-        <strong>A little preview of what’s possible.</strong> These are
-        fictional events from our example businesses, shown to help you explore
-        the calendar. They aren’t real gatherings or bookings.
-      </p>
-    </div>
-  );
-}
 export function EventList({ items, Link }) {
   return (
     <div className="event-list">
@@ -87,9 +60,6 @@ export function EventList({ items, Link }) {
             </div>
             <div className="event-card-copy">
               <div className="event-labels">
-                {event.isExample && (
-                  <span className="sample-badge">Example event</span>
-                )}
                 {event.status === "cancelled" && (
                   <strong className="cancelled-label">Cancelled</strong>
                 )}
@@ -100,8 +70,9 @@ export function EventList({ items, Link }) {
                 ))}
               </div>
               <h3>
-                <Link href={`/events/${event.id}`}>{event.title}</Link>
+                <a href={event.sourceUrl} target="_blank" rel="noopener noreferrer">{event.title}</a>
               </h3>
+              <p>{event.description}</p>
               <p className="event-hosts">
                 {event.organizationIds.map((id, index) => {
                   const org = organizations.find(
@@ -127,14 +98,17 @@ export function EventList({ items, Link }) {
                   {event.location} · {event.cost}
                 </span>
               </p>
+              <p className="event-source-note">Checked {event.verifiedAt}. Open the organizer’s website for details and registration.</p>
             </div>
-            <Link
+            <a
               className="event-open"
-              href={`/events/${event.id}`}
-              aria-label={`View ${event.title}`}
+              href={event.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${event.title} on the organizer’s website (opens in a new tab)`}
             >
               <ArrowUpRight size={22} aria-hidden="true" />
-            </Link>
+            </a>
           </article>
         );
       })}
@@ -147,12 +121,9 @@ const toggle = (values, value) =>
     : [...values, value];
 export function CalendarPage({ Link, initialParams = "" }) {
   const today = useToday();
-  const collection = useEventCollection(today);
-  const exampleMode = !publicEvents(events).length;
+  const collection = publicEvents(events);
   const params = new URLSearchParams(initialParams);
-  const selectableOrgs = organizations.filter((org) =>
-    exampleMode ? org.isExample : !org.isExample,
-  );
+  const selectableOrgs = organizations;
   const initialMonth = params.get("month");
   const [chosenMonth, setChosenMonth] = useState(
     /^\d{4}-(0[1-9]|1[0-2])$/.test(initialMonth || "") &&
@@ -217,7 +188,6 @@ export function CalendarPage({ Link, initialParams = "" }) {
         className="section-shell calendar-section"
         aria-label="Community events"
       >
-        {exampleMode && <ExampleEventsNotice />}
         <div className="calendar-filters">
           <fieldset>
             <legend>What brings you here?</legend>
@@ -320,7 +290,7 @@ export function CalendarPage({ Link, initialParams = "" }) {
                   {monthLabel(month)}
                 </h2>
                 <p>
-                  {monthEvents.length} {exampleMode ? "example " : ""}event
+                  {monthEvents.length} event
                   {monthEvents.length === 1 ? "" : "s"} · San Diego time (PT)
                 </p>
               </div>
@@ -414,10 +384,12 @@ export function CalendarPage({ Link, initialParams = "" }) {
                             )}
                             <div className="calendar-day-events">
                               {dayEvents.slice(0, 2).map((event) => (
-                                <Link
+                                <a
                                   key={event.id}
                                   className={`calendar-event section-${event.sectionIds[0]}${event.status === "cancelled" ? " cancelled-event" : ""}`}
-                                  href={`/events/${event.id}`}
+                                  href={event.sourceUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                 >
                                   <span>
                                     {event.status === "cancelled"
@@ -425,7 +397,7 @@ export function CalendarPage({ Link, initialParams = "" }) {
                                       : ""}
                                     {event.title}
                                   </span>
-                                </Link>
+                                </a>
                               ))}
                               {dayEvents.length > 2 && (
                                 <button
@@ -447,7 +419,7 @@ export function CalendarPage({ Link, initialParams = "" }) {
             </table>
             <p className="calendar-help">
               Select a date to see its events below. Select it again to see the
-              full month.
+              full month. Event links open the organizer’s website in a new tab.
             </p>
             <div className="event-list-heading">
               <div>
@@ -512,22 +484,14 @@ export function CalendarPage({ Link, initialParams = "" }) {
 }
 export function OrganizationEvents({ organization, Link }) {
   const today = useToday();
-  const collection = organization.isExample
-    ? today
-      ? getExampleEvents(today)
-      : []
-    : events;
+  const collection = events;
   const items = today ? upcomingEvents(collection, organization.id) : [];
   return (
     <section className="section-shell organization-events">
       <div className="event-list-heading">
         <div>
           <span className="eyebrow">Make a little time</span>
-          <h2>
-            {organization.isExample
-              ? "Example upcoming events"
-              : "Upcoming events"}
-          </h2>
+          <h2>Upcoming events</h2>
         </div>
         <Link
           className="text-link"
@@ -536,7 +500,6 @@ export function OrganizationEvents({ organization, Link }) {
           View on the calendar <ArrowRight size={17} aria-hidden="true" />
         </Link>
       </div>
-      {organization.isExample && <ExampleEventsNotice />}
       {!today ? (
         <p role="status">Loading upcoming events…</p>
       ) : items.length ? (
@@ -544,114 +507,9 @@ export function OrganizationEvents({ organization, Link }) {
       ) : (
         <div className="calendar-empty">
           <h3>No upcoming events listed yet.</h3>
-          <p>Check back as more gatherings are added.</p>
+          <p>We’re adding individually announced events as details are confirmed. Visit their website for the latest programs and activities.</p>
         </div>
       )}
     </section>
-  );
-}
-export function EventDetailPage({ id, Link }) {
-  const today = useToday();
-  const realEvent = publicEvents(events).find((event) => event.id === id);
-  const template = exampleEventTemplates.find((event) => event.id === id);
-  const event =
-    realEvent ||
-    (today ? getExampleEvents(today).find((event) => event.id === id) : null);
-  const title = realEvent?.title || template?.title;
-  return (
-    <>
-      <section className="page-hero section-shell event-detail-hero">
-        <Link
-          className="text-link breadcrumb"
-          href={
-            event
-              ? `/calendar?month=${eventDays(event).first.slice(0, 7)}`
-              : "/calendar"
-          }
-        >
-          ← Back to the calendar
-        </Link>
-        <div className="eyebrow">
-          {template && !realEvent
-            ? "Fictional calendar preview"
-            : "A reason to get together"}
-        </div>
-        <h1>{title}</h1>
-        <p>{realEvent?.description || template?.description}</p>
-      </section>
-      <section className="section-shell event-detail-content">
-        {template && !realEvent && <ExampleEventsNotice />}
-        {event ? (
-          <>
-            <div className="event-facts">
-              <div>
-                <Clock aria-hidden="true" />
-                <h2>When</h2>
-                <p>
-                  {eventDateLabel(event)}
-                  <br />
-                  {eventTime(event)}
-                </p>
-              </div>
-              <div>
-                <MapPin aria-hidden="true" />
-                <h2>Where</h2>
-                <p>
-                  {event.location}
-                  <br />
-                  {event.cost}
-                </p>
-              </div>
-            </div>
-            <div className="event-organizers">
-              <h2>Brought together by</h2>
-              {event.organizationIds.map((orgId) => {
-                const org = organizations.find((item) => item.id === orgId);
-                return (
-                  org && (
-                    <Link
-                      className="organizer-link"
-                      key={orgId}
-                      href={organizationPath(org)}
-                    >
-                      <span>
-                        {org.name}
-                        <small>Meet the organization & see its events</small>
-                      </span>
-                      <ArrowRight size={21} aria-hidden="true" />
-                    </Link>
-                  )
-                );
-              })}
-            </div>
-            {event.status === "cancelled" ? (
-              <p className="event-preview-note">
-                <strong>This event has been cancelled.</strong>
-              </p>
-            ) : (
-              !event.isExample && (
-                <a
-                  className="button primary"
-                  href={event.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Event details & registration{" "}
-                  <ArrowUpRight size={18} aria-hidden="true" />
-                </a>
-              )
-            )}
-            {!event.isExample && (
-              <p className="event-source-note">
-                Details checked {event.verifiedAt}. Confirm arrangements with
-                the organizer before you go.
-              </p>
-            )}
-          </>
-        ) : (
-          <p role="status">Loading event details…</p>
-        )}
-      </section>
-    </>
   );
 }

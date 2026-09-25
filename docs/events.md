@@ -4,11 +4,10 @@ The calendar lives at `/calendar/`. An event belongs to one or more organization
 and one or more of the four mission sections. The calendar and profile pages read
 the same collection; do not enter an event separately for each page or co-host.
 
-The first version shows **fictional preview events** from the existing sample
-businesses. Those records live in `src/data/example-events.js`, separate from
-real events, and move with the current San Diego month for design previews.
-Their profiles, event pages, and the preview calendar are `noindex` and excluded
-from the sitemap. There are no real booking links on sample events.
+The public directory contains reviewed real organizations. The calendar shows only
+reviewed, individually announced dates. It never falls back to fictional events.
+Every event link opens the organizer’s external source in a new tab; there are
+no local event detail pages. Organization profiles have prominent website links.
 
 ## Add an organization manually
 
@@ -26,11 +25,11 @@ Add an object to `communityOrganizations` in `src/data/organizations.js`:
 }
 ```
 
-This creates `/organizations/your-organization/` with its shared upcoming event
-list. Real organizations appear in calendar filters when real events are
-published. The old business directory still contains its explicitly fictional
-preview listings; replacing that directory with verified entries is a separate
-content step.
+This creates `/organizations/your-organization/`, its upcoming event list, and an
+entry in the shared directory, relevant mission pages, and calendar filters.
+Include `organizationType`, `profileSourceUrl`, and `reviewedAt` to preserve the
+profile’s scope and provenance. Do not imply that national organizations are
+small local businesses; identify their local office or chapter where applicable.
 
 ## Add an event manually
 
@@ -58,8 +57,9 @@ URLs and dates with information checked against the organizer's source:
 
 - Use `draft` until the details have been checked, then `published`.
 - Use `cancelled` for a previously published cancellation so visitors see it.
-  Cancelled events keep their information but have no registration button.
-- Give each repeat occurrence a distinct ID and its own start/end values.
+  Cancelled entries remain labelled and link to the external source for updates.
+- Do not publish recurring schedules or generate repeated occurrences. Add only individually announced, reviewed dates.
+- Timed events require a confirmed start with an explicit UTC offset. Omit `end` if the organizer does not publish it; the UI says “End time not listed” and shows it on its start date only. Start-only events leave profile lists after that San Diego day. Never infer duration from a film runtime.
 - Timed events require explicit UTC offsets. San Diego is normally `-07:00`
   during daylight saving and `-08:00` during standard time. Use the offset
   applicable to that date; never assume the visitor's timezone is San Diego.
@@ -68,17 +68,15 @@ URLs and dates with information checked against the organizer's source:
 - An event with multiple hosts appears once on the calendar and on each host's
   profile. Multiple sections match as OR; multiple organizations match as OR;
   a section selection and organization selection combine as AND.
-- Keep source URLs public HTTP(S) links. The event page links to the organizer
-  for arrangements/registration, with the review date visible.
+- Keep source URLs public HTTP(S) links. Every event title, calendar entry, and event arrow links directly to that URL. Review dates are shown in the event lists. No local event pages are created.
 
 Section IDs: `united-neighborhoods`, `global-impact`, `rights-action`,
 `businesses-give-back`.
 
-Once the collection contains a published or cancelled real event, the main
-calendar switches from samples to real records. Real organization and event
-pages are prerendered; the real calendar becomes indexable. Example pages remain
-labelled previews and excluded from the sitemap. Date-sensitive lists initialize
-in the browser using San Diego time, avoiding stale dates in static HTML.
+The directory, real organization profiles, populated mission pages, and calendar
+are indexable. No event detail URLs are generated or added to the sitemap. The
+business section stays noindex until real business listings are ready.
+Date-sensitive lists initialize in the browser using San Diego time.
 
 Run `npm test` and `npm run build`, commit, and deploy to GitHub Pages.
 Build validation rejects duplicate IDs, broken organization/section references,

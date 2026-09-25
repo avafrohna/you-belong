@@ -2123,3 +2123,16 @@ select {
     font-size: 12px;
   }
 }
+
+/* Real organization directory and prominent external website links. */
+.organization-card { display: flex; flex-direction: column; }
+.organization-card .listing-top { line-height: 1.6; color: var(--muted); }
+.organization-card h2 a:hover { text-decoration: underline; }
+.organization-card .tag-list { margin-bottom: 22px; }
+.organization-card .listing-detail-link { margin-top: auto; padding-top: 8px; }
+.organization-website { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; margin-top: 28px; }
+.organization-website > span { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.organization-sections { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.organization-sections a:hover { text-decoration: underline; }
+.event-card-copy > p:not([class]) { font-size: 13px; line-height: 1.7; color: var(--muted); margin: 10px 0; }
+.event-card .event-source-note { font-size: 11px; line-height: 1.6; margin-top: 12px; }

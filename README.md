@@ -1,6 +1,6 @@
 # You Belong San Diego
 
-React/Vite site for You Belong San Diego, a developing community initiative. The directory currently contains illustrative sample listings and must not be presented as verified recommendations.
+React/Vite site for You Belong San Diego, a developing community initiative. The directory contains reviewed real organizations and links to their official websites. The calendar lists individually announced events with direct external source links.
 
 The owner confirmed `https://youbelongsandiego.org` as the primary address on 2026-09-21. The secondary `youbelongsandiego.com` should permanently redirect to it; it currently shows a GoDaddy parking page. The contact address remains `info@youbelongsandiego.org`.
 
@@ -27,7 +27,7 @@ The build also generates:
 - Conservative `WebSite` and `Organization` structured data, without asserting registered nonprofit status.
 - A favicon based on the existing brand mark.
 
-`src/seo.js` is the source of truth for the public origin and page metadata. Home, About, and Explore (the mission overview) are indexable. Directory previews, the sample business profile, unfinished topic pages, and the 404 page use `noindex, follow` and are omitted from the sitemap. Crawling remains allowed so search engines can read those directives. Update this policy only when a page contains real, publishable information.
+`src/seo.js` is the source of truth for the public origin and page metadata. Home, About, Explore, the local directory, real organization profiles, populated mission pages, and the calendar are indexable. The unfinished business section and 404 use `noindex, follow`. Events do not have local detail pages or sitemap entries. Crawling remains allowed so search engines can read page-level directives.
 
 `npm run build` runs `scripts/check-build.mjs` automatically. Run `npm run check:build` to recheck existing output. The checks verify rendered content, page metadata, preview indexing restrictions, the sitemap, structured data, and consistency between `SITE_URL` and all CNAME files.
 
@@ -70,9 +70,10 @@ The homepage uses a real Balboa Park photograph by Librarybell (CC0). Source and
 ## Community calendar
 
 `/calendar/` provides a month view, multiple section/organization filters, search,
-and linked event details. Every example business now has a profile with its
-own upcoming event list. The first version is a labelled fictional preview;
-calendar samples and sample profiles are excluded from search indexing.
+and direct links to external event sources. Each organization has its own
+profile and upcoming event list. Fictional previews and recurring schedules are
+not published. The reviewed content and held leads are documented in
+[docs/community-profiles-and-events.md](docs/community-profiles-and-events.md).
 
 See [docs/events.md](docs/events.md) to enter real organizations and events,
 understand Pacific time and multi-day ranges, and plan future imports. There is

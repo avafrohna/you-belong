@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  Coffee,
   Globe,
   HeartHandshake,
   Mail,
@@ -14,14 +13,10 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { categories, getCategory, listings, regions } from "./data/listings.js";
 import { updatePageMeta, SITE_URL } from "./seo.js";
 import { organizations, organizationPath } from "./data/organizations.js";
-import { events } from "./data/events.js";
-import { exampleEventTemplates } from "./data/example-events.js";
 import {
   CalendarPage,
-  EventDetailPage,
   OrganizationEvents,
 } from "./components/Events.jsx";
 
@@ -38,7 +33,7 @@ const sections = [
       "Welcoming spaces for newcomers and longtime locals",
       "Neighborhood initiatives rooted in shared values",
     ],
-    status: "In the works",
+    status: "Meet the organizations",
     icon: Users,
   },
   {
@@ -52,7 +47,7 @@ const sections = [
       "Ways to contact local officials",
       "Advocacy for universal human rights and peace",
     ],
-    status: "In the works",
+    status: "Meet the organizations",
     icon: Globe,
   },
   {
@@ -66,7 +61,7 @@ const sections = [
       "Community-organized marches",
       "Legal support resources for grassroots activism",
     ],
-    status: "In the works",
+    status: "Meet the organizations",
     icon: Megaphone,
   },
   {
@@ -80,7 +75,7 @@ const sections = [
       "Support for communities and marginalized groups",
       "Commerce and conscience, hand in hand",
     ],
-    status: "Preview the directory",
+    status: "Help this guide grow",
     icon: Store,
   },
 ];
@@ -165,11 +160,6 @@ function App({ initialPath }) {
   const organization = organizations.find(
     (item) => organizationPath(item) === path,
   );
-  const eventId = path.startsWith("/events/") ? path.slice(8) : null;
-  const knownEvent = [
-    ...events.filter((event) => event.status !== "draft"),
-    ...exampleEventTemplates,
-  ].some((event) => event.id === eventId);
   const previousPath = useRef(path);
   useEffect(() => {
     updatePageMeta(path);
@@ -183,13 +173,14 @@ function App({ initialPath }) {
   else if (path === "/about") page = <AboutPage />;
   else if (path === "/calendar")
     page = <CalendarPage key={location} Link={Link} initialParams={params} />;
-  else if (eventId && knownEvent)
-    page = <EventDetailPage key={eventId} id={eventId} Link={Link} />;
-  else if (path === "/directory" || path === "/businesses-give-back")
-    page = <BusinessDirectoryPage key={location} initialParams={params} />;
+  else if (path === "/directory")
+    page = <OrganizationDirectoryPage key={location} initialParams={params} />;
   else if (organization)
     page = <OrganizationDetailPage organization={organization} />;
-  else if (activeSection) page = <ComingSoonPage section={activeSection} />;
+  else if (activeSection)
+    page = activeSection.id === "businesses-give-back"
+      ? <ComingSoonPage section={activeSection} />
+      : <OrganizationDirectoryPage key={location} section={activeSection} initialParams={params} />;
   else page = <NotFoundPage />;
   return (
     <>
@@ -227,7 +218,7 @@ function SiteHeader({ currentPath }) {
   }, [currentPath]);
   const nav = [
     { href: "/explore", label: "Explore" },
-    { href: "/businesses-give-back", label: "Local directory" },
+    { href: "/directory", label: "Local directory" },
     { href: "/calendar", label: "Calendar" },
     { href: "/about", label: "Our story" },
   ];
@@ -471,7 +462,7 @@ function ExplorePage() {
                   aria-label={`Explore ${section.name}`}
                 >
                   {section.id === "businesses-give-back"
-                    ? "View directory preview"
+                    ? "Help shape this guide"
                     : "Explore this area"}
                   <ArrowRight size={17} aria-hidden="true" />
                 </Link>
@@ -509,179 +500,62 @@ function Callout() {
     </section>
   );
 }
-function PreviewNotice() {
-  return (
-    <div className="preview-notice">
-      <Coffee size={21} aria-hidden="true" />
-      <div>
-        <strong>A first look at the directory</strong>
-        <p>
-          These are fictional examples showing how the guide will work. They are
-          not verified businesses or recommendations.{" "}
-          <a href={`mailto:${email}?subject=Suggest%20a%20business`}>
-            Suggest a real business
-          </a>{" "}
-          to help us get started.
-        </p>
-      </div>
-    </div>
-  );
-}
-function BusinessDirectoryPage({ initialParams }) {
+function OrganizationDirectoryPage({ initialParams = "", section }) {
   const params = new URLSearchParams(initialParams);
   const [query, setQuery] = useState(params.get("q") || "");
   const [category, setCategory] = useState(
-    categories.some((item) => item.id === params.get("category"))
-      ? params.get("category")
-      : "all",
+    section?.id || (sections.some((item) => item.id === params.get("section")) ? params.get("section") : "all"),
   );
-  const [region, setRegion] = useState(
-    regions.includes(params.get("region")) ? params.get("region") : "all",
-  );
-  const filtered = useMemo(
-    () =>
-      listings.filter(
-        (listing) =>
-          (category === "all" || listing.category === category) &&
-          (region === "all" || listing.region === region) &&
-          `${listing.name} ${listing.neighborhood} ${listing.region} ${listing.blurb} ${listing.tags.join(" ")}`
-            .toLowerCase()
-            .includes(query.trim().toLowerCase()),
-      ),
-    [query, category, region],
-  );
-  const reset = () => {
-    setQuery("");
-    setCategory("all");
-    setRegion("all");
-  };
-  const hasFilters = query !== "" || category !== "all" || region !== "all";
+  const filtered = useMemo(() => organizations.filter((organization) =>
+    (category === "all" || organization.sectionIds.includes(category)) &&
+    `${organization.name} ${organization.description} ${organization.organizationType}`.toLowerCase().includes(query.trim().toLowerCase()),
+  ), [query, category]);
+  const reset = () => { setQuery(""); setCategory(section?.id || "all"); };
   return (
     <>
       <section className="page-hero section-shell">
-        <div className="eyebrow">Businesses that give back</div>
-        <h1>
-          A little local.
-          <br />
-          <em>A lot of good.</em>
-        </h1>
-        <p>
-          We’re building a directory of local businesses that give back to their
-          communities and lift up marginalized groups—where commerce and
-          conscience go hand in hand.
-        </p>
+        <div className="eyebrow">Local roots. Shared purpose.</div>
+        <h1>{section ? section.name : <>Find your people.<br /><em>Make a little good.</em></>}</h1>
+        <p>{section?.description || "Meet the organizations connecting San Diego, standing up for human rights, and making a difference near and far. Find their work, their websites, and their upcoming events."}</p>
+        {section && <Link className="text-link listing-detail-link" href="/directory">Browse all organizations <ArrowRight size={17} aria-hidden="true" /></Link>}
       </section>
-      <section className="section-shell directory-section">
-        <PreviewNotice />
+      <section className="section-shell directory-section" aria-label="Organization directory">
         <div className="directory-controls">
-          <label className="search-label" htmlFor="directory-search">
-            Find your kind of place
-          </label>
+          <label className="search-label" htmlFor="directory-search">Find a cause or a community</label>
           <div className="search-field">
             <Search size={20} aria-hidden="true" />
-            <input
-              id="directory-search"
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Try coffee, North Park, or books"
-            />
+            <input id="directory-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try arts, refugees, or an organization name" />
           </div>
-          <div className="filters-row">
-            <fieldset>
-              <legend>Category</legend>
-              <div className="filter-buttons">
-                <FilterButton
-                  active={category === "all"}
-                  onClick={() => setCategory("all")}
-                >
-                  All categories
-                </FilterButton>
-                {categories.map((item) => (
-                  <FilterButton
-                    key={item.id}
-                    active={category === item.id}
-                    onClick={() => setCategory(item.id)}
-                  >
-                    {item.label}
-                  </FilterButton>
-                ))}
-              </div>
-            </fieldset>
-            <div className="region-filter">
-              <label htmlFor="region">Area</label>
-              <select
-                id="region"
-                value={region}
-                onChange={(event) => setRegion(event.target.value)}
-              >
-                <option value="all">All San Diego areas</option>
-                {regions.map((item) => (
-                  <option key={item}>{item}</option>
-                ))}
-              </select>
+          {!section && <div className="filters-row"><fieldset>
+            <legend>Explore by section</legend>
+            <div className="filter-buttons">
+              <FilterButton active={category === "all"} onClick={() => setCategory("all")}>All organizations</FilterButton>
+              {sections.map((item) => <FilterButton key={item.id} active={category === item.id} onClick={() => setCategory(item.id)}>{item.name}</FilterButton>)}
             </div>
-          </div>
+          </fieldset></div>}
         </div>
         <div className="results-meta">
-          <span role="status" aria-live="polite">
-            {filtered.length} example{" "}
-            {filtered.length === 1 ? "listing" : "listings"}
-          </span>
-          {hasFilters && (
-            <button type="button" className="clear-filters" onClick={reset}>
-              Clear all filters <X size={15} aria-hidden="true" />
-            </button>
-          )}
+          <span role="status" aria-live="polite">{filtered.length} {filtered.length === 1 ? "organization" : "organizations"}</span>
+          {(query || category !== (section?.id || "all")) && <button type="button" className="clear-filters" onClick={reset}>Clear filters <X size={15} aria-hidden="true" /></button>}
         </div>
         <div className="results-grid">
-          {filtered.map((listing) => (
-            <ListingCard key={listing.id} listing={listing} />
-          ))}
+          {filtered.map((organization) => <article className="listing-card organization-card" key={organization.id}>
+            <div className="listing-top">{organization.organizationType}</div>
+            <h2><Link href={organizationPath(organization)}>{organization.name}</Link></h2>
+            <p>{organization.description}</p>
+            <div className="tag-list">{organization.sectionIds.map((id) => <span key={id}>{sections.find((item) => item.id === id)?.name}</span>)}</div>
+            <Link className="text-link listing-detail-link" href={organizationPath(organization)}>Meet the organization & see events <ArrowRight size={16} aria-hidden="true" /></Link>
+          </article>)}
         </div>
-        {filtered.length === 0 && (
-          <div className="empty-state">
-            <Search size={28} aria-hidden="true" />
-            <h2>No matches this time.</h2>
-            <p>
-              Try a different search or clear your filters to see all examples.
-            </p>
-            <button type="button" className="button primary" onClick={reset}>
-              Clear filters
-            </button>
-          </div>
-        )}
+        {!filtered.length && <div className="empty-state">
+          <Search size={28} aria-hidden="true" />
+          <h2>{category === "businesses-give-back" && !query ? "A little local good, coming soon." : "No matches this time."}</h2>
+          <p>{category === "businesses-give-back" && !query ? "We’re gathering recommendations for businesses that give back. Know one that belongs here? Share it below." : "Try another search or clear your filters."}</p>
+          <button type="button" className="button primary" onClick={reset}>Clear filters</button>
+        </div>}
       </section>
       <Callout />
     </>
-  );
-}
-function ListingCard({ listing }) {
-  const category = getCategory(listing.category);
-  return (
-    <article className="listing-card">
-      <div className="listing-top">
-        <span>{category.singular}</span>
-        <span className="sample-badge">Example</span>
-      </div>
-      <h2>{listing.name}</h2>
-      <p className="listing-location">
-        <MapPin size={14} aria-hidden="true" /> {listing.neighborhood} ·{" "}
-        {listing.region}
-      </p>
-      <p>{listing.blurb}</p>
-      <div className="tag-list">
-        {listing.tags.map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
-      </div>
-      <Link
-        className="text-link listing-detail-link"
-        href={`/business/${listing.id}`}
-      >
-        View example & events <ArrowRight size={16} aria-hidden="true" />
-      </Link>
-    </article>
   );
 }
 function FilterButton({ active, onClick, children }) {
@@ -788,76 +662,26 @@ function ValueCard({ icon: Icon, title, text }) {
     </article>
   );
 }
-function OrganizationDetailPage({ organization: listing }) {
+function OrganizationDetailPage({ organization }) {
   return (
     <>
-      <section className="page-hero section-shell">
-        <Link className="text-link breadcrumb" href="/businesses-give-back">
-          ← Back to the directory preview
-        </Link>
-        <div className="eyebrow">
-          {listing.isExample ? "Fictional example" : "In our community"} ·{" "}
-          {listing.neighborhood || "San Diego"}
+      <section className="page-hero section-shell organization-hero">
+        <Link className="text-link breadcrumb" href="/directory">← Back to the local directory</Link>
+        <div className="eyebrow">{organization.organizationType}</div>
+        <h1>{organization.name}</h1>
+        <p>{organization.description}</p>
+        <div className="organization-website">
+          <a className="button primary" href={organization.website} target="_blank" rel="noopener noreferrer">
+            Visit their website <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+          <span>{new URL(organization.website).hostname.replace(/^www\./, "")}</span>
         </div>
-        <h1>{listing.name}</h1>
-        <p>{listing.description}</p>
-      </section>
-      <section className="section-shell detail-section">
-        {listing.isExample && <PreviewNotice />}
-        <div className="detail-grid">
-          <article>
-            <h2>
-              {listing.isExample
-                ? "What a listing could tell you"
-                : "Part of our community"}
-            </h2>
-            <p>{listing.details || listing.description}</p>
-            {listing.values?.length > 0 && (
-              <>
-                <h3>
-                  {listing.isExample
-                    ? "Example community contributions"
-                    : "How they give back"}
-                </h3>
-                <ul>
-                  {listing.values.map((value) => (
-                    <li key={value}>{value}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </article>
-          <aside className="detail-aside">
-            <h2>
-              {listing.isExample ? "A useful local guide" : "Get to know them"}
-            </h2>
-            <p>
-              {listing.isExample
-                ? "Published listings should include a verified website, neighborhood, and clear information about how the organization gives back."
-                : "Find out more about their work and ways to get involved."}
-            </p>
-            {!listing.isExample && (
-              <a
-                className="text-link"
-                href={listing.website}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit their website{" "}
-                <ArrowUpRight size={17} aria-hidden="true" />
-              </a>
-            )}
-            <a
-              className="text-link"
-              href={`mailto:${email}?subject=Suggest%20a%20business`}
-            >
-              Suggest a real business{" "}
-              <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
-          </aside>
+        {organization.programWebsite && <a className="text-link listing-detail-link" href={organization.programWebsite} target="_blank" rel="noopener noreferrer">{organization.programWebsiteLabel} <ArrowUpRight size={17} aria-hidden="true" /></a>}
+        <div className="organization-sections" aria-label="Areas of focus">
+          {organization.sectionIds.map((id) => <Link key={id} className={`event-section-tag section-${id}`} href={`/${id}`}>{sections.find((item) => item.id === id)?.name}</Link>)}
         </div>
       </section>
-      <OrganizationEvents organization={listing} Link={Link} />
+      <OrganizationEvents organization={organization} Link={Link} />
       <Callout />
     </>
   );
@@ -925,7 +749,7 @@ function SiteFooter() {
         <div>
           <h2>Find your way</h2>
           <Link href="/explore">Explore the project</Link>
-          <Link href="/businesses-give-back">Directory preview</Link>
+          <Link href="/directory">Local directory</Link>
           <Link href="/calendar">Community calendar</Link>
           <Link href="/about">Our story</Link>
         </div>

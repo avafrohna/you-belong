@@ -132,8 +132,8 @@ assert.deepEqual(
   "Sitemap must match the indexable routes",
 );
 assert.ok(
-  !sitemapUrls.some((url) => url.includes("/events/example-")),
-  "Fictional events must stay out of the sitemap",
+  !sitemapUrls.some((url) => url.includes("/events/")),
+  "Events must have external links, not local sitemap entries",
 );
 for (const organization of organizations.filter(
   (organization) => organization.isExample,
@@ -143,6 +143,18 @@ for (const organization of organizations.filter(
     "Fictional organizations must stay out of the sitemap",
   );
 }
+assert.ok(!Object.keys(routeMetadata).some((route) => route.startsWith("/events/")));
+assert.ok(!organizations.some((org) => org.isExample));
+for (const org of organizations) {
+  const html = pageHtml.get(`/organizations/${org.id}`);
+  assert.ok(html.includes(`href="${escapeHtml(org.website)}"`), `${org.id}: official website link`);
+  assert.ok(html.includes('Visit their website'), `${org.id}: clear website call to action`);
+  assert.ok(pageHtml.get("/directory").includes(`/organizations/${org.id}/`));
+  for (const section of org.sectionIds) {
+    assert.ok(pageHtml.get(`/${section}`).includes(`/organizations/${org.id}/`), `${org.id}: appears in its categories`);
+  }
+}
+for (const html of pageHtml.values()) assert.ok(!html.includes('href="/events/'));
 const robots = await read("dist/robots.txt");
 assert.ok(robots.includes(`Sitemap: ${SITE_URL}/sitemap.xml`));
 assert.ok(

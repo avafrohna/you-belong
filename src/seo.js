@@ -1,7 +1,4 @@
 import { organizations, organizationPath } from "./data/organizations.js";
-import { events } from "./data/events.js";
-import { exampleEventTemplates } from "./data/example-events.js";
-import { publicEvents } from "./lib/events.js";
 
 // Keep this origin aligned with GitHub Pages and both CNAME files.
 // Confirm ownership and DNS before changing the site's primary domain.
@@ -33,9 +30,7 @@ export const routeMetadata = {
     title: "Community Events Calendar | You Belong San Diego",
     description:
       "Explore the San Diego community calendar. Browse by month and filter events by the causes you care about and the organizations you follow.",
-    robots: publicEvents(events).length
-      ? "index, follow, max-image-preview:large"
-      : previewRobots,
+    robots: "index, follow, max-image-preview:large",
   },
   ...Object.fromEntries(
     organizations.map((organization) => [
@@ -51,52 +46,30 @@ export const routeMetadata = {
       },
     ]),
   ),
-  ...Object.fromEntries(
-    [
-      ...exampleEventTemplates.map((event) => ({ ...event, isExample: true })),
-      ...publicEvents(events),
-    ].map((event) => [
-      `/events/${event.id}`,
-      {
-        title: `${event.title}${event.isExample ? " · Example" : ""} | You Belong San Diego`,
-        description: event.isExample
-          ? "A fictional event for the You Belong San Diego calendar preview. This is an illustrative example, not a real gathering or booking."
-          : event.description,
-        robots: event.isExample
-          ? previewRobots
-          : "index, follow, max-image-preview:large",
-      },
-    ]),
-  ),
   "/businesses-give-back": {
-    title: "Community Directory Preview | You Belong San Diego",
-    description:
-      "Explore an early preview of the You Belong San Diego community directory. Listings are illustrative while we gather verified local recommendations.",
+    title: "Businesses That Give Back | You Belong San Diego",
+    description: "Help grow our guide to local businesses that support their communities and lift up marginalized groups.",
     robots: previewRobots,
   },
   "/directory": {
-    title: "Community Directory Preview | You Belong San Diego",
-    description:
-      "Explore an early preview of the You Belong San Diego community directory. Listings are illustrative while we gather verified local recommendations.",
-    robots: previewRobots,
+    title: "San Diego Organization Directory | You Belong San Diego",
+    description: "Meet San Diego community organizations, arts nonprofits, advocacy groups, and local chapters. Explore their work, websites, and upcoming events.",
+    robots: "index, follow, max-image-preview:large",
   },
   "/united-neighborhoods": {
     title: "United Neighborhoods | You Belong San Diego",
-    description:
-      "Help shape United Neighborhoods, a developing space for community connections and neighborhood resources from You Belong San Diego.",
-    robots: previewRobots,
+    description: "Connect with San Diego organizations that bring neighbors together through culture, the arts, refugee support, and community action.",
+    robots: "index, follow, max-image-preview:large",
   },
   "/global-impact": {
     title: "Global Impact | You Belong San Diego",
-    description:
-      "Help shape a space for understanding foreign policy, contacting local officials, and advocating for universal human rights from San Diego.",
-    robots: previewRobots,
+    description: "Meet organizations connecting San Diego to the wider world through cultural exchange, humanitarian work, and conversations about global affairs.",
+    robots: "index, follow, max-image-preview:large",
   },
   "/rights-action": {
     title: "Rights & Action | You Belong San Diego",
-    description:
-      "Help shape a space for free speech, community marches, and connections to legal support for grassroots activism in San Diego.",
-    robots: previewRobots,
+    description: "Find San Diego organizations working on civil rights, immigrant support, community organizing, and human dignity. Explore their work and get involved.",
+    robots: "index, follow, max-image-preview:large",
   },
 };
 

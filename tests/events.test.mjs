@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   eventDays,
+  eventTime,
   filterEvents,
   monthDays,
   occursInMonth,
@@ -197,4 +198,21 @@ test("missing IDs and the preview namespace cannot enter real event records", ()
   assert.throws(() =>
     validateEventData([{ ...base, id: "example-test" }], orgs, eventSections),
   );
+});
+
+
+test("start-only events keep their confirmed date without inventing a duration", () => {
+  const event = { ...base };
+  delete event.end;
+  assert.doesNotThrow(() => validateEventData([event], orgs, eventSections));
+  assert.deepEqual(eventDays(event), { first: "2026-09-24", last: "2026-09-24" });
+  assert.equal(eventTime(event), "10:00 AM PT · End time not listed");
+  assert.ok(occursOn(event, "2026-09-24"));
+  assert.ok(!occursOn(event, "2026-09-25"));
+  assert.equal(upcomingEvents([event], "one", "2026-09-25T06:59:00Z").length, 1);
+  assert.equal(upcomingEvents([event], "one", "2026-09-25T07:00:00Z").length, 0);
+  for (const end of [null, "", "invalid", event.start]) {
+    assert.throws(() => validateEventData([{ ...event, end }], orgs, eventSections));
+  }
+  assert.throws(() => validateEventData([{ ...event, allDay: true, start: "2026-09-24" }], orgs, eventSections));
 });
