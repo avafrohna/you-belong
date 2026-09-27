@@ -381,3 +381,16 @@ invitation confirmed the venue. The local collection now includes 11 events;
 the calendar and Pathways profile share this record and link straight to the
 official news announcement. This correction is pending publication with the
 current preview changes.
+
+
+## September 26 addition: The Justice Workshop
+
+The Justice Workshop is a San Diego organization working on criminal, economic, and electoral justice through education and community outreach. Its Choice Voting campaign promotes electoral reform and offers ways for residents to learn, volunteer, and get involved.
+
+**Categories:** Rights & Action (primary); United Neighborhoods.
+
+**Type:** Local education and advocacy organization.
+
+[Official website and profile source](https://thejusticeworkshop.org/) · [Official linked event listing](https://www.mobilize.us/thejusticeworkshop/)
+
+Requested by the owner September 26, 2026. This adds a 23rd organization to the directory. The official site’s Mobilize listing requires JavaScript in text retrieval; no individual future event was verified in this addition. Retain the listing as a source for subsequent scheduled discovery.

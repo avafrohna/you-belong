@@ -140,6 +140,20 @@ export const communityOrganizations = [
     "reviewedAt": "2026-09-25"
   },
   {
+    "id": "the-justice-workshop",
+    "name": "The Justice Workshop",
+    "description": "The Justice Workshop is a San Diego organization working on criminal, economic, and electoral justice through education and community outreach. Its Choice Voting campaign promotes electoral reform and offers ways for residents to learn, volunteer, and get involved.",
+    "sectionIds": [
+      "rights-action",
+      "united-neighborhoods"
+    ],
+    "primarySectionId": "rights-action",
+    "website": "https://thejusticeworkshop.org/",
+    "organizationType": "Local education and advocacy organization",
+    "profileSourceUrl": "https://thejusticeworkshop.org/",
+    "reviewedAt": "2026-09-26"
+  },
+  {
     "id": "karama",
     "name": "KARAMA",
     "description": "KARAMA promotes understanding of the Arab and Islamic worlds, with particular attention to Palestinian experiences. Its cultural and educational work includes the San Diego Arab Film Festival, which shares stories from and about Arab communities.",
