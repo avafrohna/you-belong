@@ -2181,6 +2181,8 @@ p.community-facts-source,
 .event-request-fields input, .event-request-fields select, .event-request-fields textarea { width: 100%; min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 7px; background: white; color: var(--ink); font: inherit; font-weight: 400; }
 .event-request-fields textarea { resize: vertical; }
 .event-request-wide { grid-column: 1 / -1; }
+.event-request-fields .event-request-website { margin: 0; font-size: 12px; overflow-wrap: anywhere; }
+.event-request-website a { text-decoration: underline; }
 .event-request-panel .event-request-note { font-size: 12px; }
 .event-request-status a { overflow-wrap: anywhere; text-decoration: underline; }
 @media (max-width: 800px) {
