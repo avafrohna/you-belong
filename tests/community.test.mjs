@@ -37,6 +37,15 @@ test('calendar and list event links are external; former event URLs render the 4
     for (const event of events) {
       assert.ok(list.includes(`href="${event.sourceUrl.replaceAll('&', '&amp;')}"`));
     }
+    const minimal = { ...events[0], id: "minimal-event" };
+    for (const key of ["start", "end", "description", "location", "cost"]) delete minimal[key];
+    const minimalHtml = renderToStaticMarkup(React.createElement(EventList, { items: [minimal], Link }));
+    assert.ok(minimalHtml.includes("Date to be announced"));
+    assert.ok(!minimalHtml.includes("Invalid Date"));
+    assert.ok(minimalHtml.includes(`href="${minimal.sourceUrl}"`));
+    const dateOnlyHtml = renderToStaticMarkup(React.createElement(EventList, { items: [{ ...minimal, start: "2026-10-04", dateOnly: true }], Link }));
+    assert.ok(dateOnlyHtml.includes("Time to be announced"));
+    assert.ok(!dateOnlyHtml.includes("All day"));
     const oldPage = renderToStaticMarkup(React.createElement(App, { initialPath: '/events/wac-france-2026/' }));
     assert.ok(oldPage.includes('A little off the path'));
   } finally {

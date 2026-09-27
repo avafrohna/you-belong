@@ -20,6 +20,8 @@ import {
   OrganizationEvents,
 } from "./components/Events.jsx";
 
+import { communityFacts } from "./data/community-facts.js";
+
 const email = "info@youbelongsandiego.org";
 const sections = [
   {
@@ -27,9 +29,9 @@ const sections = [
     href: "/united-neighborhoods",
     name: "United Neighborhoods",
     description:
-      "Connect across San Diego’s diverse neighborhoods and discover the strength we build together.",
+      "Connect across San Diego’s many neighborhoods and discover the strength we build together.",
     focus: [
-      "Connections across diverse neighborhoods",
+      "Connections across neighborhoods and cultures",
       "Welcoming spaces for newcomers and longtime locals",
       "Neighborhood initiatives rooted in shared values",
     ],
@@ -294,8 +296,9 @@ function HomePage() {
             <em>Put down roots.</em>
           </h1>
           <p>
-            San Diego is more than sunshine and coastlines. It’s a city of
-            people who care. Whether you’ve just arrived or been here for years,
+            San Diego is more than sunshine and coastlines. It’s a place shaped
+            by many cultures, languages, and people who care. Whether you’ve
+            just arrived or been here for years,
             connect with others who believe change starts locally and ripples
             globally.
           </p>
@@ -386,16 +389,29 @@ function HomePage() {
         <div>
           <div className="eyebrow">Compassion meets action</div>
           <h2>
-            A city feels different
+            Many cultures.
             <br />
-            when you <em>belong.</em>
+            One place to <em>belong.</em>
           </h2>
+          <dl className="community-facts">
+            <div>
+              <dt>{communityFacts.foreignBornPercent}%</dt>
+              <dd>of San Diego County residents are foreign-born</dd>
+            </div>
+            <div>
+              <dt>{communityFacts.otherHomeLanguagePercent}%</dt>
+              <dd>of county residents age 5+ speak a language other than English at home</dd>
+            </div>
+          </dl>
+          <CommunityFactsSource />
         </div>
         <div className="mission-copy">
           <p>
-            We’re a community built on shared values: celebrating diversity,
-            defending human rights, protecting privacy and free expression, and
-            working toward peace, near and far.
+            The languages spoken at our kitchen tables, the traditions we
+            carry, and the stories we share all help make this place home.
+            We come together around shared values: celebrating our cultures,
+            defending human rights, protecting privacy and free expression,
+            and working toward peace, near and far.
           </p>
           <p>
             From neighborhood initiatives to global causes, we bring people,
@@ -605,7 +621,16 @@ function AboutPage() {
             meaningful change starts locally and ripples globally.
           </p>
           <p>
-            We’re a community built on shared values: celebrating diversity,
+            Across San Diego County, {communityFacts.foreignBornPercent}% of
+            residents are foreign-born, and {communityFacts.otherHomeLanguagePercent}%
+            of residents age 5 and older speak a language other than English at
+            home. Our neighborhoods hold many languages, histories, and ways of
+            life. We want to make it easier to meet one another, learn from each
+            other, and build something together.
+          </p>
+          <CommunityFactsSource />
+          <p>
+            We’re a community built on shared values: celebrating our cultures,
             defending human rights, protecting privacy and free expression, and
             working toward peace both near and far. From neighborhood
             initiatives to global causes, we bring together the people, stories,
@@ -634,8 +659,8 @@ function AboutPage() {
         <div className="value-grid">
           <ValueCard
             icon={Users}
-            title="Diversity & belonging"
-            text="Connect across San Diego’s diverse neighborhoods and build a community where newcomers and longtime locals can feel at home."
+            title="Many cultures. Shared belonging."
+            text="Connect across San Diego’s many neighborhoods and build a community where newcomers and longtime locals can feel at home."
           />
           <ValueCard
             icon={Globe}
@@ -651,6 +676,16 @@ function AboutPage() {
       </section>
       <Callout />
     </>
+  );
+}
+function CommunityFactsSource() {
+  return (
+    <p className="community-facts-source">
+      San Diego County estimates · {communityFacts.period} American Community Survey.
+      {" "}<a href={communityFacts.sourceUrl} target="_blank" rel="noopener noreferrer">
+        County report (PDF, published March 2026)
+      </a>
+    </p>
   );
 }
 function ValueCard({ icon: Icon, title, text }) {

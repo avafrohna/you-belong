@@ -13,6 +13,7 @@ import {
 import { events } from "../data/events.js";
 import { organizations, organizationPath } from "../data/organizations.js";
 import { eventSections } from "../data/event-sections.js";
+import { EventRequest } from "./EventRequest.jsx";
 import {
   dayLabel,
   eventDateLabel,
@@ -27,6 +28,7 @@ import {
   sanDiegoDay,
   shiftMonth,
   upcomingEvents,
+  undatedEvents,
 } from "../lib/events.js";
 
 function useToday() {
@@ -51,12 +53,12 @@ export function EventList({ items, Link }) {
           >
             <div className="event-date-stamp" aria-hidden="true">
               <span>
-                {new Intl.DateTimeFormat("en-US", {
+                {first ? new Intl.DateTimeFormat("en-US", {
                   month: "short",
                   timeZone: "UTC",
-                }).format(new Date(`${first}T12:00:00Z`))}
+                }).format(new Date(`${first}T12:00:00Z`)) : "Date"}
               </span>
-              <strong>{Number(first.slice(-2))}</strong>
+              <strong>{first ? Number(first.slice(-2)) : "TBA"}</strong>
             </div>
             <div className="event-card-copy">
               <div className="event-labels">
@@ -72,7 +74,7 @@ export function EventList({ items, Link }) {
               <h3>
                 <a href={event.sourceUrl} target="_blank" rel="noopener noreferrer">{event.title}</a>
               </h3>
-              <p>{event.description}</p>
+              {event.description && <p>{event.description}</p>}
               <p className="event-hosts">
                 {event.organizationIds.map((id, index) => {
                   const org = organizations.find(
@@ -89,15 +91,15 @@ export function EventList({ items, Link }) {
               <p className="event-meta">
                 <Clock size={15} aria-hidden="true" />
                 <span>
-                  {eventDateLabel(event)} · {eventTime(event)}
+                  {eventDateLabel(event)}{first && <> · {eventTime(event)}</>}
                 </span>
               </p>
-              <p className="event-meta">
+              {(event.location || event.cost) && <p className="event-meta">
                 <MapPin size={15} aria-hidden="true" />
                 <span>
-                  {event.location} · {event.cost}
+                  {[event.location, event.cost].filter(Boolean).join(" · ")}
                 </span>
-              </p>
+              </p>}
               <p className="event-source-note">Checked {event.verifiedAt}. Open the organizer’s website for details and registration.</p>
             </div>
             <a
@@ -479,6 +481,7 @@ export function CalendarPage({ Link, initialParams = "" }) {
           </p>
         )}
       </section>
+      <EventRequest />
     </>
   );
 }
@@ -486,6 +489,7 @@ export function OrganizationEvents({ organization, Link }) {
   const today = useToday();
   const collection = events;
   const items = today ? upcomingEvents(collection, organization.id) : [];
+  const awaitingDates = undatedEvents(collection, organization.id);
   return (
     <section className="section-shell organization-events">
       <div className="event-list-heading">
@@ -510,6 +514,11 @@ export function OrganizationEvents({ organization, Link }) {
           <p>We’re adding individually announced events as details are confirmed. Visit their website for the latest programs and activities.</p>
         </div>
       )}
+      {awaitingDates.length > 0 && <div className="undated-events">
+        <h3>Date to be announced</h3>
+        <p>These announcements have no confirmed date yet. Check the organizer’s link for updates.</p>
+        <EventList items={awaitingDates} Link={Link} />
+      </div>}
     </section>
   );
 }

@@ -11,6 +11,7 @@ import {
   sanDiegoDay,
   shiftMonth,
   upcomingEvents,
+  undatedEvents,
   validateEventData,
 } from "../src/lib/events.js";
 import { getExampleEvents } from "../src/data/example-events.js";
@@ -215,4 +216,49 @@ test("start-only events keep their confirmed date without inventing a duration",
     assert.throws(() => validateEventData([{ ...event, end }], orgs, eventSections));
   }
   assert.throws(() => validateEventData([{ ...event, allDay: true, start: "2026-09-24" }], orgs, eventSections));
+});
+
+
+test("qualitative end times retain source wording without guessing sunset", () => {
+  const event = { ...base, endTimeNote: "Until sunset" };
+  delete event.end;
+  validateEventData([event], orgs, eventSections);
+  assert.equal(eventTime(event), "10:00 AM PT · Until sunset");
+  assert.deepEqual(eventDays(event), { first: "2026-09-24", last: "2026-09-24" });
+  for (const endTimeNote of ["", "  ", 123]) {
+    assert.throws(() => validateEventData([{ ...event, endTimeNote }], orgs, eventSections));
+  }
+  assert.throws(() => validateEventData([{ ...event, end: base.end }], orgs, eventSections));
+});
+
+
+test("name-and-link discoveries can omit optional facts and dates", () => {
+  const minimal = { ...base };
+  for (const key of ["start", "end", "description", "location", "cost"]) delete minimal[key];
+  validateEventData([minimal], orgs, eventSections);
+  assert.deepEqual(eventDays(minimal), { first: null, last: null });
+  assert.equal(occursInMonth(minimal, "2026-09"), false);
+  assert.equal(occursOn(minimal, "2026-09-24"), false);
+  assert.equal(upcomingEvents([minimal], "one").length, 0);
+  assert.equal(undatedEvents([minimal], "one").length, 1);
+  assert.equal(undatedEvents([{ ...minimal, status: "draft" }], "one").length, 0);
+  assert.equal(undatedEvents([minimal], "two").length, 0);
+  assert.deepEqual(publicEvents([minimal, { ...base, id: "dated" }]).map(e => e.id), ["dated", "gathering"]);
+  for (const change of [{ title: "" }, { sourceUrl: "javascript:alert(1)" }, { end: base.end }, { allDay: true }, { dateOnly: true }]) {
+    assert.throws(() => validateEventData([{ ...minimal, ...change }], orgs, eventSections));
+  }
+});
+
+test("a known date without a time is not described as an all-day event", () => {
+  const event = { ...base, start: "2026-10-04", dateOnly: true };
+  delete event.end;
+  validateEventData([event], orgs, eventSections);
+  assert.equal(eventTime(event), "Time to be announced");
+  assert.equal(occursOn(event, "2026-10-04"), true);
+  assert.equal(occursOn(event, "2026-10-05"), false);
+  assert.equal(upcomingEvents([event], "one", "2026-10-04T23:00:00-07:00").length, 1);
+  assert.equal(upcomingEvents([event], "one", "2026-10-05T00:00:00-07:00").length, 0);
+  for (const change of [{ start: "2026-02-30" }, { allDay: true }, { end: "2026-10-04" }, { end: base.end }]) {
+    assert.throws(() => validateEventData([{ ...event, ...change }], orgs, eventSections));
+  }
 });

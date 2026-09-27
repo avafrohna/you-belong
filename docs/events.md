@@ -60,6 +60,7 @@ URLs and dates with information checked against the organizer's source:
   Cancelled entries remain labelled and link to the external source for updates.
 - Do not publish recurring schedules or generate repeated occurrences. Add only individually announced, reviewed dates.
 - Timed events require a confirmed start with an explicit UTC offset. Omit `end` if the organizer does not publish it; the UI says “End time not listed” and shows it on its start date only. Start-only events leave profile lists after that San Diego day. Never infer duration from a film runtime.
+- If the source gives a non-clock ending such as “until sunset,” preserve it in `endTimeNote` and omit `end`. This is display text, not an estimated timestamp.
 - Timed events require explicit UTC offsets. San Diego is normally `-07:00`
   during daylight saving and `-08:00` during standard time. Use the offset
   applicable to that date; never assume the visitor's timezone is San Diego.
@@ -80,7 +81,7 @@ Date-sensitive lists initialize in the browser using San Diego time.
 
 Run `npm test` and `npm run build`, commit, and deploy to GitHub Pages.
 Build validation rejects duplicate IDs, broken organization/section references,
-invalid dates, missing source/review information, unsafe URL schemes, and real
+invalid supplied dates, missing source/review information, unsafe URL schemes, and real
 events linked to fictional organizations. Draft events have no public route.
 
 ## Future imports
@@ -103,3 +104,64 @@ When real source websites are selected, implement source-specific adapters:
 
 A private editing dashboard can be added separately if editing files becomes
 inconvenient. Never put an unauthenticated public editing form on the static site.
+
+## Checking news posts and image invitations
+
+Review each organization’s News/Blog/Updates as well as Events pages. When an
+announcement embeds a flyer or invitation, inspect the image before deciding
+that the venue or timing is missing. Follow public registration links for
+additional details; do not confuse the organization’s contact address with the
+event venue. Preserve qualitative endings such as “until sunset” and refer
+visitors to the organizer for unconfirmed pricing.
+
+## Minimum information and incomplete events
+
+An event name and direct public event link are enough to save a discovery. The
+collector/editor attaches its stable ID, organization, categories, source type,
+and checked date automatically. These bookkeeping fields stay required;
+`description`, `location`, `cost`, and `end` are optional. Missing details must
+not prevent collection, and must never be invented.
+
+- No confirmed date: omit `start` and `end`, set `allDay: false`. Reviewed public
+  announcements appear on their organization profile under “Date to be announced”;
+  they do not occupy an invented day on the calendar or count as upcoming dates.
+- Date known but time missing: use `dateOnly: true`, `allDay: false`, and a
+  `YYYY-MM-DD` start. The calendar displays “Time to be announced.” This does
+  not mean an all-day event. An optional date-only end is exclusive.
+- Start time known: use the existing timestamp format with the correct Pacific
+  offset. End time, location, pricing, and description remain optional.
+- Unclear year, conflicting dates, or an old announcement: keep the discovery
+  for review; do not infer a future date from the day/month or publish a known
+  past event as “date to be announced.”
+
+Daily collection should check events, news, blogs, updates, registration links,
+and embedded invitations. New discoveries and proposed changes are separate
+from human-edited records. A collector must not overwrite manual corrections
+or re-publish an event that was dismissed, cancelled, or unpublished.
+
+## Daily discovery inbox
+
+`docs/event-discovery-inbox.json` is a research inbox, separate from the public
+event collection. It is not a working admin dashboard or a database. It starts
+empty; adding this file does not schedule a job.
+
+For each discovery, store a stable ID, `status: "draft"`, title, organization ID,
+direct event URL, discovery/check timestamps, source evidence, and any confirmed
+event fields. Leave unknown fields absent. Keep proposed edits to existing
+events in `proposedChanges` with the existing event ID and supporting source.
+Keep dismissed discoveries so later runs do not repeatedly suggest them.
+
+The `sources` list records organization ID, checked page URL, last attempt,
+last successful check, and failures or a content fingerprint when available.
+`nextOrganizationId` is a checkpoint for continuing a partial pass. A run should
+target five minutes, save before stopping, and report which sources remain
+unchecked. This time target is not a promise to cover every website daily.
+
+Prefer feeds and known event/news pages, then inspect changed announcements.
+Deduplicate by event URL plus organization/title/date; a reused listings URL
+alone cannot identify distinct events. Never infer cancellations from a failed
+fetch. Keep all public-site edits, commits, and deployments out of discovery runs.
+
+A local Codex schedule can maintain this inbox while the computer and app are
+running. A future hosted collector can instead write drafts into the same
+database used by the admin dashboard, independently of a developer's laptop.

@@ -49,6 +49,8 @@ export function monthDays(month) {
   );
 }
 export function eventDays(event) {
+  if (!event.start) return { first: null, last: null };
+  if (event.dateOnly) return { first: event.start, last: event.end ? shiftDay(event.end, -1) : event.start };
   return event.allDay
     ? { first: event.start, last: shiftDay(event.end, -1) }
     : {
@@ -60,18 +62,18 @@ export function eventDays(event) {
 }
 export function occursOn(event, day) {
   const { first, last } = eventDays(event);
-  return first <= day && last >= day;
+  return Boolean(first && first <= day && last >= day);
 }
 export function occursInMonth(event, month) {
   const { first, last } = eventDays(event);
-  return first < `${shiftMonth(month, 1)}-01` && last >= `${month}-01`;
+  return Boolean(first && first < `${shiftMonth(month, 1)}-01` && last >= `${month}-01`);
 }
 export function publicEvents(records) {
   return records
     .filter((event) => ["published", "cancelled"].includes(event.status))
     .sort(
       (a, b) =>
-        eventDays(a).first.localeCompare(eventDays(b).first) ||
+        (eventDays(a).first || "9999").localeCompare(eventDays(b).first || "9999") ||
         (a.allDay === b.allDay
           ? Date.parse(a.start) - Date.parse(b.start)
           : a.allDay
@@ -109,8 +111,10 @@ export function filterEvents(
 export function upcomingEvents(records, organizationId, now = new Date()) {
   return publicEvents(records).filter(
     (event) =>
-      event.organizationIds.includes(organizationId) &&
-      (event.allDay
+      event.organizationIds.includes(organizationId) && Boolean(event.start) &&
+      (event.dateOnly
+        ? eventDays(event).last >= sanDiegoDay(now)
+        : event.allDay
         ? event.end > sanDiegoDay(now)
         : event.end
           ? Date.parse(event.end) > new Date(now).getTime()
@@ -118,6 +122,7 @@ export function upcomingEvents(records, organizationId, now = new Date()) {
   );
 }
 export function eventTime(event) {
+  if (!event.start || event.dateOnly) return "Time to be announced";
   if (event.allDay) return "All day";
   const format = (value) =>
     new Intl.DateTimeFormat("en-US", {
@@ -127,10 +132,14 @@ export function eventTime(event) {
     }).format(new Date(value));
   return event.end
     ? `${format(event.start)} – ${format(event.end)} PT`
-    : `${format(event.start)} PT · End time not listed`;
+    : `${format(event.start)} PT · ${event.endTimeNote || "End time not listed"}`;
+}
+export function undatedEvents(records, organizationId) {
+  return publicEvents(records).filter((event) => !event.start && event.organizationIds.includes(organizationId));
 }
 export function eventDateLabel(event) {
   const { first, last } = eventDays(event);
+  if (!first) return "Date to be announced";
   return first === last
     ? dayLabel(first)
     : `${dayLabel(first)} – ${dayLabel(last)}`;
@@ -186,14 +195,22 @@ export function validateEventData(records, organizations, sections) {
       fail(`Real event records cannot use the example namespace: ${label}`);
     if (!["draft", "published", "cancelled"].includes(event.status))
       fail(`Invalid status: ${label}`);
-    if (
-      ![event.title, event.description, event.location, event.cost].every(
-        (value) => typeof value === "string" && value.trim(),
-      )
-    )
-      fail(`Missing event details: ${label}`);
+    if (typeof event.title !== "string" || !event.title.trim()) fail(`Event title required: ${label}`);
+    for (const key of ["description", "location", "cost"]) {
+      if (event[key] !== undefined && typeof event[key] !== "string") fail(`Invalid ${key}: ${label}`);
+    }
+    if (event.dateOnly !== undefined && typeof event.dateOnly !== "boolean") fail(`Invalid dateOnly: ${label}`);
     if (typeof event.allDay !== "boolean") fail(`Specify allDay: ${label}`);
-    if (event.allDay) {
+    if (event.endTimeNote !== undefined && (
+      typeof event.endTimeNote !== "string" || !event.endTimeNote.trim() ||
+      event.allDay || event.dateOnly || !event.start || event.end !== undefined
+    )) fail(`End-time notes require a timed event without an exact end: ${label}`);
+    if (event.start === undefined) {
+      if (event.end !== undefined || event.allDay || event.dateOnly) fail(`Undated events cannot have an end or date flags: ${label}`);
+    } else if (event.dateOnly) {
+      if (event.allDay || !validDay(event.start) || (event.end !== undefined && (!validDay(event.end) || event.end <= event.start)))
+        fail(`Invalid date-only event: ${label}`);
+    } else if (event.allDay) {
       if (
         !validDay(event.start) ||
         !validDay(event.end) ||

@@ -62,7 +62,7 @@
       "profileSourceUrl": "https://pathwayssd.org/",
       "eventSourceUrl": "https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/",
       "eventReviewStatus": "dated",
-      "eventReviewNote": "Party with a Purpose: October 4, 3 p.m. until sunset. Venue, ticket details and a precise end time need confirmation.",
+      "eventReviewNote": "Party with a Purpose: October 4, 3 p.m. until sunset, La Valle Coastal Club in Rancho Santa Fe. Venue verified from the invitation image; ticket pricing referred to organizer.",
       "organizationType": "Local organization",
       "editorialNote": "",
       "reviewedAt": "2026-09-25"
@@ -571,13 +571,17 @@
         "2026-10-04"
       ],
       "timeAsPublished": "3 p.m. until sunset",
-      "locationAsPublished": "Not established from readable source",
+      "locationAsPublished": "La Valle Coastal Club, 5690 Cancha de Golf, Rancho Santa Fe",
       "sourceUrl": "https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/",
-      "reviewStatus": "details-needed",
-      "reviewNotes": "Confirm venue, price and precise end time. Do not substitute an estimated sunset time.",
+      "reviewStatus": "core-details-checked",
+      "reviewNotes": "Venue confirmed by visually inspecting the front invitation image embedded in the official July 21, 2026 news post. Time remains 3 p.m. until sunset; no numerical end inferred. Public registration page did not expose pricing; refer visitors to organizer. Added to shared calendar and profile collection September 25.",
       "costAsPublished": "Not confirmed",
       "hostName": "Pathways to Citizenship",
-      "checkedAt": "2026-09-25"
+      "checkedAt": "2026-09-25",
+      "supportingSourceUrls": [
+        "https://pathwayssd.org/wp-content/uploads/2026-Party-with-a-Purpose-Invitation-front-3-732x1024.jpg",
+        "https://pathwayssd.org/wp-content/uploads/2026-Party-with-a-Purpose-invitation-back-2-731x1024.jpg"
+      ]
     },
     {
       "id": "wac-france-2026",
@@ -1112,8 +1116,9 @@
       "hpr-2026-10-11",
       "irc-taste-2026",
       "macsd-great-experiment-2026",
-      "macsd-proposition-2026"
+      "macsd-proposition-2026",
+      "pathways-party-2026"
     ],
-    "notes": "House of Palestine is represented by the House of Pacific Relations umbrella only. No recurring schedules. Calendar items link directly to external sources, without local event pages. Start-only events omit unverified end times; uncertain admission is referred to the organizer. Other event candidates remain research leads, not published records."
+    "notes": "House of Palestine is represented by the House of Pacific Relations umbrella only. No recurring schedules. Calendar items link directly to external sources, without local event pages. Start-only events omit unverified end times; uncertain admission is referred to the organizer. Other event candidates remain research leads, not published records. Pathways Party with a Purpose was added in the local revision after inspecting the invitation image; deploy with the next approved update."
   }
 }

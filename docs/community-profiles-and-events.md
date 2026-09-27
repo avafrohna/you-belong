@@ -209,7 +209,7 @@ Pathways helps immigrant families navigate citizenship and other immigration pro
 
 **Type:** Local organization.
 
-**Events:** Party with a Purpose: October 4, 3 p.m. until sunset. Venue, ticket details and a precise end time need confirmation.
+**Events:** Party with a Purpose: October 4, 3 p.m. until sunset, at La Valle Coastal Club, 5690 Cancha de Golf, Rancho Santa Fe. Venue confirmed from the embedded invitation image; ticket pricing referred to organizer. Added to the shared collection in the local revision.
 
 [Profile source](https://pathwayssd.org/) · [Event source](https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/)
 
@@ -312,7 +312,7 @@ These are **research candidates**, not published calendar records. “Core detai
 | 09-30 | [Public-charge information webinar — English](https://www.alliancesd.org/) — Alliance San Diego | 5:30 p.m.. Online. | details-needed: Dated September 24 social post embedded on the official homepage. Verify registration, timezone and end time; describe as an organizer-led information session, not legal advice from You Belong. Cost: Not confirmed. |
 | 09-30 | [Public-charge information webinar — Spanish](https://www.alliancesd.org/) — Alliance San Diego | 6:30 p.m.. Online. | details-needed: Dated September 24 social post embedded on the official homepage. Verify registration, timezone and end time; describe as an organizer-led information session, not legal advice from You Belong. Cost: Not confirmed. |
 | 10-01 | [France on the World Stage — Randy Willoughby](https://www.sdwac.org/event-6854657) — San Diego World Affairs Council | 10 a.m.–noon. Remington Club II, second floor, Rancho Bernardo; also Zoom. | core-details-checked: Advance registration required; obtain street address through organizer registration. Local venue time interpreted as America/Los_Angeles. Cost: Free. |
-| 10-04 | [Party with a Purpose](https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/) — Pathways to Citizenship | 3 p.m. until sunset. Not established from readable source. | details-needed: Confirm venue, price and precise end time. Do not substitute an estimated sunset time. Cost: Not confirmed. |
+| 10-04 | [Party with a Purpose](https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/) — Pathways to Citizenship | 3 p.m. until sunset. La Valle Coastal Club, 5690 Cancha de Golf, Rancho Santa Fe. | core-details-checked: Invitation image confirms venue. Preserve “until sunset”; do not infer a timestamp. See organizer for tickets and pricing. |
 | 10-06 | [We the People civic-engagement training — English](https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/) — Alliance San Diego | 12:00 p.m.. Online. | details-needed: Start published; end time and explicit timezone not stated in event page. Cost: Free (advertised on official homepage). |
 | 10-07 | [We the People civic-engagement training — Spanish](https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/) — Alliance San Diego | 6:00 p.m.. Online. | details-needed: Start published; end time and explicit timezone not stated in event page. Cost: Free (advertised on official homepage). |
 | 10-10 | [Beyond the Echo Chamber — dialogue workshop with OneSD](https://www.sdwac.org/event-6837761) — San Diego World Affairs Council | 10 a.m.–noon. UC San Diego Extended Studies, 8980 Villa La Jolla Drive, floor 3. | core-details-checked: Advance registration available. No price displayed in extracted registration categories; do not label free. Local venue time interpreted as America/Los_Angeles. Cost: Not confirmed. |
@@ -372,3 +372,12 @@ For automation, prefer the published Google Calendar feeds linked by SDOP, JVP a
 - Organization profiles have a prominent external website link; KARAMA also has a working film-festival program link. The previously observed KARAMA and Humanization Matters HTTPS certificate issues belong to their source websites, not You Belong.
 - Every event title and calendar event link goes straight to its external source. There are no local event detail pages or event URLs in the sitemap.
 - The earlier research file and JSON preserve discovery evidence; `publication` in the JSON identifies the exact published subset. Runtime records live in `src/data/organizations.js` and `src/data/events.js`.
+
+### Pathways correction, prepared September 25
+
+Party with a Purpose was held out of the initial deployment because the venue
+was not captured from the news post’s text. Visual inspection of its linked
+invitation confirmed the venue. The local collection now includes 11 events;
+the calendar and Pathways profile share this record and link straight to the
+official news announcement. This correction is pending publication with the
+current preview changes.

@@ -201,5 +201,26 @@ export const events = [
     "status": "published",
     "sourceType": "website",
     "verifiedAt": "2026-09-25"
+  },
+  {
+    "id": "pathways-party-2026",
+    "title": "Party with a Purpose",
+    "organizationIds": [
+      "pathways-to-citizenship"
+    ],
+    "sectionIds": [
+      "united-neighborhoods",
+      "rights-action"
+    ],
+    "sourceUrl": "https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/",
+    "description": "An evening supporting legal representation for immigrant families, with live steel drums, food and beverages, and an auction. Meet Pathways clients and connect with the community.",
+    "allDay": false,
+    "start": "2026-10-04T15:00:00-07:00",
+    "endTimeNote": "Until sunset",
+    "location": "La Valle Coastal Club, 5690 Cancha de Golf, Rancho Santa Fe",
+    "cost": "See organizer for tickets and pricing",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-25"
   }
 ];
