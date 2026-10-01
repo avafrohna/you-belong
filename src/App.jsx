@@ -207,7 +207,7 @@ function Brand({ footer = false }) {
       href="/"
       aria-label="You Belong San Diego home"
     >
-      <img src="/assets/logo-mark-white.svg" width="54" height="35" alt="" />
+      <img src="/assets/logo-badge.svg" width="68" height="68" alt="" />
       <span>
         <strong>you belong</strong>
         <small>SAN DIEGO</small>
