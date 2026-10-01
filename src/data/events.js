@@ -222,5 +222,102 @@ export const events = [
     "status": "published",
     "sourceType": "website",
     "verifiedAt": "2026-09-25"
+  },
+  {
+    "id": "discovery-9fa8e331b5278590",
+    "title": "Seeds of Healing Benefit Dinner",
+    "organizationIds": [
+      "pcrf-san-diego"
+    ],
+    "sectionIds": [
+      "global-impact"
+    ],
+    "sourceUrl": "https://pcrf1.app.neoncrm.com/forms/2026-pcrf-san-diego-seeds-of-healing-benefit-dinner-registration",
+    "description": "A benefit dinner supporting PCRF’s rehabilitation of the Pediatric Specialized Hospital in Gaza. Check-in opens at 5 p.m.; dinner and the program begin at 6 p.m.",
+    "allDay": false,
+    "start": "2026-10-17T18:00:00-07:00",
+    "end": "2026-10-17T21:00:00-07:00",
+    "location": "Four Points by Sheraton, 8110 Aero Drive, San Diego",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-30"
+  },
+  {
+    "id": "discovery-7d38610e592136e5",
+    "title": "San Diego Arab Film Festival: Who Killed Alex Odeh?",
+    "organizationIds": [
+      "karama"
+    ],
+    "sectionIds": [
+      "global-impact",
+      "united-neighborhoods"
+    ],
+    "sourceUrl": "https://www.purplepass.com/whokilledalexodeh",
+    "description": "A documentary investigating the unsolved 1985 assassination of Palestinian American community leader Alex Odeh, presented by the San Diego Arab Film Festival.",
+    "allDay": false,
+    "start": "2026-10-24T18:00:00-07:00",
+    "location": "Museum of Photographic Arts at the San Diego Museum of Art, Balboa Park",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-30"
+  },
+  {
+    "id": "discovery-0fbc7c63aa77806e",
+    "title": "San Diego Arab Film Festival: El Sett",
+    "organizationIds": [
+      "karama"
+    ],
+    "sectionIds": [
+      "global-impact",
+      "united-neighborhoods"
+    ],
+    "sourceUrl": "https://www.purplepass.com/elsett",
+    "description": "A biographical drama about legendary Egyptian singer Umm Kulthum, directed by Marwan Hamed and presented by the San Diego Arab Film Festival.",
+    "allDay": false,
+    "start": "2026-10-24T20:00:00-07:00",
+    "location": "Museum of Photographic Arts at the San Diego Museum of Art, Balboa Park",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-30"
+  },
+  {
+    "id": "discovery-92788ac0f7c196c4",
+    "title": "The International Criminal Court and Global Justice — Péter Kovács",
+    "organizationIds": [
+      "san-diego-world-affairs-council"
+    ],
+    "sectionIds": [
+      "global-impact",
+      "united-neighborhoods"
+    ],
+    "sourceUrl": "https://www.sdwac.org/event-6858503",
+    "description": "Former International Criminal Court judge Péter Kovács discusses the court, national sovereignty, and accountability, followed by a moderated Q&A. Free online program; advance registration required.",
+    "allDay": false,
+    "start": "2026-11-21T10:00:00-08:00",
+    "end": "2026-11-21T12:00:00-08:00",
+    "location": "Online via Zoom",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-30"
+  },
+  {
+    "id": "discovery-a520a824455c2fe4",
+    "title": "From Churchill to Kennedy — Joel Nelson",
+    "organizationIds": [
+      "san-diego-world-affairs-council"
+    ],
+    "sectionIds": [
+      "global-impact",
+      "united-neighborhoods"
+    ],
+    "sourceUrl": "https://www.sdwac.org/event-6815994",
+    "description": "Historian Joel Nelson explores Winston Churchill, John F. Kennedy, and the relationship between Britain and the United States.",
+    "allDay": false,
+    "start": "2026-12-12T10:00:00-08:00",
+    "end": "2026-12-12T12:00:00-08:00",
+    "location": "8980 Villa La Jolla Drive, third floor, La Jolla",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-30"
   }
 ];

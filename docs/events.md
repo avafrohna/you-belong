@@ -143,7 +143,7 @@ or re-publish an event that was dismissed, cancelled, or unpublished.
 
 `docs/event-discovery-inbox.json` is a research inbox, separate from the public
 event collection. It is not a working admin dashboard or a database. It starts
-empty; adding this file does not schedule a job.
+with retained discoveries; adding this file does not schedule a job.
 
 For each discovery, store a stable ID, `status: "draft"`, title, organization ID,
 direct event URL, discovery/check timestamps, source evidence, and any confirmed
@@ -165,3 +165,32 @@ fetch. Keep all public-site edits, commits, and deployments out of discovery run
 A local Codex schedule can maintain this inbox while the computer and app are
 running. A future hosted collector can instead write drafts into the same
 database used by the admin dashboard, independently of a developer's laptop.
+
+## Permanent review history and repeat discoveries
+
+The inbox is also the permanent review ledger. Each discovery has a
+`reviewDecision` (`pending`, `approved`, or `rejected`) and append-only
+`reviewHistory` entries containing `at`, `decision`, and `reason`. Retain source
+aliases when a registration URL changes. Keep owner corrections in
+`manualCorrections`; scrape results must never overwrite them. Rejection is
+per announced occurrence, not an automatic ban on its organization.
+
+Before proposing anything, read this ledger and the public collection. Run
+`npm run events:review -- /path/to/candidates.json` on candidate objects (one
+object or an array) to check both. `skip-rejected` must not be proposed again;
+`already-recorded` is not a new discovery. Save meaningful source changes to
+`proposedChanges` for review, without modifying approved values. A
+`review-possible-change` needs a human comparison: it may be a rescheduled event,
+an undated lead gaining a date, or a separately announced annual occurrence.
+Do not inherit the old approval or rejection for a distinct new occurrence.
+Changed titles/URLs that the helper cannot confidently match still need a manual
+duplicate check. Never replace this ledger with only the latest run's results.
+
+After an owner decision, update `reviewDecision`, append to `reviewHistory`, and
+run `npm run events:review` to regenerate `docs/event-review-log.md`. For an
+approved publication, store `publishedEventId` and update the public collection
+only within an owner-authorized publishing task. Do not treat unanswered items
+as rejected. Reopen rejected items only when the owner explicitly asks. Ordinary
+discovery runs cannot publish. General source pages may still be fetched to find
+new events, but already rejected occurrences should not be researched or offered
+again. Keep held series and uncertain leads in the coverage report.

@@ -1,9 +1,1918 @@
 {
   "version": 1,
-  "lastRunAt": null,
+  "lastRunAt": "2026-10-01T00:29:37.869128+00:00",
   "nextOrganizationId": null,
-  "sources": [],
-  "discoveries": [],
+  "sources": [
+    {
+      "organizationId": "activist-san-diego",
+      "url": "https://www.activistsandiego.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "9803d7b757c8bbe350a47f6f3889a07ef95b41f4127e4b72d0b6430b98eccd4a"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "48a56082d2578467a7725959c237cc79e9be71ce3fd07079f74302448408f7b7"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/event/we-the-people-claim-our-collective-power/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "244a279c6a1fd51049bbf217c76bf077f210ef5249e6eb4258e095882621dee0"
+    },
+    {
+      "organizationId": "border-angels",
+      "url": "https://www.borderangels.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "432b2228762b29460f367098253366329c66bdff7bdcc2ffab5e494b58d75b49"
+    },
+    {
+      "organizationId": "border-angels",
+      "url": "https://www.borderangels.org/volunteer.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "e10e12cc4e7d7469203595bee15d570bd51300138254896d3a5047c832695104"
+    },
+    {
+      "organizationId": "cair-san-diego",
+      "url": "https://ca.cair.com/sandiego/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "failure": "HTTP Error 403: Forbidden"
+    },
+    {
+      "organizationId": "cair-san-diego",
+      "url": "https://ca.cair.com/events/beyond-the-headlines/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "failure": "HTTP Error 403: Forbidden"
+    },
+    {
+      "organizationId": "heal-palestine",
+      "url": "https://www.healpalestine.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "failure": "HTTP Error 403: Forbidden"
+    },
+    {
+      "organizationId": "heal-palestine",
+      "url": "https://www.healpalestine.org/events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "failure": "HTTP Error 403: Forbidden"
+    },
+    {
+      "organizationId": "house-of-pacific-relations",
+      "url": "https://www.sdhpr.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "91767e2bf363ce565817b91a125f474be2e09bd8671aa25e186d0ea05f08f73e"
+    },
+    {
+      "organizationId": "house-of-pacific-relations",
+      "url": "https://www.sdhpr.org/lp.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "8c932273c6d2c251d91f02d7800c184898bc4b5c2d7cbb47bd6bc00b90593974"
+    },
+    {
+      "organizationId": "irc-san-diego",
+      "url": "https://www.rescue.org/united-states/san-diego-ca",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "0c98443dba12c5b014998475fae34d8c69f03281546f836779274d417b2273c4"
+    },
+    {
+      "organizationId": "irc-san-diego",
+      "url": "https://www.rescue.org/About/Taste2026",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "765f721c267b83b903efc1e01cebe9db2d4eb9b1db879154888d4f5cc332c1ee"
+    },
+    {
+      "organizationId": "jvp-san-diego",
+      "url": "https://www.jvpsandiego.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "a96ebdc2a285426c3154b7b9c8d8a70411c4c97a6ba16a77d9fcaf638f840495"
+    },
+    {
+      "organizationId": "jvp-san-diego",
+      "url": "https://www.jvpsandiego.org/events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "841c91ac14fa8a0c820bf01423ce06acf77cee4c2b75a997db3e862ea066b7f5"
+    },
+    {
+      "organizationId": "just-education-collective",
+      "url": "https://www.justeducationcollective.com/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "9aa9f65519130b046fd5c566704534539b855a46477059c81c2b598edc7f3e63"
+    },
+    {
+      "organizationId": "just-education-collective",
+      "url": "https://www.justeducationcollective.com/events",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "b11297917aed4c11e07484410db6fa57ef63677c31164085833aaf10b5ebbe3c"
+    },
+    {
+      "organizationId": "the-justice-workshop",
+      "url": "https://thejusticeworkshop.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "0f61672966b430e3aad1e1d3a72d53d33e8abc449d6b17c949ac964b0fec19e1"
+    },
+    {
+      "organizationId": "the-justice-workshop",
+      "url": "https://www.mobilize.us/thejusticeworkshop/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "ce9fd2ec48eae75cf914913e5b44c56a75f34ff0921f17a6cd6093b55897e40a"
+    },
+    {
+      "organizationId": "karama",
+      "url": "https://karamanow.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "29aafc66bc895b516eb26472a633965bc9fd50df70497d4eba7c5110471ff6ff"
+    },
+    {
+      "organizationId": "karama",
+      "url": "https://sandiegoaff.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "0e2bdaace80cfc267b1ac818dbded36717262cd860d51bb97f6cf51e798362c9"
+    },
+    {
+      "organizationId": "kind-hearts-san-diego",
+      "url": "https://www.kindheartssd.org/home",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "14a169e144e0e4af44aa1a3d6065a5370139388538b2f1038197482ae0b10c37"
+    },
+    {
+      "organizationId": "kind-hearts-san-diego",
+      "url": "https://www.kindheartssd.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "f73e3eec2200a5e5961d5f469f4a3143b55b72957c252c227bf9284e257672e3"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://mediaartscenter.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "7f6a4fec04a2b9f66e865aa944c9eeae37830d3cc67ea777335ab853b7da047f"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "d8db416938e168615467337306d9a0e954106cef7c81e84717523e95fdef812c"
+    },
+    {
+      "organizationId": "pcrf-san-diego",
+      "url": "https://www.pcrf.net/team/san-diego.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "8c06aaec8171dba5087184d4e6e85b37a0deb2be9caa7efb4957ece48c2003a2"
+    },
+    {
+      "organizationId": "pcrf-san-diego",
+      "url": "https://www.pcrf.net/get-involved",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "36f6b268dc8d2e0c11819c64c16de92fc1eacdcff85c869aecf803c6f85b3619"
+    },
+    {
+      "organizationId": "pana",
+      "url": "https://www.panasd.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "fcebb6c46ad7bab129db13878de8761235831ea6db133153f235045f45b71be6"
+    },
+    {
+      "organizationId": "pana",
+      "url": "https://www.panasd.org/newsletter/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "ea2ebf52c0094832d005e6becfa7d20a5a306959cf482ffb9f9715431f9ac4fd"
+    },
+    {
+      "organizationId": "pathways-to-citizenship",
+      "url": "https://pathwayssd.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "failure": "HTTP Error 403: Forbidden"
+    },
+    {
+      "organizationId": "pathways-to-citizenship",
+      "url": "https://pathwayssd.org/join-us-at-party-with-a-purpose-on-sunday-october-4th-from-3pm-until-sunset/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "failure": "HTTP Error 403: Forbidden"
+    },
+    {
+      "organizationId": "san-diego-foundation",
+      "url": "https://www.sdfoundation.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "d903e1fbdb5c8fbe45f5fc08c8168eab30b60969ec757963316e6cab95854031"
+    },
+    {
+      "organizationId": "san-diego-foundation",
+      "url": "https://www.sdfoundation.org/news-events/events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "9fda9625027acdc63c9855923724197bf21f1754e419ca76d7f8d6bde0000a46"
+    },
+    {
+      "organizationId": "san-diego-sister-cities",
+      "url": "https://www.sandisca.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "7fe86fa26f74d6dcc81f5f63ad86e3742ffb20aac7fdc3047756c2fe3d97e51b"
+    },
+    {
+      "organizationId": "san-diego-sister-cities",
+      "url": "https://www.sandisca.org/events-calendar/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "db5409afd58d63126fb523852b815ce80f9e13c5b120e542576100b4dc12ca69"
+    },
+    {
+      "organizationId": "san-diego-organizing-project",
+      "url": "https://sdop.net/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "c9d7083c2860513904ed0635aa20e51c1267b25555f66326e86eceb1cf0dcec1"
+    },
+    {
+      "organizationId": "san-diego-organizing-project",
+      "url": "https://sdop.net/calendar",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "06f488c0b381dde4422f6e6dc4f4d4972d1dccc7d4738986506f02f4a3a4aaeb"
+    },
+    {
+      "organizationId": "san-diego-refugee-communities-coalition",
+      "url": "https://sandiegorefugeecommunities.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "3258995c481446986ff7bd0b96ae7d3567fdc790815ab017b4f887e7cee61192"
+    },
+    {
+      "organizationId": "san-diego-refugee-communities-coalition",
+      "url": "https://sandiegorefugeecommunities.org/news-stories/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "ae75d0ae05f2ad30cb5ab8c3854407cc2766bd0a9b0f9d0163f3def70c17a3ab"
+    },
+    {
+      "organizationId": "san-diego-world-affairs-council",
+      "url": "https://www.sdwac.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "c78edf67e7887b800f6b7437cd6a1d7c7ce3f3c2d96d3f309ed5f51d7c9a3a71"
+    },
+    {
+      "organizationId": "activist-san-diego",
+      "url": "https://www.activistsandiego.org/blog/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "c9f6386380f0b1758d56af90c0c8b4cfdb24084bbbace7fe41a320f9e417121e"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/news-resources/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "5e818065a1dbee18b70061599d38d263c4683b9f11d8bc882ce568449e2efb13"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/news/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "8e95930b865636aeb849214d9c2f0f06a06289f5929bb45ff22d1989e2b45757"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "50d8357e8723c6968a27f9bc5df4849eabcdf2f78f87b27b340b5437d02360a4"
+    },
+    {
+      "organizationId": "border-angels",
+      "url": "https://www.borderangels.org/news-and-updates.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "3f3f36ace5e1e8e062c2d0edc07ff90432365a6c6dc717a4e93efff539ef14cd"
+    },
+    {
+      "organizationId": "border-angels",
+      "url": "https://www.borderangels.org/news.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "35c8655635f3a171f96c72fbfb4da02f7f8804dba3cae437fa0a003d62c6bc40"
+    },
+    {
+      "organizationId": "house-of-pacific-relations",
+      "url": "https://www.sdhpr.org/hon-resv.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "4ca71503b7653d6af0947ce60fe6a9d2723c18721570bf2e820ac54fbf6b786f"
+    },
+    {
+      "organizationId": "irc-san-diego",
+      "url": "https://www.rescue.org/latest",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "68696d44136fafaa207593c45d450ebed1cdcf112c4802c45ba7b55a9ad6a60e"
+    },
+    {
+      "organizationId": "irc-san-diego",
+      "url": "https://www.rescue.org/hopeful-news",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "11b5c73301e7e95c04a1773107ff30abbac9898bb1a29982dd59dba2442df84a"
+    },
+    {
+      "organizationId": "irc-san-diego",
+      "url": "https://www.rescue.org/us-news",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "afa005c4e2d3ee911dc0366187c42701591b5a983ef28a2284f98cc56301d947"
+    },
+    {
+      "organizationId": "jvp-san-diego",
+      "url": "https://www.jvpsandiego.org/teach-in-events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "5f58da22d22e8ac4912c9d327f34ddc994f3b1fb927772d15cd720b6356d5831"
+    },
+    {
+      "organizationId": "just-education-collective",
+      "url": "https://www.justeducationcollective.com/newsletters",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "6aff588a35ef150a429236b560094eecf6ea34f106e5035246230ac9b4afda6c"
+    },
+    {
+      "organizationId": "just-education-collective",
+      "url": "https://www.justeducationcollective.com/resources-events-1",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "b11297917aed4c11e07484410db6fa57ef63677c31164085833aaf10b5ebbe3c"
+    },
+    {
+      "organizationId": "pcrf-san-diego",
+      "url": "https://www.pcrf.net/humanitarian-blog",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "d4f87fee8a55973a94b52b3aad6b1a8a3212024bb68359f2dbb21e57fd6809b6"
+    },
+    {
+      "organizationId": "pcrf-san-diego",
+      "url": "https://www.pcrf.net/pcrf-in-the-news/chapters-news",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "c2eabdcd6cf677bddc53d44d1fb5d2edbdc010d863a04d2f5076e78cd53d5436"
+    },
+    {
+      "organizationId": "pcrf-san-diego",
+      "url": "https://www.pcrf.net/team/cafe-palestine-pcrf-switzerland-event.html",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "11b8b0a90b34138d50702cf3d8cb28838bc009c8fb93b564f9dcd4689dbabd13"
+    },
+    {
+      "organizationId": "san-diego-foundation",
+      "url": "https://www.sdfoundation.org/nonprofits/nonprofit-newsletter/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "2b36c02c39d4c151e2b0e672b934cf611cb971bf0e85e2a2e0d0aaf4dc3ee807"
+    },
+    {
+      "organizationId": "san-diego-foundation",
+      "url": "https://www.sdfoundation.org/news-events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "443a55ee9f91256f642c7bc4ce23078ab50a71a336d47f59ff5b402ad7a7b3a8"
+    },
+    {
+      "organizationId": "san-diego-foundation",
+      "url": "https://www.sdfoundation.org/news-events/sdf-news/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "fad5d1f99f4433e9d8e0b2c2a645f90c6ca3ecda29520c2af27e832426d468bb"
+    },
+    {
+      "organizationId": "san-diego-sister-cities",
+      "url": "https://www.sandisca.org/news/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "fec24dcb948eaaa4a3a4454453b4a1a9d074aef6039031033d464a9dbc2e748a"
+    },
+    {
+      "organizationId": "san-diego-sister-cities",
+      "url": "https://www.sandisca.org/events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "37856ca13bc9e30f81e35208ad759571568ae33edd65aac3f96a50e88dbede51"
+    },
+    {
+      "organizationId": "san-diego-sister-cities",
+      "url": "https://www.sandisca.org/category/news/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "8697dbed668d9fbcd8f4b9a3feba58345900b1ae5a6d81e9e65de29549e4ce67"
+    },
+    {
+      "organizationId": "san-diego-organizing-project",
+      "url": "https://sdop.net/blog",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "ecfc126ed78927a0df77cbb18f27e164c1446f52390e98dcdf8e4671e835fb52"
+    },
+    {
+      "organizationId": "san-diego-refugee-communities-coalition",
+      "url": "https://sandiegorefugeecommunities.org/category/news/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "9876824ebbcfb402d4405e70abe070325cf588a12a920476d124f75c523fa26e"
+    },
+    {
+      "organizationId": "san-diego-world-affairs-council",
+      "url": "https://www.sdwac.org/Upcoming-Events",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "fd0a120641e1b85c33750a3690f4fae4ae8329f11b3767afd7ff435c7cfd99bd"
+    },
+    {
+      "organizationId": "san-diego-world-affairs-council",
+      "url": "https://www.sdwac.org/event-6854657",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "61392c81a48bf2e2798072fdf1a1aac9524304eaca31c88b90acb0ca3bf28728"
+    },
+    {
+      "organizationId": "san-diego-world-affairs-council",
+      "url": "https://www.sdwac.org/programs#dss",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "6fc07493a8a3e1507b709d5b057c13013ccb28191ef2c10dd545109aecabffdb"
+    },
+    {
+      "organizationId": "san-diego-world-affairs-council",
+      "url": "https://www.sdwac.org/event-6858503",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "99f05cd71938ca370ab0e1334e3ba462a0dc12ba8002d630d79fec22d60d718d"
+    },
+    {
+      "organizationId": "san-diego-world-affairs-council",
+      "url": "https://www.sdwac.org/event-6815994",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "a1f714a77f085c3933d0fa1393faec91a06bb19f8b07bfed6bbf6b02dcd2cd16"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/event/know-your-rights-literature-drops/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "fb726298901e25e400d1ec934f7337f68e815331ba5064fa4b2f3cf5553f9a2a"
+    },
+    {
+      "organizationId": "alliance-san-diego",
+      "url": "https://www.alliancesd.org/event/webinar-new-public-charge-rule-does-it-affect-you/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "502e30337510af6f9c14fc9c93eebb5ceefef20360d5bb73d25631a4d6ffd5a2"
+    },
+    {
+      "organizationId": "pcrf-san-diego",
+      "url": "https://pcrf1.app.neoncrm.com/nx/portal/event-detail?event=2543&",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "a9279b9202e0dcd3af1dd17b11a71459c963624f2f08688199460174c7e4ab2b"
+    },
+    {
+      "organizationId": "karama",
+      "url": "https://www.purplepass.com/elsett",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "f1f44d827d913bab183f4171827344ea9b7ee249859d5ab82cde0e92f4652e3c"
+    },
+    {
+      "organizationId": "karama",
+      "url": "https://www.purplepass.com/whokilledalexodeh",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "cb6595ffe3860759fadb16ee31bae7e54bc1e4ba26b562d499773034650a5548"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/if-i-go-will-they-miss-me/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "56d95f9a0eff60f128baa540a4437d45144850ef511e57577f2d2a12755cf69a"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/the-history-of-concrete/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "bae69b06f6926ae914bf1ed35a4f7f77c6a87259ede9a445e6dac9b02ab8c674"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/the-incomer/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "164d7c6815d699aedd33c19144a32ebddd7a783465f1eb8b57c03038894fa8d5"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/unzipped-4k-restoration/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "54e9d1be5b309e1b7c329b87d24a4e6be66cc70982f8ac69c1443a9311cbcfb5"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-video-hells-highway-the-true-story-of-highway-safety-films-2k-restoration/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "7279526e64fa9a1c48cd4ac177d18b480b474e8ab2e26923d49fb4650b293529"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/zoe-presents-memorex-rexsexex-y-mas/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "c1b4151eab3c21ca0cbc3c22d4ac257691de39c30ebcfdbbfabac85a370e0a1d"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-the-addiction/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "50e2393153b7ece6209be51245f94ec0480b500ad02854c430667a5a45a1940f"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/naza/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "55d684c86b0529836361354e1cf671171cb014ffffc751f2fd1646de93d5d607"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/the-scout/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "bbcd961a2d2d500b35c7450a220324dd183f4013fb18d20174258c0c9a084b2d"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/atonement/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "88dbfc38b74baa725674516fb150db5e83e051a2a61882359cae4848f01bb8a3"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-persona/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "9a5f07aaad9de6ea4a84ec346c5b8d6a0798cfa4c7f2934df66d71fffb79f8b1"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-begotten-4k-restoration/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "62df44c67e7fe252dbdc971d6c10f51df5703ed9f8cb351c2db36b392b01b10e"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-the-fly/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "a5c5a84ae852c79c86c35db3b53d144e94d1c79be2553d4cc3d913f1c0ca0e39"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-invasion-of-the-body-snatchers/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "49ea8c8218f3f5f0e1ab1d32598950c7a32b4e2fad94920e4aac76ad538c6bd6"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-964-pinocchio/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "9bcf8a839f577af5feabb7e93300ccd5dd08d8718a025de1cf0e4f0ffa17326f"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-screen-gems-house-hausu/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "4f8e37c918b25fcfc6d9cd983b71441e91aafb6c3ff85f0ca0ca25ecb537253c"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/film-geeks-san-diego-bone-tomahawk/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "42f684ae151c78eddc8def556fe0bc98744818ad92d275f887676547213be710"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-video-gandahar-4k-restoration/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "bd0a86269ec0702ed1f861b9cb646b12811a738c8d64d797c85ba6e2c159347f"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/who-moves-america/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "e37f7b7a8b38e76f03aad312c62bd69ba089716260de7817a62df01b25f234eb"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/traces-of-home/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "08addfc99150ea53af1710f8d70a7c6837f666237438a6e731a00c01ea44cad9"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/chronovisor/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "c3a8d4641438fc9793e04a32386d1a971a98303c8daa89b0ac5221066f075355"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/tenzing/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "cb7b6aec83082015ca2f73004508e3573f8a36d0c5c5f0f1204e1fea19de80f9"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/burke-revival-film-and-discussion-series-taxi-driver/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "463bb2f834d88484f483841330f317cb9774f96c493faa36ba992ce75ac94cd2"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/possible-love/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "04ee8669281016888adef3934a7e4979a40ba075487323e4e47dbfbef315cca5"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/my-brothers-wedding-4k-restoration/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "b2b2469eb43bdc783460766587f815bc4401a80e86c7d129835a9dd78c6ec6fe"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/the-great-experiment-filmmaker-intro-qa/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "280f5b74396f7102d07e73adc78b49fd32848b7a71aeaf003c052da452d31594"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/particle-fm-presents-the-yellow-magic-orchestra-mixtape-an-original-video-voyage/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "bd9fdf5d2fa0152a18da70c36883af17d9b20a9075ac3bdebab4f2dea59c2844"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/dgc-video-the-legend-of-the-stardust-brothers/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "eebd39b6e55d82e89e11747b756ebce81bb2c3845ba3a63a6e66156b48bdf80e"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/german-currents-kino-fatherland/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "3a9ee7f3ec9106bccc236d06cd113b1fe04b43a68bc3b8b59a6ae50397715b44"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/film-geeks-san-diego-the-proposition/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "b72a6b325a776b130db363d78605b50bfe65da4bb06e3edef560af1f411ffeb1"
+    },
+    {
+      "organizationId": "media-arts-center-san-diego",
+      "url": "https://digitalgym.org/movies/film-geeks-san-diego-ride-the-high-country/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "httpStatus": 200,
+      "contentFingerprint": "5a84116e0403811b2dee8b40bb43f5f7367edcda1bf67a8a52f44dbcf82cb584"
+    },
+    {
+      "organizationId": "cair-san-diego",
+      "url": "https://ca.cair.com/sandiego/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "web reader fallback after HTTP 403",
+      "note": "No new dated local event on reviewed homepage/news excerpts."
+    },
+    {
+      "organizationId": "heal-palestine",
+      "url": "https://www.healpalestine.org/events/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "web reader fallback after HTTP 403",
+      "note": "Upcoming listings were Charlotte and Sarasota, not San Diego."
+    },
+    {
+      "organizationId": "pathways-to-citizenship",
+      "url": "https://pathwayssd.org/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "web reader fallback after HTTP 403",
+      "note": "October 4 Party with a Purpose is already on our calendar."
+    },
+    {
+      "organizationId": "the-justice-workshop",
+      "url": "https://www.mobilize.us/thejusticeworkshop/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "rendered browser",
+      "note": "Repeated phone-bank, tabling, volunteer-meeting and monthly-social listings; not expanded."
+    },
+    {
+      "organizationId": "san-diego-sister-cities",
+      "url": "https://www.sandisca.org/events-calendar/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "rendered browser",
+      "note": "Calendar displayed Sept 27 through Dec 26 without event cards."
+    },
+    {
+      "organizationId": "san-diego-organizing-project",
+      "url": "https://sdop.net/calendar",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "embedded public ICS feed",
+      "note": "48 VEVENTs, no explicitly starting October–December 2026 entries; recurring rules not expanded."
+    },
+    {
+      "organizationId": "activist-san-diego",
+      "url": "https://www.activistsandiego.org/blog/",
+      "lastAttemptAt": "2026-10-01T00:29:37.869128+00:00",
+      "lastSuccessfulCheckAt": "2026-10-01T00:29:37.869128+00:00",
+      "method": "linked public Google Calendar ICS",
+      "note": "659 VEVENTs; 16 non-recurring October–December entries. Two repeated Art and Law workshop-series sessions held; 14 others need host checks."
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "discovery-9fa8e331b5278590",
+      "status": "published",
+      "title": "Seeds of Healing Benefit Dinner",
+      "organizationIds": [
+        "pcrf-san-diego"
+      ],
+      "sectionIds": [
+        "global-impact"
+      ],
+      "sourceUrl": "https://pcrf1.app.neoncrm.com/forms/2026-pcrf-san-diego-seeds-of-healing-benefit-dinner-registration",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Official flyer: Saturday October 17, 2026; registration 5 p.m., dinner/program 6 p.m. Official registration form confirms Oct 17, 5–9 p.m. at Four Points, 8110 Aero Drive.",
+      "reviewNotes": "Use 6 p.m. dinner/program start, not the erroneous listing time. Check-in is 5 p.m.; registration form supplies 9 p.m. end.",
+      "evidenceUrl": "https://www.pcrf.net/get-involved",
+      "reviewGroup": "recommended",
+      "start": "2026-10-17T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "approved",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "approved",
+          "reason": "Owner explicitly approved publication in chat."
+        }
+      ],
+      "publishedEventId": "discovery-9fa8e331b5278590",
+      "description": "A benefit dinner supporting PCRF’s rehabilitation of the Pediatric Specialized Hospital in Gaza. Check-in opens at 5 p.m.; dinner and the program begin at 6 p.m.",
+      "sourceAliases": [
+        "https://pcrf1.app.neoncrm.com/nx/portal/event-detail?event=2543"
+      ],
+      "end": "2026-10-17T21:00:00-07:00",
+      "location": "Four Points by Sheraton, 8110 Aero Drive, San Diego",
+      "manualCorrections": {
+        "start": "2026-10-17T18:00:00-07:00",
+        "sourceUrl": "https://pcrf1.app.neoncrm.com/forms/2026-pcrf-san-diego-seeds-of-healing-benefit-dinner-registration",
+        "reason": "Owner correction verified against the flyer and linked registration form.",
+        "at": "2026-10-01T02:13:40.155Z"
+      }
+    },
+    {
+      "id": "discovery-7d38610e592136e5",
+      "status": "published",
+      "title": "San Diego Arab Film Festival: Who Killed Alex Odeh?",
+      "organizationIds": [
+        "karama"
+      ],
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://www.purplepass.com/whokilledalexodeh",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Festival website lists October 24, 2026; linked ticket page title confirms start time.",
+      "reviewNotes": "Use working ticket URL; one link on festival website is misspelled.",
+      "evidenceUrl": "https://sandiegoaff.org/",
+      "reviewGroup": "recommended",
+      "start": "2026-10-24T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "approved",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "approved",
+          "reason": "Owner explicitly approved publication in chat."
+        }
+      ],
+      "publishedEventId": "discovery-7d38610e592136e5",
+      "description": "A documentary investigating the unsolved 1985 assassination of Palestinian American community leader Alex Odeh, presented by the San Diego Arab Film Festival.",
+      "location": "Museum of Photographic Arts at the San Diego Museum of Art, Balboa Park"
+    },
+    {
+      "id": "discovery-0fbc7c63aa77806e",
+      "status": "published",
+      "title": "San Diego Arab Film Festival: El Sett",
+      "organizationIds": [
+        "karama"
+      ],
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://www.purplepass.com/elsett",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Festival website lists October 24, 2026; linked ticket page title confirms start time.",
+      "reviewNotes": "Use working ticket URL; one link on festival website is misspelled.",
+      "evidenceUrl": "https://sandiegoaff.org/",
+      "reviewGroup": "recommended",
+      "start": "2026-10-24T20:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "approved",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "approved",
+          "reason": "Owner explicitly approved publication in chat."
+        }
+      ],
+      "publishedEventId": "discovery-0fbc7c63aa77806e",
+      "description": "A biographical drama about legendary Egyptian singer Umm Kulthum, directed by Marwan Hamed and presented by the San Diego Arab Film Festival.",
+      "location": "Museum of Photographic Arts at the San Diego Museum of Art, Balboa Park"
+    },
+    {
+      "id": "discovery-92788ac0f7c196c4",
+      "status": "published",
+      "title": "The International Criminal Court and Global Justice — Péter Kovács",
+      "organizationIds": [
+        "san-diego-world-affairs-council"
+      ],
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://www.sdwac.org/event-6858503",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Event page: November 21, 2026, 10:00 AM–12:00 PM; Zoom.",
+      "reviewNotes": "",
+      "end": "2026-11-21T12:00:00-08:00",
+      "location": "Online via Zoom",
+      "reviewGroup": "recommended",
+      "start": "2026-11-21T10:00:00-08:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "approved",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "approved",
+          "reason": "Owner explicitly approved publication in chat."
+        }
+      ],
+      "publishedEventId": "discovery-92788ac0f7c196c4",
+      "description": "Former International Criminal Court judge Péter Kovács discusses the court, national sovereignty, and accountability, followed by a moderated Q&A. Free online program; advance registration required."
+    },
+    {
+      "id": "discovery-a520a824455c2fe4",
+      "status": "published",
+      "title": "From Churchill to Kennedy — Joel Nelson",
+      "organizationIds": [
+        "san-diego-world-affairs-council"
+      ],
+      "sectionIds": [
+        "global-impact",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://www.sdwac.org/event-6815994",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Event page: December 12, 2026, 10:00 AM–12:00 PM.",
+      "reviewNotes": "December addition, beyond the main October–November review window.",
+      "end": "2026-12-12T12:00:00-08:00",
+      "location": "8980 Villa La Jolla Drive, third floor, La Jolla",
+      "reviewGroup": "recommended",
+      "start": "2026-12-12T10:00:00-08:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "approved",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "approved",
+          "reason": "Owner explicitly approved publication in chat."
+        }
+      ],
+      "publishedEventId": "discovery-a520a824455c2fe4",
+      "description": "Historian Joel Nelson explores Winston Churchill, John F. Kennedy, and the relationship between Britain and the United States."
+    },
+    {
+      "id": "discovery-399633a49bb2ddb0",
+      "status": "draft",
+      "title": "Unzipped — introduction by Olga Cecilia Sanchez",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/unzipped-4k-restoration/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-02T17:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "A fashion documentary following designer Isaac Mizrahi as he prepares his 1994 collection. This screening includes an introduction by local designer Olga Cecilia Sanchez."
+    },
+    {
+      "id": "discovery-b0d8708720b2ae8c",
+      "status": "draft",
+      "title": "DGC Video: Hell’s Highway",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-video-hells-highway-the-true-story-of-highway-safety-films-2k-restoration/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-06T19:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "A documentary about the shocking driver-education films made from 1959 to 1979 and the people behind them. Includes graphic footage of real crashes."
+    },
+    {
+      "id": "discovery-9d423846ec330e10",
+      "status": "draft",
+      "title": "Zoé Presents: Memorex + Rexsexex y Más",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/zoe-presents-memorex-rexsexex-y-mas/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-07T19:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "A concert-film program featuring Mexican rock band Zoé and its large-scale Mexico City performances. Spanish with English subtitles."
+    },
+    {
+      "id": "discovery-3accf370bbb53113",
+      "status": "draft",
+      "title": "DGC Screen Gems: The Addiction",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-screen-gems-the-addiction/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-08T19:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "Abel Ferrara’s black-and-white vampire drama about a New York graduate student whose transformation becomes a study of addiction. Stars Lili Taylor and Christopher Walken."
+    },
+    {
+      "id": "discovery-df83a93aa0fdf970",
+      "status": "draft",
+      "title": "DGC Screen Gems: Begotten",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-screen-gems-begotten-4k-restoration/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-09T21:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "An experimental black-and-white horror film presenting an abstract creation myth about death and rebirth. Surreal and graphically violent."
+    },
+    {
+      "id": "discovery-7a980feb92fe5a5a",
+      "status": "draft",
+      "title": "DGC Screen Gems: The Fly",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-screen-gems-the-fly/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-10T18:30:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "David Cronenberg’s science-fiction horror film about a scientist whose teleportation experiment merges him with a fly. Stars Jeff Goldblum and Geena Davis; graphic body horror."
+    },
+    {
+      "id": "discovery-b2193748802c39a8",
+      "status": "draft",
+      "title": "DGC Screen Gems: Invasion of the Body Snatchers",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-screen-gems-invasion-of-the-body-snatchers/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-10T21:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "The 1978 science-fiction thriller in which San Francisco residents are replaced by emotionless alien doubles. Stars Donald Sutherland, Leonard Nimoy, and Jeff Goldblum."
+    },
+    {
+      "id": "discovery-ee2b89b65a16bfb2",
+      "status": "draft",
+      "title": "Film Geeks San Diego: Bone Tomahawk",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/film-geeks-san-diego-bone-tomahawk/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-11T12:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "A Western-horror rescue story starring Kurt Russell as a sheriff searching for kidnapped townspeople. Includes an exclusive filmmaker video introduction and very graphic violence."
+    },
+    {
+      "id": "discovery-ad4423f97c591344",
+      "status": "draft",
+      "title": "DGC Video: Gandahar",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-video-gandahar-4k-restoration/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-13T19:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "René Laloux’s French animated science-fiction fantasy about a peaceful society attacked by a mechanical army. Surreal creatures, strange technology, and a quest to save the civilization."
+    },
+    {
+      "id": "discovery-71660fa179009f36",
+      "status": "draft",
+      "title": "Taxi Driver — film and discussion",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/burke-revival-film-and-discussion-series-taxi-driver/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-22T19:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "Martin Scorsese’s drama about an isolated New York taxi driver descending into obsession and violence. Followed by a guided discussion with Rev. Scott Young through the Burke film series."
+    },
+    {
+      "id": "discovery-d3aff9c49638f0e5",
+      "status": "draft",
+      "title": "DGC Video: The Legend of the Stardust Brothers",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/dgc-video-the-legend-of-the-stardust-brothers/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-10-27T19:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "A Japanese cult musical about a punk rocker and a new-wave singer transformed into a pop duo by a shady music mogul. A surreal satire of fame and the music industry."
+    },
+    {
+      "id": "discovery-33462548c244f5cc",
+      "status": "draft",
+      "title": "Film Geeks San Diego: Ride the High Country",
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods",
+        "rights-action"
+      ],
+      "sourceUrl": "https://digitalgym.org/movies/film-geeks-san-diego-ride-the-high-country/",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Individual film page lists this dated program and time.",
+      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewGroup": "arts-options",
+      "start": "2026-12-06T12:00:00-08:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ],
+      "description": "Sam Peckinpah’s classic Western about an aging former soldier escorting gold while his partner plots a betrayal. A story of loyalty, honor, and growing older."
+    },
+    {
+      "id": "discovery-562295504d44adf1",
+      "status": "draft",
+      "title": "Emergency Food Drive",
+      "organizationIds": [
+        "kind-hearts-san-diego"
+      ],
+      "sectionIds": [
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://www.kindheartssd.org/event-details/emergency-food-drive",
+      "sourceType": "website",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Official upcoming-events page has the title and detail link; date/time and location are TBD.",
+      "reviewNotes": "Retain name and link. Confirm currency and a date before positioning it on the calendar.",
+      "reviewGroup": "needs-date",
+      "verifiedAt": "2026-09-30",
+      "allDay": false,
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-b56308f567192cbe",
+      "status": "draft",
+      "title": "Día de Muertos Procession from Centro Cultural de la Raza to Sherman Heights Community Center",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=MXB1NXNjdjNxdXYwYmUzbDNubjZxYnNjdTcgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-11-02T14:00:00-08:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-e2a4a173a05201c9",
+      "status": "draft",
+      "title": "Dorothy's Depot a Queer Makers Market",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=MWhmY2RiaGJsOWYwYW1nbG4xODdkZTV0azggYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-03T12:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-c1a91ec7c20e6484",
+      "status": "draft",
+      "title": "11th Annual Día de Muertos Celebration.",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=NzlncDY0ZjJ2b3E4czdhMnFxZ3MzN3V0bDcgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-30T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-1cece506315d93fc",
+      "status": "draft",
+      "title": "A Climate Town Hall",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=N2JqM2Q4azNmcTRoYWxkdTU4dmVobjRzMWwgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-02T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-9070c3b3f9ec7a1b",
+      "status": "draft",
+      "title": "Saving Walden's World: Documentary Screen",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=MzdoMTRldWppcGRmc2V1ZjlvOHRoOTd2ZGsgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-02T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-4e490128941c4fb9",
+      "status": "draft",
+      "title": "March for Palestine",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=N3NuNzl0YjM0am9iZmplZG5qMGM2c2djNHUgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-10T15:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-2754e1c06cb70d79",
+      "status": "draft",
+      "title": "Paddle Palooza Pickleball for a Purpose",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=NW1pcDc5YTc4dTNoc2UxOGFiamkzcnE3MzggYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-17T14:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-28d8301ce93f50c8",
+      "status": "draft",
+      "title": "Chalk the Walk",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=MW1sMG84OGgxaTgzcnI1OTVydDAzMm40NDIgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-03T16:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-4ddc46e5395c445f",
+      "status": "draft",
+      "title": "Community Gathering - Potluck",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=NW92OG5jc3UzaHJzb2xyajl1ZGptZTJidXIgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-11T14:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-bf4f6dbfcd6e2c4b",
+      "status": "draft",
+      "title": "Documentary Screening Fundraiser: No Más Bebés",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=MGNjaDUyZXBnYmR1ZXA3dGFkcWE4a25rYmogYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-10T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-fec1163cb7a6d777",
+      "status": "draft",
+      "title": "Fandango at Centro",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=MmlybXQyOG5pNDdhZ3FwMWtuZGwxZzQ0NWcgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-10T18:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-4e4b6227c6a8efec",
+      "status": "draft",
+      "title": "The Future of Public Power in San Diego",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=NGYxZW81ZDc4bmE1Ymo3dHA3OGdyOTVrYWUgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-04T10:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-35e916be117db3ba",
+      "status": "draft",
+      "title": "Chollas Lake Park Cleanup and Storytime",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=N2FiOXRpajUwYTlnaXJrZDhraDlybmI1bGggYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-03T10:00:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    },
+    {
+      "id": "discovery-d0a93c4e98c45c08",
+      "status": "draft",
+      "title": "Black Panther Day: Disaster and Emergency Preparedness Workshop",
+      "organizationIds": [
+        "activist-san-diego"
+      ],
+      "sectionIds": [
+        "rights-action",
+        "united-neighborhoods"
+      ],
+      "sourceUrl": "https://calendar.google.com/calendar/event?eid=Mml2ZGlpNjcxdW1kc3YwczBndXN1NHU0YTUgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles",
+      "sourceType": "feed",
+      "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
+      "checkedAt": "2026-10-01T00:29:37.869128+00:00",
+      "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "evidenceUrl": "https://www.activistsandiego.org/blog/",
+      "reviewGroup": "needs-organizer-check",
+      "start": "2026-10-10T11:30:00-07:00",
+      "allDay": false,
+      "verifiedAt": "2026-09-30",
+      "reviewDecision": "pending",
+      "reviewHistory": [
+        {
+          "at": "2026-10-01T02:13:40.155Z",
+          "decision": "pending",
+          "reason": "Retained for owner review; not approved for the calendar."
+        }
+      ]
+    }
+  ],
   "proposedChanges": [],
-  "dismissed": []
+  "dismissed": [],
+  "reviewPolicy": {
+    "version": 1,
+    "scope": "Individual announced event occurrence",
+    "decisions": [
+      "pending",
+      "approved",
+      "rejected"
+    ],
+    "instructions": "Retain every discovery and its review history. Compare candidates with this ledger and published events before proposing them. Rejected events stay excluded unless the owner explicitly reopens them. Preserve reviewed corrections; source changes are proposed separately. A new annual occurrence needs fresh review."
+  }
 }
