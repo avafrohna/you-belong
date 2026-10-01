@@ -394,3 +394,19 @@ The Justice Workshop is a San Diego organization working on criminal, economic, 
 [Official website and profile source](https://thejusticeworkshop.org/) · [Official linked event listing](https://www.mobilize.us/thejusticeworkshop/)
 
 Requested by the owner September 26, 2026. This adds a 23rd organization to the directory. The official site’s Mobilize listing requires JavaScript in text retrieval; no individual future event was verified in this addition. Retain the listing as a source for subsequent scheduled discovery.
+
+## September 30 addition: License to Freedom
+
+Requested by the owner. License to Freedom is based in El Cajon and serves
+refugee and immigrant communities across San Diego County. Its official pages
+describe domestic violence advocacy, mental health counseling, legal aid,
+housing support, and youth and family programs.
+
+**Categories:** Rights & Action (primary); United Neighborhoods.
+
+Sources: [official website](https://licensetofreedom.org/),
+[about](https://licensetofreedom.org/about-us/), and
+[programs](https://licensetofreedom.org/our-programs/). Reviewed September 30, 2026.
+The shared organization record supplies its profile, directory/category entries,
+calendar filter, event-request dropdown, and sitemap entry. No events added in
+this update; this was an organization-profile review, not a new event sweep.

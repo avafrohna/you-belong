@@ -170,6 +170,20 @@ export const communityOrganizations = [
     "reviewedAt": "2026-09-25"
   },
   {
+    "id": "license-to-freedom",
+    "name": "License to Freedom",
+    "description": "Based in El Cajon, License to Freedom supports refugee and immigrant communities across San Diego County. Its work includes domestic violence advocacy, mental health counseling, legal aid, housing support, and youth and family programs. It helps survivors and families build safety, independence, and community connections.",
+    "sectionIds": [
+      "rights-action",
+      "united-neighborhoods"
+    ],
+    "primarySectionId": "rights-action",
+    "website": "https://licensetofreedom.org/",
+    "organizationType": "Local community organization based in El Cajon",
+    "profileSourceUrl": "https://licensetofreedom.org/about-us/",
+    "reviewedAt": "2026-09-30"
+  },
+  {
     "id": "media-arts-center-san-diego",
     "name": "Media Arts Center San Diego",
     "description": "Media Arts Center San Diego expands access to filmmaking, creative learning, and community storytelling. Its programs include youth media education, Digital Gym Cinema, and the San Diego Latino Film Festival, creating space for underrepresented voices and shared cultural experiences.",

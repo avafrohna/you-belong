@@ -22,6 +22,7 @@ import {
 
 import { communityFacts } from "./data/community-facts.js";
 import { LocalHighlights } from "./components/LocalHighlights.jsx";
+import { NewsletterSignup } from "./components/NewsletterSignup.jsx";
 
 const email = "info@youbelongsandiego.org";
 const sections = [
@@ -776,6 +777,7 @@ function NotFoundPage() {
 function SiteFooter() {
   return (
     <footer className="site-footer">
+      <NewsletterSignup />
       <div className="section-shell footer-grid">
         <div>
           <Brand footer />
