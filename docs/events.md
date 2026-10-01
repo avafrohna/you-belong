@@ -186,6 +186,11 @@ Do not inherit the old approval or rejection for a distinct new occurrence.
 Changed titles/URLs that the helper cannot confidently match still need a manual
 duplicate check. Never replace this ledger with only the latest run's results.
 
+Approval for the scrolling strip alone belongs in `placementReviews.scroll`
+with its decision, timestamp, and reason. Append a `scope: "scrolling-strip"`
+history entry and keep the calendar's `reviewDecision` unchanged. A strip
+approval does not approve a directory association or a calendar listing.
+
 After an owner decision, update `reviewDecision`, append to `reviewHistory`, and
 run `npm run events:review` to regenerate `docs/event-review-log.md`. For an
 approved publication, store `publishedEventId` and update the public collection

@@ -50,11 +50,11 @@ export function reviewReport(inbox) {
     [decision, records.filter(record => record.reviewDecision === decision).length]));
   const lines = [
     '# Event review log', '',
-    `${records.length} discoveries: ${counts.approved} approved, ${counts.pending} pending, ${counts.rejected} rejected.`, '',
+    `${records.length} discoveries: ${counts.approved} approved for the calendar, ${counts.pending} pending, ${counts.rejected} rejected. Separately, ${records.filter(record => record.placementReviews?.scroll?.decision === 'approved').length} discoveries are approved for the scrolling strip.`, '',
     'This is the retained research ledger, not the total number of events on the website. Previously published events are also checked during deduplication. Coverage notes and held series remain in event-discovery-review-2026-09-30.md.', '',
     'Never delete a rejected discovery. Record each owner decision in reviewHistory with its date and reason. Reopen it only at the owner’s request. New annual occurrences and possible date changes require separate review. Calendar approval and homepage-strip placement are separate.', '',
-    '| # | Date (Pacific) | Event | Decision |', '|---|---|---|---|',
-    ...records.map((record, index) => `| ${index + 1} | ${record.start || 'Unconfirmed'} | [${record.title.replaceAll('|', ' / ')}](${record.sourceUrl}) | ${record.reviewDecision} |`),
+    '| # | Date (Pacific) | Event | Calendar decision | Scrolling strip |', '|---|---|---|---|---|',
+    ...records.map((record, index) => `| ${index + 1} | ${record.start || 'Unconfirmed'} | [${record.title.replaceAll('|', ' / ')}](${record.sourceUrl}) | ${record.reviewDecision} | ${record.placementReviews?.scroll?.decision || '—'} |`),
     '', '## Arts programs awaiting calendar approval', '',
     ...records.filter(record => record.reviewGroup === 'arts-options').flatMap(record => [
       `**${records.indexOf(record) + 1}. [${record.title}](${record.sourceUrl})**`, '', record.description || 'Description pending.', '',

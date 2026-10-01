@@ -1484,7 +1484,7 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
-      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing. Approved for the scrolling strip only. Rechecked explicit 2026 dates in the public source calendar. Do not attribute hosting to Activist San Diego. Strip omits time: source calendar says doors 2 p.m., ceremony 5:30 p.m.; Sherman Heights lists its candlelight program 4–9 p.m.",
       "evidenceUrl": "https://www.activistsandiego.org/blog/",
       "reviewGroup": "needs-organizer-check",
       "start": "2026-11-02T14:00:00-08:00",
@@ -1496,8 +1496,21 @@
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:20:13.828736+00:00",
+          "decision": "approved",
+          "scope": "scrolling-strip",
+          "reason": "Owner requested publication in the strip; calendar approval remains pending."
         }
-      ]
+      ],
+      "placementReviews": {
+        "scroll": {
+          "decision": "approved",
+          "at": "2026-10-01T02:20:13.828736+00:00",
+          "reason": "Owner requested both Día de Muertos discoveries in the scrolling strip."
+        }
+      }
     },
     {
       "id": "discovery-e2a4a173a05201c9",
@@ -1546,7 +1559,7 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Listed in the public Google Calendar embedded by Activist San Diego; explicit DTSTART and no recurrence rule.",
-      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing.",
+      "reviewNotes": "Listed by Activist San Diego, not necessarily hosted by it. Confirm actual organizer and permission to associate with this profile before publishing. Approved for the scrolling strip only. Rechecked explicit 2026 dates in the public source calendar. Do not attribute hosting to Activist San Diego.",
       "evidenceUrl": "https://www.activistsandiego.org/blog/",
       "reviewGroup": "needs-organizer-check",
       "start": "2026-10-30T18:00:00-07:00",
@@ -1558,8 +1571,21 @@
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:20:13.828891+00:00",
+          "decision": "approved",
+          "scope": "scrolling-strip",
+          "reason": "Owner requested publication in the strip; calendar approval remains pending."
         }
-      ]
+      ],
+      "placementReviews": {
+        "scroll": {
+          "decision": "approved",
+          "at": "2026-10-01T02:20:13.828891+00:00",
+          "reason": "Owner requested both Día de Muertos discoveries in the scrolling strip."
+        }
+      }
     },
     {
       "id": "discovery-1cece506315d93fc",
