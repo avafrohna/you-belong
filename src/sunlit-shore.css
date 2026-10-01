@@ -248,7 +248,7 @@ h1 em, h2 em { color: var(--terracotta); }
 .value-card h3 { line-height: 1.4; }
 .footer-grid h2 { color: var(--link); font-size: 11px; }
 .footer-grid > div > a:not(.brand) { font-size: 14px; }
-.footer-grid > div > a:hover { color: var(--link); }
+.footer-grid > div > a:not(.brand):hover { color: var(--link); }
 .footer-note { color: #645c50; font-size: 12px; }
 .footer-bottom { color: #645c50; border-color: var(--line); font-size: 11px; }
 
