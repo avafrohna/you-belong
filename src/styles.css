@@ -150,7 +150,7 @@ main:focus {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  min-height: 104px;
+  min-height: 76px;
 }
 .brand {
   display: inline-flex;
@@ -175,6 +175,9 @@ main:focus {
   letter-spacing: -1.3px;
   line-height: 1.1;
   font-weight: 600;
+}
+.site-header .brand strong {
+  font-size: 34px;
 }
 .brand small {
   font-size: 11px;
@@ -1145,7 +1148,7 @@ select {
     width: calc(100% - 44px);
   }
   .nav-shell {
-    min-height: 96px;
+    min-height: 68px;
   }
   .desktop-nav {
     display: none;
@@ -1158,6 +1161,9 @@ select {
   }
   .brand strong {
     font-size: 34px;
+  }
+  .site-header .brand strong {
+    font-size: 30px;
   }
   .brand img {
     width: 74px;
@@ -1294,11 +1300,14 @@ select {
     width: calc(100% - 40px);
   }
   .nav-shell {
-    min-height: 92px;
+    min-height: 66px;
     gap: 12px;
   }
   .brand strong {
     font-size: clamp(30px, 8.72vw, 34px);
+  }
+  .site-header .brand strong {
+    font-size: clamp(26px, 7.7vw, 30px);
   }
   .desktop-nav {
     display: none;
