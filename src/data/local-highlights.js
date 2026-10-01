@@ -1,7 +1,6 @@
 // Organizer sources checked 2026-09-30. These are discovery links, not calendar events.
 // Keep annual festivals undated until a future edition has a confirmed schedule.
 export const localHighlights = [
-  { name: "The Fly · Digital Gym Cinema", schedule: "Oct 10 · 6:30pm", through: "2026-10-10", url: "https://digitalgym.org/movies/dgc-screen-gems-the-fly/" },
   { name: "Adams Halloween Haunt", schedule: "Oct 24", through: "2026-10-24", url: "https://www.adamsavenuebusiness.com/event-info/halloween-haunt/" },
   { name: "Stockton Halloween Haunt", schedule: "Oct 30 · 3:30–6pm", through: "2026-10-30", url: "https://www.sandiego.gov/event/halloween-haunt-stockton-recreation-center" },
   {"name": "Día de Muertos · Centro Cultural de la Raza", "schedule": "Oct 30 · 6pm", "through": "2026-10-30", "url": "https://calendar.google.com/calendar/event?eid=NzlncDY0ZjJ2b3E4czdhMnFxZ3MzN3V0bDcgYWs3M2huOTkxY3RrcjA3NG1qNDBicjU0ajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&ctz=America/Los_Angeles"},

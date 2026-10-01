@@ -141,6 +141,24 @@ or re-publish an event that was dismissed, cancelled, or unpublished.
 
 ## Daily discovery inbox
 
+### Editorial scope: arts-center films
+
+Skip routine Media Arts Center / Digital Gym film listings by default. The owner
+finds the full cinema schedule too numerous and usually unrelated to this site's
+purpose. Do not enumerate film listings or repeatedly offer the declined arts
+shortlist. Zoé Presents on October 7, 2026 is an explicitly approved exception.
+The Fly was explicitly removed from the scrolling strip and must stay removed.
+
+Continue checking for relevant non-film community programs. A special film
+program can be considered only with a clear connection to local cultures,
+community participation, or the project mission. An editor must record that
+reason in `editorialRelevance` before it can bypass `skip-routine-film`; never
+copy this field from scraped content, and it does not authorize publication.
+Existing approved films stay published unless the owner asks to remove them.
+The structured rule is in `reviewPolicy.routineFilmScreenings` in the inbox.
+
+### Retained discoveries
+
 `docs/event-discovery-inbox.json` is a research inbox, separate from the public
 event collection. It is not a working admin dashboard or a database. It starts
 with retained discoveries; adding this file does not schedule a job.

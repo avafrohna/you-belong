@@ -319,5 +319,23 @@ export const events = [
     "status": "published",
     "sourceType": "website",
     "verifiedAt": "2026-09-30"
+  },
+  {
+    "id": "discovery-9d423846ec330e10",
+    "title": "Zoé Presents: Memorex + Rexsexex y Más",
+    "organizationIds": [
+      "media-arts-center-san-diego"
+    ],
+    "sectionIds": [
+      "united-neighborhoods"
+    ],
+    "sourceUrl": "https://digitalgym.org/movies/zoe-presents-memorex-rexsexex-y-mas/",
+    "description": "A concert-film program featuring Mexican rock band Zoé and its large-scale Mexico City performances. Spanish with English subtitles.",
+    "allDay": false,
+    "start": "2026-10-07T19:00:00-07:00",
+    "location": "Digital Gym Cinema, 1100 Market Street, San Diego",
+    "status": "published",
+    "sourceType": "website",
+    "verifiedAt": "2026-09-30"
   }
 ];

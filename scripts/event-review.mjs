@@ -20,7 +20,8 @@ const day = event => event.start?.slice(0, 10);
 const urls = event => [event.sourceUrl, ...(event.sourceAliases || [])].filter(Boolean).map(sourceKey);
 
 // Read-only: discovery never changes an owner's decision or corrected fields.
-export function classifyCandidate(candidate, records) {
+export function classifyCandidate(candidate, records, policy = {}) {
+  let possibleChange;
   for (const record of records) {
     if (candidate.id && candidate.id === record.id) return result(record);
     const sameOrg = candidate.organizationIds?.some(id => record.organizationIds?.includes(id));
@@ -30,9 +31,21 @@ export function classifyCandidate(candidate, records) {
     const sameDay = day(candidate) === day(record);
     // Shared calendar/listing URLs alone are not event identities.
     if (sameTitle && sameDay) return result(record);
-    if (sameUrl && sameTitle) return { action: 'review-possible-change', existingId: record.id };
+    if (sameUrl && sameTitle) possibleChange = { action: 'review-possible-change', existingId: record.id };
   }
-  return { action: 'new-draft' };
+  const films = policy.routineFilmScreenings;
+  if (films?.excludeByDefault) {
+    let cinemaFilm = false;
+    try {
+      const url = new URL(candidate.sourceUrl);
+      cinemaFilm = films.sourceHosts?.includes(url.hostname.replace(/^www\./, '')) && url.pathname.startsWith('/movies/');
+    } catch { /* Invalid URLs are handled by content validation. */ }
+    const orgFilm = candidate.eventType === 'film-screening' && candidate.organizationIds?.some(id => films.organizationIds?.includes(id));
+    if ((cinemaFilm || orgFilm) && !candidate.editorialRelevance?.trim()) {
+      return { action: 'skip-routine-film', reason: films.reason };
+    }
+  }
+  return possibleChange || { action: 'new-draft' };
 }
 
 function result(record) {
@@ -55,9 +68,9 @@ export function reviewReport(inbox) {
     'Never delete a rejected discovery. Record each owner decision in reviewHistory with its date and reason. Reopen it only at the owner’s request. New annual occurrences and possible date changes require separate review. Calendar approval and homepage-strip placement are separate.', '',
     '| # | Date (Pacific) | Event | Calendar decision | Scrolling strip |', '|---|---|---|---|---|',
     ...records.map((record, index) => `| ${index + 1} | ${record.start || 'Unconfirmed'} | [${record.title.replaceAll('|', ' / ')}](${record.sourceUrl}) | ${record.reviewDecision} | ${record.placementReviews?.scroll?.decision || '—'} |`),
-    '', '## Arts programs awaiting calendar approval', '',
+    '', '## Arts program review history', '',
     ...records.filter(record => record.reviewGroup === 'arts-options').flatMap(record => [
-      `**${records.indexOf(record) + 1}. [${record.title}](${record.sourceUrl})**`, '', record.description || 'Description pending.', '',
+      `**${records.indexOf(record) + 1}. [${record.title}](${record.sourceUrl}) — ${record.reviewDecision}**`, '', record.description || 'Description pending.', '',
     ]),
   ];
   return lines.join('\n');
@@ -69,7 +82,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === fs.realpathSync(proces
   if (process.argv[2]) {
     const candidates = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
     const records = [...inbox.discoveries, ...(inbox.dismissed || []), ...events];
-    console.log(JSON.stringify([candidates].flat().map(candidate => ({ title: candidate.title, ...classifyCandidate(candidate, records) })), null, 2));
+    console.log(JSON.stringify([candidates].flat().map(candidate => ({ title: candidate.title, ...classifyCandidate(candidate, records, inbox.reviewPolicy) })), null, 2));
   } else {
     const report = reviewReport(inbox);
     fs.writeFileSync(new URL('../docs/event-review-log.md', import.meta.url), report);

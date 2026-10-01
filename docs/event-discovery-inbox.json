@@ -1084,17 +1084,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-02T17:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "A fashion documentary following designer Isaac Mizrahi as he prepares his 1994 collection. This screening includes an introduction by local designer Olga Cecilia Sanchez."
@@ -1115,51 +1120,62 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-06T19:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "A documentary about the shocking driver-education films made from 1959 to 1979 and the people behind them. Includes graphic footage of real crashes."
     },
     {
       "id": "discovery-9d423846ec330e10",
-      "status": "draft",
+      "status": "published",
       "title": "Zoé Presents: Memorex + Rexsexex y Más",
       "organizationIds": [
         "media-arts-center-san-diego"
       ],
       "sectionIds": [
-        "united-neighborhoods",
-        "rights-action"
+        "united-neighborhoods"
       ],
       "sourceUrl": "https://digitalgym.org/movies/zoe-presents-memorex-rexsexex-y-mas/",
       "sourceType": "website",
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Owner explicitly approved this concert-film program as an exception to skipping routine film listings. No end time inferred.",
       "reviewGroup": "arts-options",
       "start": "2026-10-07T19:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "approved",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "approved",
+          "reason": "Owner explicitly requested Zoé Presents on the calendar."
         }
       ],
-      "description": "A concert-film program featuring Mexican rock band Zoé and its large-scale Mexico City performances. Spanish with English subtitles."
+      "description": "A concert-film program featuring Mexican rock band Zoé and its large-scale Mexico City performances. Spanish with English subtitles.",
+      "publishedEventId": "discovery-9d423846ec330e10",
+      "location": "Digital Gym Cinema, 1100 Market Street, San Diego"
     },
     {
       "id": "discovery-3accf370bbb53113",
@@ -1177,17 +1193,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-08T19:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "Abel Ferrara’s black-and-white vampire drama about a New York graduate student whose transformation becomes a study of addiction. Stars Lili Taylor and Christopher Walken."
@@ -1208,17 +1229,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-09T21:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "An experimental black-and-white horror film presenting an abstract creation myth about death and rebirth. Surreal and graphically violent."
@@ -1239,20 +1265,38 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-10T18:30:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "scope": "scrolling-strip",
+          "reason": "Owner explicitly requested removal from the scrolling strip."
         }
       ],
-      "description": "David Cronenberg’s science-fiction horror film about a scientist whose teleportation experiment merges him with a fly. Stars Jeff Goldblum and Geena Davis; graphic body horror."
+      "description": "David Cronenberg’s science-fiction horror film about a scientist whose teleportation experiment merges him with a fly. Stars Jeff Goldblum and Geena Davis; graphic body horror.",
+      "placementReviews": {
+        "scroll": {
+          "decision": "rejected",
+          "at": "2026-10-01T02:23:36.246Z",
+          "reason": "Owner explicitly requested removal from the scrolling strip."
+        }
+      }
     },
     {
       "id": "discovery-b2193748802c39a8",
@@ -1270,17 +1314,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-10T21:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "The 1978 science-fiction thriller in which San Francisco residents are replaced by emotionless alien doubles. Stars Donald Sutherland, Leonard Nimoy, and Jeff Goldblum."
@@ -1301,17 +1350,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-11T12:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "A Western-horror rescue story starring Kurt Russell as a sheriff searching for kidnapped townspeople. Includes an exclusive filmmaker video introduction and very graphic violence."
@@ -1332,17 +1386,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-13T19:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "René Laloux’s French animated science-fiction fantasy about a peaceful society attacked by a mechanical army. Surreal creatures, strange technology, and a quest to save the civilization."
@@ -1363,17 +1422,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-22T19:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "Martin Scorsese’s drama about an isolated New York taxi driver descending into obsession and violence. Followed by a guided discussion with Rev. Scott Young through the Burke film series."
@@ -1394,17 +1458,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-10-27T19:00:00-07:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "A Japanese cult musical about a punk rocker and a new-wave singer transformed into a pop duo by a shady music mogul. A surreal satire of fame and the music industry."
@@ -1425,17 +1494,22 @@
       "discoveredAt": "2026-10-01T00:29:37.869128+00:00",
       "checkedAt": "2026-10-01T00:29:37.869128+00:00",
       "evidence": "Individual film page lists this dated program and time.",
-      "reviewNotes": "Optional arts additions. These are separately titled programs, not generated recurring dates. No end time inferred.",
+      "reviewNotes": "Retained as excluded under the owner’s film-screening preference. Do not propose again unless explicitly reopened.",
       "reviewGroup": "arts-options",
       "start": "2026-12-06T12:00:00-08:00",
       "allDay": false,
       "verifiedAt": "2026-09-30",
-      "reviewDecision": "pending",
+      "reviewDecision": "rejected",
       "reviewHistory": [
         {
           "at": "2026-10-01T02:13:40.155Z",
           "decision": "pending",
           "reason": "Retained for owner review; not approved for the calendar."
+        },
+        {
+          "at": "2026-10-01T02:23:36.246Z",
+          "decision": "rejected",
+          "reason": "Owner selected Zoé and asked to exclude routine arts-center film screenings due to volume and relevance."
         }
       ],
       "description": "Sam Peckinpah’s classic Western about an aging former soldier escorting gold while his partner plots a betrayal. A story of loyalty, honor, and growing older."
@@ -1939,6 +2013,17 @@
       "approved",
       "rejected"
     ],
-    "instructions": "Retain every discovery and its review history. Compare candidates with this ledger and published events before proposing them. Rejected events stay excluded unless the owner explicitly reopens them. Preserve reviewed corrections; source changes are proposed separately. A new annual occurrence needs fresh review."
+    "instructions": "Retain every discovery and its review history. Compare candidates with this ledger and published events before proposing them. Rejected events stay excluded unless the owner explicitly reopens them. Preserve reviewed corrections; source changes are proposed separately. A new annual occurrence needs fresh review.",
+    "routineFilmScreenings": {
+      "organizationIds": [
+        "media-arts-center-san-diego"
+      ],
+      "sourceHosts": [
+        "digitalgym.org"
+      ],
+      "excludeByDefault": true,
+      "reason": "Owner prefers not to include routine arts-center film screenings: too many and usually not relevant. Zoé Presents is an explicitly approved exception.",
+      "exceptions": "Only suggest a special program when a human-reviewed relevance note explains its connection to local cultures, community participation, or the project mission. Do not routinely enumerate the cinema schedule. Previously approved events are not automatically removed."
+    }
   }
 }

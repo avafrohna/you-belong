@@ -1,6 +1,6 @@
 # Event discovery review — 30 September 2026
 
-Status: the five priority suggestions were approved by the owner and added to the public event collection. The other 27 discoveries remain pending. See event-review-log.md for the running tally.
+Status: the five priority suggestions and Zoé Presents were approved for the calendar. The other eleven arts films were excluded under the owner’s preference to skip routine screenings. Fifteen leads remain pending for the calendar; the two Día de Muertos events were separately approved for the scrolling strip. See event-review-log.md for current decisions.
 
 Checked public sources for all 21 remaining organizations: 67 initial pages and 38 event detail pages, plus browser/web-reader and public-calendar fallbacks. Main window: October–November 2026; separately noted December leads. This is a bounded review, not a guarantee that every social post or image-only invitation was captured.
 
@@ -16,7 +16,7 @@ Checked public sources for all 21 remaining organizations: 67 initial pages and 
 
 ## Optional arts programs
 
-These are distinct film programs on explicit dates, not inferred weekly or daily repeats. All remain drafts.
+These are distinct film programs on explicit dates, not inferred repeats. Review complete: Zoé Presents approved; the other eleven excluded. Keep this historical list to avoid suggesting declined screenings again.
 
 | Date (Pacific) | Program |
 |---|---|
@@ -88,4 +88,4 @@ Activist San Diego lists events from other groups. Do not imply it organizes the
 
 ICSD and Humanization Matters are excluded from the directory and this scan at the owner’s request. Existing live events were not overwritten. Missing times, venue details or descriptions do not disqualify a lead; uncertainty is recorded instead of guessed. No new account access, private calendar access, recurring expansion, emails or event registrations were used.
 
-Retained 32 discoveries: five approved for publication, twelve pending arts programs, fourteen pending organizer-check leads and one pending undated lead. Source attempts and fingerprints are in `event-discovery-inbox.json`.
+Retained 32 discoveries: six approved for the calendar, eleven excluded film listings, fourteen pending organizer-check leads and one pending undated lead. Two organizer-check leads are approved for the scrolling strip only. Source attempts and fingerprints are in `event-discovery-inbox.json`.

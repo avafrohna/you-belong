@@ -28,3 +28,13 @@ test('URL normalization removes tracking but preserves event identifiers', () =>
   assert.equal(sourceKey('https://example.org/event?id=1&utm_source=email#top'), 'https://example.org/event?id=1');
   assert.notEqual(sourceKey('https://example.org/event?id=1'), sourceKey('https://example.org/event?id=2'));
 });
+
+test('routine cinema films are excluded while community programs and approved exceptions remain', () => {
+  const policy = { routineFilmScreenings: { excludeByDefault: true, organizationIds: ['cinema'], sourceHosts: ['digitalgym.org'], reason: 'Owner preference' } };
+  const film = { ...rejected, id: 'new-film', sourceUrl: 'https://digitalgym.org/movies/new-film/' };
+  assert.equal(classifyCandidate(film, [], policy).action, 'skip-routine-film');
+  assert.equal(classifyCandidate({ ...film, id: 'next-year', start: '2027-10-10' }, [film], policy).action, 'skip-routine-film');
+  assert.equal(classifyCandidate({ ...film, sourceUrl: 'https://digitalgym.org/community-workshop/' }, [], policy).action, 'new-draft');
+  assert.equal(classifyCandidate(film, [{ ...film, reviewDecision: 'approved' }], policy).action, 'already-recorded');
+  assert.equal(classifyCandidate({ ...film, editorialRelevance: 'Editor verified a community cultural discussion.' }, [], policy).action, 'new-draft');
+});
