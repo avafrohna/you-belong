@@ -1,15 +1,7 @@
-import { useEffect, useState } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { newsletterSignupUrl } from "../data/newsletter.js";
 
 export function NewsletterSignup() {
-  const [preview, setPreview] = useState(false);
-  useEffect(() => {
-    if (import.meta.env.DEV) setPreview(true);
-  }, []);
-
-  if (!newsletterSignupUrl && !preview) return null;
-
   return (
     <section className="newsletter-band" aria-labelledby="newsletter-title">
       <div className="section-shell newsletter-signup">
@@ -28,7 +20,7 @@ export function NewsletterSignup() {
               <button className="button primary" type="button" disabled aria-describedby="newsletter-preview-note">
                 Sign me up <ArrowUpRight size={17} aria-hidden="true" />
               </button>
-              <small id="newsletter-preview-note">Design preview · signup is not connected yet.</small>
+              <small id="newsletter-preview-note">Coming soon — signup opens shortly.</small>
             </>
           )}
         </div>

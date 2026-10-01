@@ -535,7 +535,7 @@ function OrganizationDirectoryPage({ initialParams = "", section }) {
   const reset = () => { setQuery(""); setCategory(section?.id || "all"); };
   return (
     <>
-      <section className="page-hero section-shell">
+      <section className={`page-hero section-shell directory-hero section-${section?.id || "united-neighborhoods"}`}>
         <div className="eyebrow">Local roots. Shared purpose.</div>
         <h1>{section ? section.name : <>Find your people.<br /><em>Make a little good.</em></>}</h1>
         <p>{section?.description || "Meet the organizations connecting San Diego, standing up for human rights, and making a difference near and far. Find their work, their websites, and their upcoming events."}</p>
@@ -561,7 +561,7 @@ function OrganizationDirectoryPage({ initialParams = "", section }) {
           {(query || category !== (section?.id || "all")) && <button type="button" className="clear-filters" onClick={reset}>Clear filters <X size={15} aria-hidden="true" /></button>}
         </div>
         <div className="results-grid">
-          {filtered.map((organization) => <article className="listing-card organization-card" key={organization.id}>
+          {filtered.map((organization) => <article className={`listing-card organization-card section-${organization.sectionIds[0]}`} key={organization.id}>
             <div className="listing-top">{organization.organizationType}</div>
             <h2><Link href={organizationPath(organization)}>{organization.name}</Link></h2>
             <p>{organization.description}</p>
