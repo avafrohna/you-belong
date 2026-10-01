@@ -195,7 +195,7 @@ h1 em, h2 em { color: var(--terracotta); }
   background: var(--sand);
 }
 .mission-section .community-facts > div + div { background: var(--sky); }
-.mission-section .community-facts dt { font-size: clamp(34px, 3.4vw, 46px); line-height: 1; }
+.mission-section .community-facts dt { font-size: clamp(40px, 4vw, 54px); font-weight: 700; line-height: 1; }
 .mission-section .community-facts dd { font-size: 13px; line-height: 1.45; margin: 0; max-width: 168px; }
 .community-facts-source a { color: var(--link); }
 
@@ -291,7 +291,7 @@ h1 em, h2 em { color: var(--terracotta); }
   .category-card { min-height: 310px; padding: 28px; }
   .mission-section { grid-template-columns: 1fr; gap: 28px; }
   .mission-copy { padding-top: 0; }
-  .mission-section .community-facts dt { font-size: 46px; }
+  .mission-section .community-facts dt { font-size: 54px; }
   .mission-section .community-facts dd { font-size: 14px; }
   .callout-content { grid-template-columns: 1fr; }
   .callout-content .button { width: fit-content; max-width: none; }
@@ -326,7 +326,7 @@ h1 em, h2 em { color: var(--terracotta); }
   .mission-section h2 { font-size: 37px; }
   .mission-section .community-facts { gap: 12px; }
   .mission-section .community-facts > div { padding: 16px; gap: 6px; }
-  .mission-section .community-facts dt { font-size: 36px; }
+  .mission-section .community-facts dt { font-size: 42px; }
   .mission-section .community-facts dd { font-size: 11px; line-height: 1.4; }
   .mission-copy p { font-size: 15px; }
   .callout-band { width: calc(100% - 24px); border-radius: 28px; margin-bottom: 24px; }
@@ -347,7 +347,7 @@ h1 em, h2 em { color: var(--terracotta); }
     .hero .eyebrow { font-size: 7px; }
   .mission-section .community-facts { gap: 8px; }
   .mission-section .community-facts > div { padding: 12px; }
-  .mission-section .community-facts dt { font-size: 32px; }
+  .mission-section .community-facts dt { font-size: 38px; }
   .mission-section .community-facts dd { font-size: 10px; }
   .collage-caption { font-size: 8px; }
 }
