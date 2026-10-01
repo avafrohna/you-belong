@@ -107,6 +107,44 @@ main:focus {
   border-bottom: 1px solid var(--line);
   background: rgba(250, 248, 242, 0.97);
 }
+/* A quiet, linked guide to markets and annual festivals around the city. */
+.local-highlights {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 32px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 12px;
+}
+.local-highlights-window { flex: 1; min-width: 0; overflow: hidden; }
+.local-highlights-track { display: flex; width: max-content; animation: local-highlights-scroll 105s linear infinite; }
+.local-highlights-track ul { display: flex; align-items: center; flex-shrink: 0; gap: 28px; list-style: none; margin: 0; padding: 0 0 0 28px; }
+.local-highlights-track li { display: flex; align-items: center; gap: 28px; white-space: nowrap; }
+.local-highlights-track a { display: inline-flex; align-items: center; gap: 10px; min-height: 32px; color: inherit; text-decoration: none; }
+.local-highlights-track strong { font-weight: 550; }
+.local-highlights-track a > span { color: #dce4d7; font-size: 11px; }
+.local-highlights-track a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.local-highlights-dot { color: var(--gold); font-size: 12px; }
+.local-highlights-toggle { display: grid; place-items: center; flex-shrink: 0; width: 44px; min-height: 32px; border: 0; border-left: 1px solid #faf8f22b; background: var(--ink); color: var(--paper); cursor: pointer; }
+.local-highlights a:focus-visible, .local-highlights-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: -3px; }
+.local-highlights:hover .local-highlights-track { animation-play-state: paused; }
+.local-highlights.is-paused .local-highlights-track,
+.local-highlights-window:focus-within .local-highlights-track { animation: none; transform: none; }
+.local-highlights.is-paused .local-highlights-window,
+.local-highlights-window:focus-within { overflow-x: auto; }
+.local-highlights.is-paused .local-highlights-copy,
+.local-highlights-window:focus-within .local-highlights-copy { display: none; }
+@keyframes local-highlights-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 600px) {
+  .local-highlights-track ul { padding-left: 20px; gap: 20px; }
+  .local-highlights-track li { gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .local-highlights-track { animation: none; transform: none; }
+  .local-highlights-window { overflow-x: auto; }
+  .local-highlights-copy, .local-highlights-toggle { display: none; }
+}
 .nav-shell {
   display: flex;
   justify-content: space-between;

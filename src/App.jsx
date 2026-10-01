@@ -21,6 +21,7 @@ import {
 } from "./components/Events.jsx";
 
 import { communityFacts } from "./data/community-facts.js";
+import { LocalHighlights } from "./components/LocalHighlights.jsx";
 
 const email = "info@youbelongsandiego.org";
 const sections = [
@@ -190,6 +191,7 @@ function App({ initialPath }) {
         Skip to content
       </a>
       <SiteHeader currentPath={path} />
+      <LocalHighlights />
       <main id="main-content" tabIndex={-1}>
         {page}
       </main>
