@@ -15,6 +15,7 @@ import { organizations, organizationPath } from "../data/organizations.js";
 import { eventSections } from "../data/event-sections.js";
 import { EventRequest } from "./EventRequest.jsx";
 import {
+  calendarWindow,
   dayLabel,
   eventDateLabel,
   eventDays,
@@ -147,7 +148,8 @@ export function CalendarPage({ Link, initialParams = "" }) {
   const [query, setQuery] = useState("");
   const [orgQuery, setOrgQuery] = useState("");
   const [selectedDay, setSelectedDay] = useState(null);
-  const month = chosenMonth || today?.slice(0, 7);
+  const featuredMonths = today ? calendarWindow(today) : [];
+  const month = chosenMonth || featuredMonths[0];
   const filtered = filterEvents(
     collection,
     { sectionIds, organizationIds, query },
@@ -307,9 +309,9 @@ export function CalendarPage({ Link, initialParams = "" }) {
                 <button
                   className="this-month"
                   type="button"
-                  onClick={() => changeMonth(today.slice(0, 7))}
+                  onClick={() => changeMonth(featuredMonths[0])}
                 >
-                  This month
+                  Upcoming
                 </button>
                 <button
                   type="button"
@@ -319,6 +321,13 @@ export function CalendarPage({ Link, initialParams = "" }) {
                   <ChevronRight size={20} />
                 </button>
               </div>
+            </div>
+            <div className="calendar-month-choices" role="group" aria-label="Upcoming three months">
+              {featuredMonths.map((option) => (
+                <button key={option} type="button" aria-pressed={month === option} onClick={() => changeMonth(option)}>
+                  {monthLabel(option)}
+                </button>
+              ))}
             </div>
             <table className="month-calendar" aria-labelledby="calendar-month">
               <thead>

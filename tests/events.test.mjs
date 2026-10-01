@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
+  calendarWindow,
   eventDays,
   eventTime,
   filterEvents,
@@ -14,6 +15,12 @@ import {
   undatedEvents,
   validateEventData,
 } from "../src/lib/events.js";
+test("calendar opens in October and the three-month window rolls across years", () => {
+  assert.deepEqual(calendarWindow("2026-09-30"), ["2026-10", "2026-11", "2026-12"]);
+  assert.deepEqual(calendarWindow("2026-10-01"), ["2026-10", "2026-11", "2026-12"]);
+  assert.deepEqual(calendarWindow("2026-12-31"), ["2026-12", "2027-01", "2027-02"]);
+  assert.deepEqual(calendarWindow("2027-01-01"), ["2027-01", "2027-02", "2027-03"]);
+});
 import { getExampleEvents } from "../src/data/example-events.js";
 import { eventSections } from "../src/data/event-sections.js";
 const orgs = [

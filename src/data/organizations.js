@@ -99,19 +99,6 @@ export const communityOrganizations = [
     "reviewedAt": "2026-09-25"
   },
   {
-    "id": "islamic-center-san-diego",
-    "name": "Islamic Center of San Diego",
-    "description": "A mosque and community center offering religious services, education, youth activities, and support for families. Its programs create opportunities for learning, volunteering, and connection within San Diego’s Muslim community.",
-    "sectionIds": [
-      "united-neighborhoods"
-    ],
-    "primarySectionId": "united-neighborhoods",
-    "website": "https://www.icsd.org/",
-    "organizationType": "Local faith and community center",
-    "profileSourceUrl": "https://www.icsd.org/icsd.html",
-    "reviewedAt": "2026-09-25"
-  },
-  {
     "id": "jvp-san-diego",
     "name": "Jewish Voice for Peace San Diego",
     "description": "The San Diego chapter of Jewish Voice for Peace brings together anti-Zionist Jews and allies advocating for Palestinian freedom and equal rights. It offers ways to learn, build community, and participate in collective advocacy.",
@@ -304,20 +291,6 @@ export const communityOrganizations = [
     "website": "https://www.sdwac.org/",
     "organizationType": "Local organization affiliated with a national council network",
     "profileSourceUrl": "https://www.sdwac.org/",
-    "reviewedAt": "2026-09-25"
-  },
-  {
-    "id": "humanization-matters",
-    "name": "The Humanization Matters Collaborative",
-    "description": "The Humanization Matters Collaborative works to counter dehumanization and center the voices of oppressed and Indigenous communities. It offers advisory work, community partnerships, and research focused on dignity and equity in healthcare, education, and media.",
-    "sectionIds": [
-      "rights-action",
-      "united-neighborhoods"
-    ],
-    "primarySectionId": "rights-action",
-    "website": "https://humanizationmatters.org/",
-    "organizationType": "San Diego-run organization",
-    "profileSourceUrl": "https://humanizationmatters.org/about-us/",
     "reviewedAt": "2026-09-25"
   }
 ];

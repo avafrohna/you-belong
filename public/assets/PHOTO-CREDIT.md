@@ -15,3 +15,13 @@
 This is a real photograph, not AI-generated imagery. Wikimedia Commons identifies it as the photographer's own work and publishes the image under CC0. The local asset is Wikimedia's resized rendition; no generative edits or content changes were made. Any layout cropping is performed by the website's CSS.
 
 Suggested optional credit: "Balboa Park photo: Librarybell / Wikimedia Commons (CC0)."
+
+## Current homepage collage (30 September 2026)
+
+Real photographs displayed with CSS crops; no generative edits. The site owner selected these photographs and requested publication with source acknowledgements. No reuse license or photographer permission has been verified for these three images. A source acknowledgement is not a claim of permission or ownership.
+
+- `ocean-beach-community.jpg`: **Ocean Beach Farmers Market**. Photographer: **Josh Utley**, credited by Ocean Beach MainStreet Association. [Source](https://oceanbeachsandiego.com/media/photos/ob-farmers-market-wednesdays-now-open). [Original image](https://oceanbeachsandiego.com/sites/default/files/styles/768x768/public/d7/photos/_dsc0004_1.jpg?itok=23RfFb1f). Original 4288 × 2848 image.
+- `sicilian-festival.jpg`: **Sicilian Festival, Little Italy**. Photographer not identified. User-supplied image, 1000 × 665. The downloaded file's source metadata identifies [this Yelp-hosted image](https://s3-media0.fl.yelpcdn.com/bphoto/Tft6cFD9BWFhrhTpfzVP4Q/o.jpg). The visible banner identifies the Sicilian Festival; it must not be captioned as Mexican dance.
+- `oceanside-sunset-market.jpg`: **Oceanside Sunset Market**. Photographer not identified. Via [101 Things To Do](https://101thingstodosw.com/san-diego/oceanside-sunset-market-street-fair-1/). [Source image](https://101thingstodosw.com/san-diego/wp-content/uploads/2019/10/Oceanside-Sunset-Market-Street-Fair-1-750x430.jpg), 750 × 430.
+
+Visitors can open the homepage Photo credits disclosure for these acknowledgements and original source links.

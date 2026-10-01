@@ -280,6 +280,11 @@ function SiteHeader({ currentPath }) {
   );
 }
 function HomePage() {
+  const collagePhotos = [
+    { className: "collage-gathering", src: "/assets/ocean-beach-community.jpg", alt: "Neighbors filling the street between stalls at Ocean Beach Farmers Market", caption: "Ocean Beach Farmers Market", width: 4288, height: 2848 },
+    { className: "collage-food", src: "/assets/sicilian-festival.jpg", alt: "A costumed dancer and festivalgoers dancing together at the Sicilian Festival", caption: "Sicilian Festival · Little Italy", width: 1000, height: 665 },
+    { className: "collage-market", src: "/assets/oceanside-sunset-market.jpg", alt: "Crowds exploring Oceanside Sunset Market beneath evening string lights", caption: "Oceanside Sunset Market", width: 750, height: 430 },
+  ];
   return (
     <>
       <section className="hero section-shell" aria-labelledby="home-title">
@@ -316,29 +321,27 @@ function HomePage() {
             free to explore.
           </div>
         </div>
-        <figure className="hero-visual">
-          <div className="photo-frame">
-            <img
-              src="/assets/san-diego-real.jpg"
-              alt="California Tower above the gardens at Balboa Park in San Diego"
-              width="960"
-              height="1280"
-              fetchPriority="high"
-            />
-            <span className="photo-label">
-              <MapPin size={15} aria-hidden="true" /> A little corner of San
-              Diego
-            </span>
+        <figure className="hero-visual community-collage">
+          <div className="collage-photos">
+            {collagePhotos.map((photo, index) => (
+              <div className={`collage-photo ${photo.className}`} key={photo.src}>
+                <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} fetchPriority={index === 0 ? "high" : undefined} />
+                <span className="collage-caption">{photo.caption}</span>
+              </div>
+            ))}
+            <span className="collage-seal" aria-hidden="true">So many stories.<br /><em>One community.</em></span>
           </div>
           <figcaption>
             <span>Good things start close to home.</span>
-            <a
-              href="https://commons.wikimedia.org/wiki/File:California_tower_gardens_at_Balboa_Park_2022.jpg"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Photo credit <ArrowUpRight size={12} aria-hidden="true" />
-            </a>
+            <details className="collage-credits">
+              <summary>Photo credits</summary>
+              <div>
+                <p>Real photographs of San Diego community celebrations, cropped to fit this collage.</p>
+                <p><a href="https://oceanbeachsandiego.com/media/photos/ob-farmers-market-wednesdays-now-open" target="_blank" rel="noreferrer">Ocean Beach Farmers Market</a> · Photo by Josh Utley, via Ocean Beach MainStreet Association.</p>
+                <p><a href="https://s3-media0.fl.yelpcdn.com/bphoto/Tft6cFD9BWFhrhTpfzVP4Q/o.jpg" target="_blank" rel="noreferrer">Sicilian Festival</a> · Image via Yelp; photographer not identified.</p>
+                <p><a href="https://101thingstodosw.com/san-diego/oceanside-sunset-market-street-fair-1/" target="_blank" rel="noreferrer">Oceanside Sunset Market</a> · Image via 101 Things To Do; photographer not identified.</p>
+              </div>
+            </details>
           </figcaption>
         </figure>
       </section>

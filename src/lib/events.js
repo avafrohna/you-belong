@@ -25,6 +25,11 @@ export function shiftMonth(month, offset) {
   const date = new Date(Date.UTC(year, number - 1 + offset, 1));
   return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}`;
 }
+export function calendarWindow(today) {
+  // The reviewed calendar starts in October 2026, then rolls forward with time.
+  const first = today.slice(0, 7) < "2026-10" ? "2026-10" : today.slice(0, 7);
+  return [first, shiftMonth(first, 1), shiftMonth(first, 2)];
+}
 export function monthLabel(month) {
   return new Intl.DateTimeFormat("en-US", {
     month: "long",

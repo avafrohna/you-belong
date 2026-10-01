@@ -1093,7 +1093,9 @@
   "exclusions": [
     "Spark San Diego",
     "SJP",
-    "San Diego Community Coalition"
+    "San Diego Community Coalition",
+    "Islamic Center of San Diego",
+    "The Humanization Matters Collaborative"
   ],
   "deduplication": {
     "Kasey’s group": "JUST Education Collective"
@@ -1108,7 +1110,6 @@
       "heal-palestine",
       "house-of-pacific-relations",
       "irc-san-diego",
-      "islamic-center-san-diego",
       "jvp-san-diego",
       "just-education-collective",
       "karama",
@@ -1122,7 +1123,6 @@
       "san-diego-organizing-project",
       "san-diego-refugee-communities-coalition",
       "san-diego-world-affairs-council",
-      "humanization-matters",
       "the-justice-workshop"
     ],
     "eventIds": [
@@ -1138,6 +1138,6 @@
       "macsd-proposition-2026",
       "pathways-party-2026"
     ],
-    "notes": "House of Palestine is represented by the House of Pacific Relations umbrella only. No recurring schedules. Calendar items link directly to external sources, without local event pages. Start-only events omit unverified end times; uncertain admission is referred to the organizer. Other event candidates remain research leads, not published records. Pathways Party with a Purpose was added in the local revision after inspecting the invitation image; deploy with the next approved update."
+    "notes": "House of Palestine is represented by the House of Pacific Relations umbrella only. No recurring schedules. Calendar items link directly to external sources, without local event pages. Start-only events omit unverified end times; uncertain admission is referred to the organizer. Other event candidates remain research leads, not published records. Pathways Party with a Purpose was added in the local revision after inspecting the invitation image; deploy with the next approved update. Owner requested removal of ICSD and Humanization Matters on September 30, 2026; historical source profiles are retained as research only and excluded from future discovery."
   }
 }
