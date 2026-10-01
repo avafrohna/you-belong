@@ -1,14 +1,24 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, HeartHandshake, Mail } from "lucide-react";
 import { newsletterSignupUrl } from "../data/newsletter.js";
 
-export function NewsletterSignup() {
+export function NewsletterSignup({ welcome = false }) {
   return (
-    <section className="newsletter-band" aria-labelledby="newsletter-title">
+    <section className={`newsletter-band${welcome ? " welcome-newsletter" : ""}`} aria-labelledby="newsletter-title">
       <div className="section-shell newsletter-signup">
-        <Mail size={28} aria-hidden="true" />
+        {!welcome && <Mail size={28} aria-hidden="true" />}
         <div className="newsletter-copy">
-          <h2 id="newsletter-title">Sign up to our monthly newsletter</h2>
-          <p>Local events, community stories, and ways to get involved. One email a month.</p>
+          {welcome ? (
+            <>
+              <span className="newsletter-kicker">New here? Lived here forever?</span>
+              <h2 id="newsletter-title">There’s room for you. <HeartHandshake size={34} aria-hidden="true" /></h2>
+              <p>Sign up to our monthly newsletter for local events, community stories, and ways to get involved. One email a month.</p>
+            </>
+          ) : (
+            <>
+              <h2 id="newsletter-title">Sign up to our monthly newsletter</h2>
+              <p>Local events, community stories, and ways to get involved. One email a month.</p>
+            </>
+          )}
         </div>
         <div className="newsletter-action">
           {newsletterSignupUrl ? (

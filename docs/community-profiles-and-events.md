@@ -137,17 +137,19 @@ KARAMA promotes understanding of the Arab and Islamic worlds, with particular at
 
 Research note: Main KARAMA site had an expired-certificate error. Its official film-festival site was accessible and identifies the festival as a KARAMA project.
 
-#### San Diego International Sister Cities Association
+#### Sister Cities Project
 
-San Diego’s sister-city umbrella association supports connections with communities around the world. It brings together local societies working on cultural, educational, economic, and humanitarian exchanges that encourage understanding and peace.
+Sister Cities Project connects San Diego communities to advance racial and economic equity. Through community partnerships, cultural exchanges, entrepreneurship support, and educational opportunities, it builds relationships and expands opportunities for Black communities and other communities of color.
 
-**Categories:** Global Impact, United Neighborhoods.
+**Categories:** United Neighborhoods, Rights & Action.
 
-**Type:** Local umbrella association.
+**Type:** Local nonprofit organization.
 
-**Events:** The embedded calendar did not expose a readable schedule. A current news post announces a House of Panama sweepstakes drawing on October 3, but no start time; this is a partner fundraiser, not a verified SanDISCA-hosted public gathering.
+**Correction (2026-10-01):** Owner requested replacing San Diego International Sister Cities Association (SanDISCA) with Sister Cities Project. These are distinct organizations. Historical SanDISCA research and event-discovery records are retained for provenance only; do not use them for future discovery or transfer their events to Sister Cities Project. Use the current organization directory as the source of active organizations.
 
-[Profile source](https://www.sandisca.org/) · [Event source](https://www.sandisca.org/events-calendar/)
+**Events:** No events added in this correction; future discoveries require review.
+
+[Website](https://sistercitiesproject.org/) · [Profile source](https://sistercitiesproject.org/the-project/) · [Current ecosystem overview](https://ecosystem.sistercitiesproject.org/about-ecosystem/)
 
 #### Palestine Children’s Relief Fund — San Diego
 

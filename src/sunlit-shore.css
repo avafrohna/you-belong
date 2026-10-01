@@ -147,6 +147,16 @@ h1 em, h2 em { color: var(--terracotta); }
 .welcome-strip > .section-shell { font-size: 17px; }
 .welcome-strip strong { font-family: var(--serif); font-size: 22px; font-weight: 400; }
 .welcome-strip svg { color: var(--terracotta); }
+.welcome-newsletter .newsletter-signup { padding-block: 36px; gap: 48px; }
+.welcome-newsletter .newsletter-kicker { display: block; font-size: 14px; color: var(--brand); margin-bottom: 8px; }
+.welcome-newsletter .newsletter-copy h2 { font-family: var(--serif); font-size: clamp(30px, 3.2vw, 40px); font-weight: 400; color: var(--brand); }
+.welcome-newsletter .newsletter-copy p { max-width: 620px; }
+.welcome-newsletter .newsletter-copy h2 svg { display: inline-block; color: var(--terracotta); vertical-align: middle; margin-left: 10px; }
+@media (max-width: 650px) {
+  .welcome-newsletter .newsletter-signup { gap: 20px; padding-block: 28px; }
+  .welcome-newsletter .newsletter-copy { flex-basis: 100%; }
+  .welcome-newsletter .newsletter-action { margin-left: 0; }
+}
 .section-block { padding-block: 80px; }
 .section-intro { margin-bottom: 36px; }
 .section-intro > p { max-width: 380px; font-size: 16px; line-height: 1.65; }

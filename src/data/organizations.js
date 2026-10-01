@@ -252,18 +252,18 @@ export const communityOrganizations = [
     "reviewedAt": "2026-09-25"
   },
   {
-    "id": "san-diego-sister-cities",
-    "name": "San Diego International Sister Cities Association",
-    "description": "San Diego’s sister-city umbrella association supports connections with communities around the world. It brings together local societies working on cultural, educational, economic, and humanitarian exchanges that encourage understanding and peace.",
+    "id": "sister-cities-project",
+    "name": "Sister Cities Project",
+    "description": "Sister Cities Project connects San Diego communities to advance racial and economic equity. Through community partnerships, cultural exchanges, entrepreneurship support, and educational opportunities, it builds relationships and expands opportunities for Black communities and other communities of color.",
     "sectionIds": [
-      "global-impact",
-      "united-neighborhoods"
+      "united-neighborhoods",
+      "rights-action"
     ],
-    "primarySectionId": "global-impact",
-    "website": "https://www.sandisca.org/",
-    "organizationType": "Local umbrella association",
-    "profileSourceUrl": "https://www.sandisca.org/",
-    "reviewedAt": "2026-09-25"
+    "primarySectionId": "united-neighborhoods",
+    "website": "https://sistercitiesproject.org/",
+    "organizationType": "Local nonprofit organization",
+    "profileSourceUrl": "https://sistercitiesproject.org/the-project/",
+    "reviewedAt": "2026-10-01"
   },
   {
     "id": "san-diego-organizing-project",

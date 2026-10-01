@@ -196,7 +196,7 @@ function App({ initialPath }) {
       <main id="main-content" tabIndex={-1}>
         {page}
       </main>
-      <SiteFooter />
+      <SiteFooter showNewsletter={path !== "/"} />
     </>
   );
 }
@@ -348,13 +348,7 @@ function HomePage() {
           </figcaption>
         </figure>
       </section>
-      <div className="welcome-strip">
-        <div className="section-shell">
-          <span>New here? Lived here forever?</span>
-          <strong>There’s room for you.</strong>
-          <HeartHandshake size={24} aria-hidden="true" />
-        </div>
-      </div>
+      <NewsletterSignup welcome />
       <section
         id="explore"
         className="section-shell section-block"
@@ -774,10 +768,10 @@ function NotFoundPage() {
     </section>
   );
 }
-function SiteFooter() {
+function SiteFooter({ showNewsletter = true }) {
   return (
     <footer className="site-footer">
-      <NewsletterSignup />
+      {showNewsletter && <NewsletterSignup />}
       <div className="section-shell footer-grid">
         <div>
           <Brand footer />
