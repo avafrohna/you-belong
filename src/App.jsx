@@ -59,11 +59,11 @@ const sections = [
     href: "/rights-action",
     name: "Rights & Action",
     description:
-      "Defend free speech, organize marches, and find legal support for grassroots activism.",
+      "Defend free speech, organize marches, and find resources for grassroots activism.",
     focus: [
       "Free speech, privacy, and free expression",
       "Community-organized marches",
-      "Legal support resources for grassroots activism",
+      "Resources for grassroots activism",
     ],
     status: "Meet the organizations",
     icon: Megaphone,
