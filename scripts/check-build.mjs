@@ -73,7 +73,7 @@ for (const route of pages) {
     "/apple-touch-icon.png",
   ]) {
     assert.ok(
-      html.includes(`href="${icon}?v=3"`),
+      html.includes(`href="${icon}?v=4"`),
       `${route}: expected icon ${icon}`,
     );
   }
