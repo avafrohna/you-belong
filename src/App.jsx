@@ -79,7 +79,7 @@ const sections = [
       "Support for communities and marginalized groups",
       "Commerce and conscience, hand in hand",
     ],
-    status: "Help this guide grow",
+    status: "Meet the businesses",
     icon: Store,
   },
 ];
@@ -517,6 +517,7 @@ function Callout() {
   );
 }
 function OrganizationDirectoryPage({ initialParams = "", section }) {
+  const isBusinessSection = section?.id === "businesses-give-back";
   const params = new URLSearchParams(initialParams);
   const [query, setQuery] = useState(params.get("q") || "");
   const [category, setCategory] = useState(
@@ -537,10 +538,10 @@ function OrganizationDirectoryPage({ initialParams = "", section }) {
       </section>
       <section className="section-shell directory-section" aria-label="Organization directory">
         <div className="directory-controls">
-          <label className="search-label" htmlFor="directory-search">Find a cause or a community</label>
+          <label className="search-label" htmlFor="directory-search">{isBusinessSection ? "Find a business that gives back" : "Find a cause or a community"}</label>
           <div className="search-field">
             <Search size={20} aria-hidden="true" />
-            <input id="directory-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try arts, refugees, or an organization name" />
+            <input id="directory-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={isBusinessSection ? "Try culinary training, kitchenware, or a business name" : "Try arts, refugees, or an organization name"} />
           </div>
           {!section && <div className="filters-row"><fieldset>
             <legend>Explore by section</legend>
@@ -551,7 +552,7 @@ function OrganizationDirectoryPage({ initialParams = "", section }) {
           </fieldset></div>}
         </div>
         <div className="results-meta">
-          <span role="status" aria-live="polite">{filtered.length} {filtered.length === 1 ? "organization" : "organizations"}</span>
+          <span role="status" aria-live="polite">{filtered.length} {isBusinessSection ? (filtered.length === 1 ? "listing" : "listings") : (filtered.length === 1 ? "organization" : "organizations")}</span>
           {(query || category !== (section?.id || "all")) && <button type="button" className="clear-filters" onClick={reset}>Clear filters <X size={15} aria-hidden="true" /></button>}
         </div>
         <div className="results-grid">
@@ -565,8 +566,8 @@ function OrganizationDirectoryPage({ initialParams = "", section }) {
         </div>
         {!filtered.length && <div className="empty-state">
           <Search size={28} aria-hidden="true" />
-          <h2>{category === "businesses-give-back" && !query ? "A little local good, coming soon." : "No matches this time."}</h2>
-          <p>{category === "businesses-give-back" && !query ? "We’re gathering recommendations for businesses that give back. Know one that belongs here? Share it below." : "Try another search or clear your filters."}</p>
+          <h2>No matches this time.</h2>
+          <p>Try another search or clear your filters.</p>
           <button type="button" className="button primary" onClick={reset}>Clear filters</button>
         </div>}
       </section>

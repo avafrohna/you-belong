@@ -182,3 +182,7 @@ for (const icon of [
 console.log(
   `Build checks passed: ${pages.length} rendered pages, route metadata, noindex previews, sitemap, structured data, favicon, and domain consistency.`,
 );
+
+// Populated business category must remain public and discoverable.
+assert.ok(sitemapUrls.includes(`${SITE_URL}/businesses-give-back/`));
+assert.ok(!pageHtml.get("/businesses-give-back").includes("A little local good, coming soon."));

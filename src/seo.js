@@ -48,8 +48,8 @@ export const routeMetadata = {
   ),
   "/businesses-give-back": {
     title: "Businesses That Give Back | You Belong San Diego",
-    description: "Help grow our guide to local businesses that support their communities and lift up marginalized groups.",
-    robots: previewRobots,
+    description: "Discover San Diego businesses and social enterprises that give back, including Kitchens for Good. Explore their work and ways to support the community.",
+    robots: "index, follow, max-image-preview:large",
   },
   "/directory": {
     title: "San Diego Organization Directory | You Belong San Diego",
