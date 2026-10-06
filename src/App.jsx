@@ -182,7 +182,7 @@ function App({ initialPath }) {
   else if (organization)
     page = <OrganizationDetailPage organization={organization} />;
   else if (activeSection)
-    page = activeSection.id === "businesses-give-back"
+    page = !organizations.some((org) => org.sectionIds.includes(activeSection.id))
       ? <ComingSoonPage section={activeSection} />
       : <OrganizationDirectoryPage key={location} section={activeSection} initialParams={params} />;
   else page = <NotFoundPage />;
@@ -477,9 +477,9 @@ function ExplorePage() {
                   href={section.href}
                   aria-label={`Explore ${section.name}`}
                 >
-                  {section.id === "businesses-give-back"
-                    ? "Help shape this guide"
-                    : "Explore this area"}
+                  {organizations.some((org) => org.sectionIds.includes(section.id))
+                    ? "Explore this area"
+                    : "Help shape this guide"}
                   <ArrowRight size={17} aria-hidden="true" />
                 </Link>
               </div>

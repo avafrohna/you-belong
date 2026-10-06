@@ -412,3 +412,12 @@ Sources: [official website](https://licensetofreedom.org/),
 The shared organization record supplies its profile, directory/category entries,
 calendar filter, event-request dropdown, and sitemap entry. No events added in
 this update; this was an organization-profile review, not a new event sweep.
+
+
+## October 6 addition: Kitchens for Good
+
+Owner requested addition and publication. Reviewed the [official website](https://kitchensforgood.org/), which describes culinary apprenticeships, paid work experience, food entrepreneurship support, and social enterprises including a kitchenware shop and cooking classes. Its published address is in San Diego.
+
+**Categories:** Businesses That Give Back (primary); United Neighborhoods.
+
+The shared organization record supplies its profile, directory/category entries, calendar filter, event-request dropdown, and sitemap entry. No events added in this organization-profile update.

@@ -141,6 +141,20 @@ export const communityOrganizations = [
     "reviewedAt": "2026-09-26"
   },
   {
+    "id": "kitchens-for-good",
+    "name": "Kitchens for Good",
+    "description": "Kitchens for Good helps San Diegans build careers and food businesses through culinary apprenticeships, paid work experience, and entrepreneurship support. Its kitchenware shop, cooking classes, and other social enterprises help fund this work and create opportunities for the community.",
+    "sectionIds": [
+      "businesses-give-back",
+      "united-neighborhoods"
+    ],
+    "primarySectionId": "businesses-give-back",
+    "website": "https://kitchensforgood.org/",
+    "organizationType": "Local nonprofit and social enterprise",
+    "profileSourceUrl": "https://kitchensforgood.org/",
+    "reviewedAt": "2026-10-06"
+  },
+  {
     "id": "karama",
     "name": "KARAMA",
     "description": "KARAMA promotes understanding of the Arab and Islamic worlds, with particular attention to Palestinian experiences. Its cultural and educational work includes the San Diego Arab Film Festival, which shares stories from and about Arab communities.",
